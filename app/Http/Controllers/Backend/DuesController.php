@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
-use Illuminate\Http\Request;
 use App\Models\backend\Dues as BackendDues;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class DuesController extends Controller
 {
@@ -18,8 +17,10 @@ class DuesController extends Controller
      */
     public function index()
     {
-
-        $dues = BackendDues::query()->join('users','users.id','=','dues.user_id')->get();
+        $dues = BackendDues::query()->join('users', 'users.id', '=', 'dues.user_id')->select(
+            'dues.*',
+            'users.full_name_tr'
+        )->get();
         return view('backend.dues.index', compact('dues'));
     }
 
@@ -77,7 +78,7 @@ class DuesController extends Controller
     {
         $users = User::all();
         $dues = BackendDues::find($id);
-
+//dd(compact('dues', 'users'));
         return view('backend.dues.edit', compact('dues', 'users'));
     }
 

@@ -2,11 +2,10 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
 
 
-
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"> 
-                    <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                     <div class="brand-logo"></div>
                    <img src="https://ibda.com.tr/uploads/settings/menu.png" style="width: 100px;padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
                   </a></li>
@@ -59,7 +58,7 @@
     <a href="{{ route('admin.auth.user.deleted') }}"><i class="feather icon-user-x"></i>
         <span class="menu-title" data-i18n="User">@lang('menus.backend.access.users.deleted')</span>
         @if ($deleted_users > 0)
-        <span class="badge badge badge-primary badge-pill float-right ">{{ $deleted_users }}</span>
+            <span class="badge badge badge-primary badge-pill float-right ">{{ $deleted_users }}</span>
         @endif
     </a>
 </li>
@@ -67,42 +66,39 @@
 </li>
 
 
+            <li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
+                <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span
+                        class="menu-title"
+                        data-i18n="User">@lang('labels.backend.access.roles.management')</span>
+                </a>
+            </li>
+
+            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-activity"></i><span class="menu-item"
+                                                                                                 data-i18n="Select">Aidat</span></a>
+            </li>
 
 
+            <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
+                        class="feather icon-edit"></i><span class="menu-item"
+                                                            data-i18n="Select">{{ trans('backend.posts') }}</span></a>
+            </li>
+            <li class="@if(Request::segment(2) == "announcement" ) active @endif"><a
+                    href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span
+                        class="menu-item"
+                        data-i18n="Select">Duyurular</span></a>
+            </li>
+            <li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span
+                        class="menu-item"
+                        data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
+            </li>
 
-<li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
-    <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span class="menu-title"
-            data-i18n="User">@lang('labels.backend.access.roles.management')</span>
-    </a>
-</li>
+            <li class=" nav-item ">
+                <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span class="menu-title"
+                                                                                                      data-i18n="User">@lang('backend.sliders')</span>
+                </a>
+            </li>
 
-
-<li class="nav-item @if(Request::segment(2) == "activity" ) active @endif">
-    <a href="{{ route('admin.activity.index') }}"><i class="feather icon-activity"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.activities')</span></a>
-</li>
-
-
-
-
-
-<li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i class="feather icon-edit"></i><span class="menu-item"
-            data-i18n="Select">{{ trans('backend.posts') }}</span></a>
-</li>
-<li class="@if(Request::segment(2) == "announcement" ) active @endif"><a href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span class="menu-item"
-    data-i18n="Select">Duyurular</span></a>
-</li>
-<li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span class="menu-item"
-            data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
-</li>
-
-<li class=" nav-item ">
-    <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.sliders')</span>
-    </a>
-</li>
-
-<!-- <li class=" nav-item ">
+        <!-- <li class=" nav-item ">
     <a href="{{ route('admin.testimonial.index') }}"><i class="feather icon-message-circle"></i><span class="menu-title"
             data-i18n="User">@lang('backend.testimonials')</span>
     </a>
@@ -203,14 +199,12 @@
 </li>
 
 
-
-
-{{-- 
-<li class=" nav-item ">
-    <a href="{{ URL('/admin/forum/category')}}"><i class="feather icon-message-square"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.forum_category')</span>
-    </a>
-</li> --}}
+            {{--
+            <li class=" nav-item ">
+                <a href="{{ URL('/admin/forum/category')}}"><i class="feather icon-message-square"></i><span class="menu-title"
+                        data-i18n="User">@lang('backend.forum_category')</span>
+                </a>
+            </li> --}}
 
 
 <li class=" nav-item ">

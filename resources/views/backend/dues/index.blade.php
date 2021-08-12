@@ -31,7 +31,6 @@
                                 </thead>
                                 <tbody>
 
-
                                     @foreach ($dues as $ad)
                                     <tr>
                                         <td>{{ $ad->date }}</td>
