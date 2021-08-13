@@ -6,3 +6,6 @@
 /node_modules/
 /.phpstorm.meta.php
 /_ide_helper.php
+vendor/composer/autoload_classmap.php
+.gitignore
+vendor/composer/installed.php
