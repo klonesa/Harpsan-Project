@@ -7,7 +7,7 @@
             <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                     <div class="brand-logo"></div>
-                   <img src="https://ibda.com.tr/uploads/settings/menu.png" style="width: 100px;padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
+                   <img src="https://harpsantuketim.com/uploads/settings/16260374462255.png" style="width: 100px;padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
                   </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
                         class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i
@@ -21,7 +21,9 @@
     <div class="shadow-bottom"></div>
     @if ($logged_in_user->isAdmin())
 <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="
+    margin-top: 55px;
+">
 
 <li class=" nav-item"><a href="{{ route('admin.dashboard') }}"><i class="feather icon-home"></i><span class="menu-title"
             data-i18n="Dashboard">@lang('menus.backend.sidebar.dashboard')</span><span
