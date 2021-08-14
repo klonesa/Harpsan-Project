@@ -13,8 +13,8 @@
                     <div class="card-body">
 
 
-                        <form role="form" action="{{ route('admin.shopping.update',$shopping->id) }}"
-                            method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{ route('admin.shopping.update',$shopping->id) }}" method="post"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
                             <div class="row clealfix">
@@ -39,36 +39,54 @@
                                         <div class="card-content">
                                             <div class="card-body">
 
-                                               
+
                                                 <!-- Tab panes -->
                                                 <div class="tab-content pt-1">
                                                     <div class="tab-pane active" id="home-unit" role="tabpanel"
                                                         aria-labelledby="home-tab-justified">
 
-                                                        <h4 class="card-title">
-                                                            Ürün Adı</h4>
+                                                        <h4 class="card-title">Ürün Adı</h4>
 
                                                         <input type="text" class="form-control" name="name"
-                                                            aria-required="true">
+                                                            aria-required="true"
+                                                            value="{{ old('name', $shopping->name) }}">
 
-                                                        <h4 class="card-title">
-                                                            Açıklama </h4>
+                                                        <h4 class="card-title"> Açıklama </h4>
                                                         <input type="text" class="form-control" name="description"
-                                                            aria-required="true">
+                                                            aria-required="true"
+                                                            value="{{ old('description', $shopping->description) }}">
 
-                                                        <h4 class="card-title">Birim </h4>
-                                                        <select name="type" class="form-select"
-                                                            aria-label="Default select example">
-                                                            <option name="choice1">Kilogram</option>
-                                                            <option name="choice2">Gram</option>
-                                                            <option name="choice3">Adet</option>
-                                                            <option name="choice4">Santimetre</option>
-                                                        </select>
+
+
+
+
+                                                       
+                                                           
+                                                       
+
+                                                        <h4 for="inputState">Birim </h4>
+                                                        <select id="type" name="type" class="form-control"
+                                                            >
+                                                            <option value="">Seçiniz...</option>
+                                                            <option name="choice1"
+                                                                {{ ($shopping->type) == 'Kilogram' ? 'selected' : '' }}
+                                                                value="Kilogram">Kilogram</option>
+                                                            <option name="choice2"
+                                                                {{ ($shopping->type) == 'Gram' ? 'selected' : '' }}
+                                                                value="Gram">Gram</option>
+                                                            <option name="choice3"
+                                                                {{ ($shopping->type) == 'Adet' ? 'selected' : '' }}
+                                                                value="Adet">Adet</option>
+                                                            <option name="choice4"
+                                                                {{ ($shopping->type) == 'Santimetre' ? 'selected' : '' }}
+                                                                value="Santimetre">Santimetre</option>
+                                                        </select> 
                                                         <h4 class="card-title">
                                                             Fiyat</h4>
 
                                                         <input type="text" class="form-control" name="price"
-                                                            aria-required="true">
+                                                            aria-required="true"
+                                                            value="{{ old('price', $shopping->price) }}">
                                                     </div>
                                                 </div>
                                             </div>
