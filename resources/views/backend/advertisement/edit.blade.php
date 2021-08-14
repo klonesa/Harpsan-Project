@@ -73,7 +73,7 @@
                         </div>
                         <div class="body">
                             <div class="multiselect_div">
-                                <select id="single-selection" name="ad_order" class="multiselect multiselect-custom">
+                                <select id="single-selection" name="ad_order" class="form-control">
                                     <option @if($advertisement->ad_order == 0) selected @endif value="0" >Slider Altı</option>
                                     <option @if($advertisement->ad_order == 1) selected @endif value="1">Sol</option>
                                     <option @if($advertisement->ad_order == 2) selected @endif value="2">Sağ</option>

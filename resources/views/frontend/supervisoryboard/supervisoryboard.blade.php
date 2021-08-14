@@ -12,7 +12,7 @@
             <div class="section-content text-center">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <h2 class="text-theme-colored font-36">Denetleme Kurulu</h2>
+                        <h2 class="text-theme-colored font-36"> Denetleme Kurulu </h2>
 
 
 
@@ -21,6 +21,8 @@
                 </div>
             </div>
         </div>
+
+
     </section>
 
 <!--
