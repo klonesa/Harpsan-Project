@@ -5,10 +5,10 @@
 
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto">
+            <li class="nav-item mr-auto" >
                 <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                     <div class="brand-logo"></div>
-                   <img src="https://ibda.com.tr/uploads/settings/menu.png" style="width: 100px;padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
+                   <img src="https://harpsantuketim.com/uploads/settings/16260374462255.png" style="width: 100px; height:auto; padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
                 </a>
                 </li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
@@ -19,9 +19,10 @@
         </ul>
     </div>
     <div class="shadow-bottom"></div>
-    <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-
+    <div class="main-menu-content" style="margin-top:50px;">
+    <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="
+    margin-top: 55px;
+">
 
 
             @can('view backend')
