@@ -4,12 +4,12 @@
 
 @section('content')
 
- <section id="home">
+<section id="home">
     <div class="container-fluid p-0">
 
         <!-- Slider Revolution Start -->
         <div class="rev_slider_wrapper">
-            <div  class="rev_slider rev_slider_fullscreen" data-version="5.0">
+            <div class="rev_slider rev_slider_fullscreen" data-version="5.0">
                 <ul>
                     @foreach ($sliders as $slider)
                     <!-- SLIDE 1 -->
@@ -168,267 +168,264 @@
 <section id="tm-home-news" class="uk-section tm-filter-after">
     <div class="uk-container">
 
-    <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
-
-        <div class="uk-width-1-3@m">
-            <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
-                <h3 class="uk-h2"><span>Son</span> <span>Haberler</span></h3>
-            </div>
-        </div>
-
-        <div class="uk-width-expand">
-            <div class="uk-panel uk-flex uk-flex-middle">
-                <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between" href="{{URL('/news')}}">
-                    TÜMÜNÜ GÖSTER
-                    <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
-                </a>
-            </div>
-        </div>
-        
-
-    </div>
-
-</div>
-
-<div class="uk-container uk-container-large uk-container-expand-right uk-margin-medium-top">
-    <div uk-slider="finite: true;" style="overflow: visible !important;">
-
-        <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
-
-            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
-                            
-                @foreach ($posts->take(3) as $post)
- 
-                <li>
-                    <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
-                        <div class="uk-card-media-top">
-                                <a href="{{route('frontend.new',$post->slug)}}" title="{{$post->title}}">
-                                                                        <img  src="{{asset('uploads/posts/')}}/{{ $post->f_image}}" style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
-                                                                    </a>
-                        </div>
-                        <div class="uk-card-body">
-                            <h4>
-                                <a class="uk-link-text" href="haberler/anitkabir-ziyareti.html" title="{{$post->title}}">
-                                    {{$post->title}}
-                                </a>
-                            </h4>
-                                                        <div class="uk-text-small">
-                                                            <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...') !!}</p>
-                                                        </div>
-                                                        <div class="uk-margin">
-                                <a href="{{route('frontend.new',$post->slug)}}"  title="{{$post->title}}">Devamı <span uk-icon="icon: arrow-right; ratio: 1.2;"></span></a>
-                            </div>
-                        </div>
-                    </article>
-                </li>                                 @endforeach
-
-                            </ul>
-
-            <a uk-icon="icon: arrow-left" class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-left uk-position-small uk-box-shadow-large" href="#" uk-slider-item="previous"></a>
-            <a uk-icon="icon: arrow-right" class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-right uk-position-small uk-box-shadow-large" href="#" uk-slider-item="next"></a>
-        </div>
-
-    </div>
-</div>
-</section>
-    <section id="tm-home-about" class="uk-section tm-background">
-    <div class="uk-container">
-    <div class="uk-child-width-1-2@m" uk-grid uk-height-match="target: > div;">
-
-        <div>
-
-            <div class="uk-width-2-3@m">
-                <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
-                    <h3 class="uk-h2"><span>{{ $about->about_title }}  </h3>
-                </div>
-            </div>
-
-            <div class="uk-margin-medium uk-text-small">
- <p>{!! $about->about_text !!}</p>
-             </div>
-
-            <div class="uk-margin">
-                <a class="uk-button uk-button-primary tm-button-large uk-flex uk-flex-middle uk-flex-between" href="{{route('frontend.about')}}">
-                    DETAYLAR
-                    <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
-                </a>
-            </div>
-
-        </div>
-
-        <div class="uk-width-expand uk-visible@s"></div>
-
-        <div class="uk-width-2-5@m uk-flex uk-flex-middle">
-            <div class="">
-                <img class="uk-position-relative" src="{{asset('uploads/settings')}}/{{GeneralSiteSettings("site_logo")}}" style="width: 250px" alt="{{GeneralSiteSettings("site_title")}}">
-            </div>
-        </div>
-
-    </div>
-</div>
-    </section>
-     
-<section id="tm-home-news" class="uk-section tm-filter-after">
-    <div class="uk-container">
-
-    <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
-
-        <div class="uk-width-1-3@m">
-            <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
-                <h3 class="uk-h2"><span>Duyurular</span></h3>
-            </div>
-        </div>
-
-        <div class="uk-width-expand">
-            <div class="uk-panel uk-flex uk-flex-middle">
-                <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between" href="{{URL('/announcements')}}">
-                    TÜMÜNÜ GÖSTER
-                    <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
-                </a>
-            </div>
-        </div>
-        
-
-    </div>
-
-</div>
-
-<div class="uk-container uk-container-large uk-container-expand-right uk-margin-medium-top">
-    <div uk-slider="finite: true;" style="overflow: visible !important;">
-
-        <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
-
-            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
-                            
-                @foreach ($announcements->take(3) as $aaa) 
-                <li>
-                    <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
-                        <div class="uk-card-media-top">
-                                <a href="{{route('frontend.announcements',$aaa->slug)}}" title="{{$aaa->title}}">
-                                                                        <img  src="{{asset('uploads/announcements/')}}/{{ $aaa->f_image}}" style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
-                                                                    </a>
-                        </div>
-                        <div class="uk-card-body">
-                            <h4>
-                                <a class="uk-link-text" href="{{route('frontend.announcements',$aaa->slug)}}" title="{{$aaa->title}}">
-                                    {{$aaa->title}}
-                                </a>
-                            </h4>
-                                                        <div class="uk-text-small">
-                                                            <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...') !!}</p>
-                                                        </div>
-                                                        <div class="uk-margin">
-                                <a href="{{route('frontend.announcements',$post->slug)}}"  title="{{$post->title}}">Devamı <span uk-icon="icon: arrow-right; ratio: 1.2;"></span></a>
-                            </div>
-                        </div>
-                    </article>
-                </li>                                 @endforeach
-
-                            </ul>
-
-            <a uk-icon="icon: arrow-left" class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-left uk-position-small uk-box-shadow-large" href="#" uk-slider-item="previous"></a>
-            <a uk-icon="icon: arrow-right" class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-right uk-position-small uk-box-shadow-large" href="#" uk-slider-item="next"></a>
-        </div>
-
-    </div>
-</div>
-</section>
-
-        <section id="tm-home-events" class="uk-section tm-background">
-        <div class="uk-container">
-
-    <div class="tm-background-white uk-padding" style="padding-bottom: 10px;">
         <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
 
             <div class="uk-width-1-3@m">
-                <div class="uk-panel uk-flex uk-flex-middle">
-                    <h2 class="uk-text-bold">Etkinlikler</h2>
+                <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
+                    <h3 class="uk-h2"><span>Son</span> <span>Haberler</span></h3>
                 </div>
             </div>
 
-            <div class="uk-width-1-3@m uk-visible@s uk-text-small">
-            </div>
-
             <div class="uk-width-expand">
-                <div class="uk-panel uk-flex uk-flex-middle uk-flex-right">
-                    <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between" href="basin/haberler.html">
+                <div class="uk-panel uk-flex uk-flex-middle">
+                    <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between"
+                        href="{{URL('/news')}}">
                         TÜMÜNÜ GÖSTER
                         <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
                     </a>
                 </div>
             </div>
 
+
         </div>
+
     </div>
 
-</div>
+    <div class="uk-container uk-container-large uk-container-expand-right uk-margin-medium-top">
+        <div uk-slider="finite: true;" style="overflow: visible !important;">
 
-<div class="uk-container">
-    <div class="tm-background-white uk-padding">
-                <div class="uk-child-width-1-3@m" uk-grid uk-height-match="target: article > .tm-card-body > h3;">
+            <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
 
-                        <article class="uk-card" style="opacity: .5;">
-                <div class="tm-card-header uk-flex uk-flex-between uk-flex-middle tm-padding-vertical">
-                    <div>
-                        <h4 class="uk-margin-remove uk-text-bold">13 Temmuz</h4>
-                    </div>
-                    <div>
-                        <p class="uk-margin-remove uk-text-small">Anıtkabir, Ankara</p>
-                    </div>
-                </div>
-                <div class="tm-card-body tm-padding-vertical-large uk-position-relative">
-                                        <span class="uk-label tm-label-muted uk-position-top-right">tamamlandı</span>
-                                        <h3 class="uk-text-bold uk-margin-remove-top">
-                        <a class="uk-link-text" href="etkinlikler/anitkabir-ziyareti-13-07.html" title="Anıtkabir Ziyareti">Anıtkabir Ziyareti</a>
-                    </h3>
-                    <div class="uk-margin uk-text-small">
-                        24 Haziran 2021 tarihinde gerçekleşen 18. Olağan Genel Kurul toplantısında 18. Dönem Yönetim Kurulu ve Denetleme Kurulu asil ve yedek üyeleri seçilmiştir. Bu kapsamda, Derneğimiz yeni dönemin ilk ziyaretini yönetim kurulumuz ve üyelerimizden oluşan bir heyetle ANITKABİR’e gerçekleştirerek, Cumhuriyetimizin kurucusu Ulu Önderimiz Gazi Mustafa Kemal ATATÜRK’ü minnet ve saygıyla anmıştır.
-                    </div>
-                </div>
-            </article>
-                        <article class="uk-card" style="opacity: .5;">
-                <div class="tm-card-header uk-flex uk-flex-between uk-flex-middle tm-padding-vertical">
-                    <div>
-                        <h4 class="uk-margin-remove uk-text-bold">06 Temmuz</h4>
-                    </div>
-                    <div>
-                        <p class="uk-margin-remove uk-text-small">Sakıp Sabancı Müzesi, MSA Restaurant</p>
-                    </div>
-                </div>
-                <div class="tm-card-body tm-padding-vertical-large uk-position-relative">
-                                        <span class="uk-label tm-label-muted uk-position-top-right">tamamlandı</span>
-                                        <h3 class="uk-text-bold uk-margin-remove-top">
-                        <a class="uk-link-text" href="etkinlikler/networking-kahvaltisi-06-07.html" title="Networking Kahvaltısı">Networking Kahvaltısı</a>
-                    </h3>
-                    <div class="uk-margin uk-text-small">
-                        GYİAD Networking Kahvaltısı 6 Temmuz 2021 tarihinde üyelerimizin katılımıyla Sakıp Sabancı Müzesi, MSA Restaurant’ta gerçekleştirildi.
-                    </div>
-                </div>
-            </article>
-                        <article class="uk-card" style="opacity: .5;">
-                <div class="tm-card-header uk-flex uk-flex-between uk-flex-middle tm-padding-vertical">
-                    <div>
-                        <h4 class="uk-margin-remove uk-text-bold">24 Haziran</h4>
-                    </div>
-                    <div>
-                        <p class="uk-margin-remove uk-text-small">Portaxe</p>
-                    </div>
-                </div>
-                <div class="tm-card-body tm-padding-vertical-large uk-position-relative">
-                                        <span class="uk-label tm-label-muted uk-position-top-right">tamamlandı</span>
-                                        <h3 class="uk-text-bold uk-margin-remove-top">
-                        <a class="uk-link-text" href="etkinlikler/gyiad-18-olagan-genel-kurul-toplantisi.html" title="GYİAD 18. Olağan Genel Kurul Toplantısı">GYİAD 18. Olağan Genel Kurul Toplantısı</a>
-                    </h3>
-                    <div class="uk-margin uk-text-small">
-                        Derneğimiz 24 Haziran 2021 tarihinde 18. Olağan Genel Kurul toplantısını düzenledi. Toplantının açılış konuşması 17. Dönem Yönetim Kurulu Başkanı Sayın Fuat Pamukçu tarafından yapıldı. Ardından Derneğimizin Genel Sekreteri Sayın Sinem Sonuvar Birbilen 17. Dönem Faaliyet Raporu sunumunu gerçekleştirdi. Hemen akabinde  toplantı gündemi kapsamında Denetleme Kurulu Başkanı İrem Pehlivanoğlu Gürkaş tarafından 17. Dönem Bilanço, gelir ve gider hesaplarının detayları paylaşıldı.  Bahsi geçen toplantıda GYİAD’ın Yönetim Kurulu ve Denetleme Kurulu asil ve yedek üyelerinin seçimi gerçekleştirildi ve Derneğimizin 18. Dönem Yönetim Kurulu Başkanı olarak yeniden Sayın Fuat seçildi.
-                    </div>
-                </div>
-            </article>
-            
+                <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
+
+                    @foreach ($posts->take(3) as $post)
+
+                    <li>
+                        <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
+                            <div class="uk-card-media-top">
+                                <a href="{{route('frontend.new',$post->slug)}}" title="{{$post->title}}">
+                                    <img src="{{asset('uploads/posts/')}}/{{ $post->f_image}}"
+                                        style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
+                                </a>
+                            </div>
+                            <div class="uk-card-body">
+                                <h4>
+                                    <a class="uk-link-text" href="haberler/anitkabir-ziyareti.html"
+                                        title="{{$post->title}}">
+                                        {{$post->title}}
+                                    </a>
+                                </h4>
+                                <div class="uk-text-small">
+                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...')
+                                        !!}</p>
+                                </div>
+                                <div class="uk-margin">
+                                    <a href="{{route('frontend.new',$post->slug)}}" title="{{$post->title}}">Devamı
+                                        <span uk-icon="icon: arrow-right; ratio: 1.2;"></span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </li> @endforeach
+
+                </ul>
+
+                <a uk-icon="icon: arrow-left"
+                    class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-left uk-position-small uk-box-shadow-large"
+                    href="#" uk-slider-item="previous"></a>
+                <a uk-icon="icon: arrow-right"
+                    class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-right uk-position-small uk-box-shadow-large"
+                    href="#" uk-slider-item="next"></a>
+            </div>
+
         </div>
+    </div>
+</section>
+<section id="tm-home-about" class="uk-section tm-background">
+    <div class="uk-container">
+        <div class="uk-child-width-1-2@m" uk-grid uk-height-match="target: > div;">
+
+            <div>
+
+                <div class="uk-width-2-3@m">
+                    <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
+                        <h3 class="uk-h2"><span>{{ $about->about_title }} </h3>
+                    </div>
                 </div>
-</div>
-    </section>
- 
- 
+
+                <div class="uk-margin-medium uk-text-small">
+                    <p>{!! $about->about_text !!}</p>
+                </div>
+
+                <div class="uk-margin">
+                    <a class="uk-button uk-button-primary tm-button-large uk-flex uk-flex-middle uk-flex-between"
+                        href="{{route('frontend.about')}}">
+                        DETAYLAR
+                        <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="uk-width-expand uk-visible@s"></div>
+
+            <div class="uk-width-2-5@m uk-flex uk-flex-middle">
+                <div class="">
+                    <img class="uk-position-relative"
+                        src="{{asset('uploads/settings')}}/{{GeneralSiteSettings("site_logo")}}" style="width: 250px"
+                        alt="{{GeneralSiteSettings("site_title")}}">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="tm-home-news" class="uk-section tm-filter-after">
+    <div class="uk-container">
+
+        <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
+
+            <div class="uk-width-1-3@m">
+                <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
+                    <h3 class="uk-h2"><span>Duyurular</span></h3>
+                </div>
+            </div>
+
+            <div class="uk-width-expand">
+                <div class="uk-panel uk-flex uk-flex-middle">
+                    <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between"
+                        href="{{URL('/announcements')}}">
+                        TÜMÜNÜ GÖSTER
+                        <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="uk-container uk-container-large uk-container-expand-right uk-margin-medium-top">
+        <div uk-slider="finite: true;" style="overflow: visible !important;">
+
+            <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+
+                <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
+
+                    @foreach ($announcements->take(3) as $aaa)
+                    <li>
+                        <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
+                            <div class="uk-card-media-top">
+                                <a href="{{route('frontend.announcements',$aaa->slug)}}" title="{{$aaa->title}}">
+                                    <img src="{{asset('uploads/announcements/')}}/{{ $aaa->f_image}}"
+                                        style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
+                                </a>
+                            </div>
+                            <div class="uk-card-body">
+                                <h4>
+                                    <a class="uk-link-text" href="{{route('frontend.announcements',$aaa->slug)}}"
+                                        title="{{$aaa->title}}">
+                                        {{$aaa->title}}
+                                    </a>
+                                </h4>
+                                <div class="uk-text-small">
+                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...')
+                                        !!}</p>
+                                </div>
+                                <div class="uk-margin">
+                                    <a href="{{route('frontend.announcements',$post->slug)}}"
+                                        title="{{$post->title}}">Devamı <span
+                                            uk-icon="icon: arrow-right; ratio: 1.2;"></span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </li> @endforeach
+
+                </ul>
+
+                <a uk-icon="icon: arrow-left"
+                    class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-left uk-position-small uk-box-shadow-large"
+                    href="#" uk-slider-item="previous"></a>
+                <a uk-icon="icon: arrow-right"
+                    class="tm-circle tm-circle-white tm-circle-smaller uk-text-primary uk-position-center-right uk-position-small uk-box-shadow-large"
+                    href="#" uk-slider-item="next"></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="tm-home-events" class="uk-section tm-background">
+    <div class="uk-container">
+
+        <div class="tm-background-white uk-padding" style="padding-bottom: 10px;">
+            <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
+
+                <div class="uk-width-1-3@m">
+                    <div class="uk-panel uk-flex uk-flex-middle">
+                        <h2 class="uk-text-bold">Etkinlikler</h2>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-3@m uk-visible@s uk-text-small">
+                </div>
+
+                <div class="uk-width-expand">
+                    <div class="uk-panel uk-flex uk-flex-middle uk-flex-right">
+                        <a class="uk-button tm-button-outline-primary tm-button-large uk-flex uk-flex-middle uk-flex-between"
+                        href="{{route('frontend.events')}}">
+                            TÜMÜNÜ GÖSTER
+                            <span class="tm-button-icon" uk-icon="icon: arrow-right; ratio: 1.2;"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="uk-container">
+        <div class="tm-background-white uk-padding"> 
+            
+            <div class="uk-child-width-1-3@m" uk-grid uk-height-match="target: article > .tm-card-body > h3;">
+            @foreach ($events->take(3) as $event)
+                <article class="uk-card" style="opacity: .5;">
+              
+                    <div class="tm-card-header uk-flex uk-flex-between uk-flex-middle tm-padding-vertical">
+                        <div>
+                            <h5 class="uk-margin-remove uk-text-bold"> {{ date('d',strtotime($event->start_date)) }} {{ date('M',strtotime($event->start_date)) }}</h5>
+                        </div>
+                        <div>
+                            <p class="uk-margin-remove uk-text-small"></p>
+                        </div>
+                    </div>
+                    <div class="tm-card-body tm-padding-vertical-large uk-position-relative">
+                        <span class="uk-label tm-label-muted uk-position-top-right">Etkinlik</span>
+                        <h3 class="uk-text-bold uk-margin-remove-top">
+                            <a class="uk-link-text" href="{{ route('frontend.event',$event->slug)}}"
+                                >{{ $event->name}}</a>
+                        </h3>
+                        <div class="uk-margin uk-text-small">
+                        {!! $event->text !!}
+                        </div>
+                        <ul class="uk-list uk-list-divider">
+                                        <li>{{date('d/m/Y - H:i',strtotime($event->start_date)) }}
+                                            - {{ date('d/m/Y - H:i',strtotime($event->end_date)) }}</li>
+                                        <li> {{ $event->location }}
+                                        </li>
+                                    </ul>
+                    </div>
+                         
+                </article>
+        
+                @endforeach
+            </div>  
+        </div>
+    </div>
+    
+</section>
+
+
 @endsection
