@@ -94,7 +94,9 @@
                 </ul>
 
                 <div>
-                    <a class="uk-button tm-button-outline-white uk-button-small" href="{{route('frontend.auth.login')}}">
+                    <a class="uk-button tm-button-outline-black uk-button-small" style="    border: cadetblue;
+    border-style: inset;
+    background-color: whitesmoke;" href="{{route('frontend.auth.login')}}">
                      Portal Giriş
                     </a>
 
