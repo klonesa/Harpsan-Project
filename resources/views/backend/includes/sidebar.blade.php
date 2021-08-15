@@ -78,7 +78,9 @@
             <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-activity"></i><span class="menu-item"
                                                                                                  data-i18n="Select">Aidat</span></a>
             </li>
-
+            <li><a href="{{ route('admin.finance.index') }}"><i class="feather icon-feather"></i><span class="menu-item"
+                                                                                                     data-i18n="Select">Finans</span></a>
+            </li>
 
             <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
                         class="feather icon-edit"></i><span class="menu-item"
