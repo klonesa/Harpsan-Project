@@ -26,16 +26,16 @@
 <section class="uk-section uk-section-small">
     <div class="uk-container">
         
-
+        
         <div class="uk-child-width-1-3@m" uk-grid  >
         @foreach ($companies as $com )
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-media-top" style="text-align:center;" >
-                        <img src="{{ URL::to('uploads/company',$com->src)}}" style="max-height:200px; min-height 200px;" alt="">
+                        <a href="{{route('frontend.companie',$com->slug)}}"></a> <img src="{{ URL::to('uploads/company',$com->src)}}" style="max-height:200px;" alt=""></a>
                     </div>
                     <div class="uk-card-body">
-                        <h3 class="uk-card-title">{{$com->name}}</h3>
+                        <a href="{{route('frontend.companie',$com->slug)}}"> <h3 class="uk-card-title">{{$com->name}}</h3></a>  
                         <p >{!!\Illuminate\Support\str::limit($com->detail,200)!!}</p>
                     </div>
                 </div>
