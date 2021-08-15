@@ -6,73 +6,50 @@
 <!-- Start main-content -->
 <div class="main-content">
 
-    <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5">
-        <div class="container pt-10 pb-10">
-            <!-- Section Content -->
-            <div class="section-content pt-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="title text-white">{{ trans('frontend.events') }}</h3>
-                    </div>
+<div class="uk-section">
+        <div class="uk-container">
+            <div uk-grid>
+                <div class="uk-width-expand">@foreach($events as $event)
+                                            <article class="uk-card uk-card-default uk-card-body uk-card-small uk-margin-medium-top uk-box-shadow-hover-xlarge">
+                            <div class="uk-flex uk-flex-middle" uk-grid>
+                                                                <div class="uk-width-1-5@m">
+                                    <a href="{{ route('frontend.event',$event->slug) }}">
+                                        <img src="{{  asset('uploads/events/')}}/{{ $event->image }}" alt=" {{ $event->name_tr }}" uk-img>
+                                    </a>
+                                </div>
+                                                                <div class="uk-width-expand">
+                                    <p class="uk-margin-remove uk-text-danger uk-text-small uk-text-bold">{{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</p>
+                                    <h4 class="uk-margin-small">
+                                        <a  class="uk-link-text uk-text-bold" href="{{ route('frontend.event',$event->slug) }}" title=" {{ $event->name_tr }}">
+                                            {{ $event->name_tr }}
+                                        </a>
+                                    </h4>
+                                    <div class="uk-flex uk-flex-middle uk-flex-between">
+                                        <div>
+                                            <p class="uk-margin-remove">{{ trans('frontend.location')." : ".$event->location }}</p>
+                                            <div class="uk-margin">{!! $event->text_tr !!}</div>
+                                        </div>
+                                        <div class="uk-text-small uk-margin-medium-left uk-flex-none">
+                                            <a href="{{ route('frontend.event',$event->slug) }}"> Detaylı Bilgi<span uk-icon="icon: arrow-right;"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>    
+                        @endforeach        
+                    <ul class="uk-pagination uk-flex-center uk-margin-large" uk-margin>
+    <li class="uk-disabled">
+        {{ $events->links() }}
+    </li>
+</ul>
+
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
 
-
-
-
-<!-- Section: event calendar -->
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-
-				<ul class="news_tab">
-					@foreach($events as $event)
-					<div class="upcoming-events bg-white-f3 mb-20">
-						<div class="row">
-							<div class="col-sm-3 pr-0 pr-sm-15">
-								<div class="thumb p-15">
-									<img class="img-fullwidth" src="{{  asset('uploads/events/')}}/{{ $event->image }}" alt="{{ $event->name }}">
-								</div>
-							</div>
-							<div class="col-sm-3 pl-0 pl-sm-15">
-								<div class="event-details p-15 mt-20">
-
-
-
-									<h4 class="mt-0 text-uppercase font-weight-500">{{ $event->name }}</h4>
-
-									<a href="{{ route('frontend.event',$event->slug) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">{{ trans('frontend.read_more') }} <i
-											class="fa fa-angle-double-right"></i></a>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="event-count p-15 mt-15">
-									<ul class="event-date list-inline font-16 text-uppercase mt-10 mb-20">
-										<li class="p-15 mr-5 bg-lightest">{{ date('M',strtotime($event->start_date)) }}</li>
-										<li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> {{ date('d',strtotime($event->start_date)) }}</li>
-										<li class="p-15 bg-lightest">{{ date('Y',strtotime($event->start_date)) }}</li>
-									</ul>
-									<ul>
-										<li class="mb-10"><a href="#"><i class="fa fa-clock-o mr-5"></i> at {{ date('d/M/Y - H:i',strtotime($event->start_date)) }} - {{ date('d/M/Y - H:i',strtotime($event->end_date)) }}</a></li>
-										<li><a href="#"><i class="fa fa-map-marker mr-5"></i>{{ trans('frontend.location')." : ".$event->location }}</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					@endforeach
-
-			</div>
-        </div>
-        <nav>
-            <ul class="pagination theme-colored">
-                {{ $events->links() }}
-            </ul>
-        </nav>
+  
 	</div>
 </section>
 
