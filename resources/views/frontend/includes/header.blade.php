@@ -1,7 +1,5 @@
 <div id="app">
-    <header class="uk-position-relative" style="
-    background: linear-gradient(179deg,#092d39 5%,rgba(24,70,85,.62) 39%,rgba(0,96,127,.67) 61%,#004359 96%);
-">
+    <header class="uk-position-relative" style="background-color:#F5F5F5;">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
         <div class="uk-navbar-center">
             <div class="uk-navbar-center-left uk-visible@m uk-navbar-item">
@@ -11,7 +9,7 @@
                     </li>
                   
                     <li class="uk-active">
-                        <a href="index.html" title="GYİAD">
+                        <a href="index.html" title="Harpsan">
                             <span>Hakkımızda</span>
                         </a>
                         <div class="uk-navbar-dropdown uk-width-4-5@m">
