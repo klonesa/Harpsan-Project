@@ -1,113 +1,47 @@
 @extends('frontend.layouts.app')
 
-@section('title', GeneralSiteSettings('site_title'))
+@section('title', GeneralSiteSettings('site_title') . ' | ' . __('frontend.board_of_directors'))
 
 @section('content')
 <!-- Start main-content -->
 <div class="main-content">
 
-<section class="inner-header divider layer-overlay overlay-dark bg-silver-light">
-        <div class="container pt-20 pb-30">
-            <!-- Section Content -->
-            <div class="section-content text-center">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <h2 class="text-theme-colored font-36"> Denetleme Kurulu </h2>
+<section class="uk-section uk-section-small ">
+              <div class="uk-container">
 
+                  <div class="uk-flex uk-flex-middle uk-grid-small" uk-grid>
+                      <div class="uk-panel uk-width-1-3@m">
+                          <div class="tm-title-border-top span-block uk-width-2-3@m">
+                              <h2>
+                              Denetleme Kurulu
+                              </h2>
+                          </div>
+                      </div>
 
+                      <div class="uk-width-expand">
 
+                      </div>
+                  </div>
+              </div>
+          </section>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-<!--
-    <section class="inner-header divider">
-        <div class="col-md-2 col-sm-6">
-
-        </div>
-        <div class="col-md-8 col-sm-6">
-            <article class="post  mb-30">
-                <div class="entry-header">
-                </div>
-                <div class="entry-content p-20 pr-10">
-                    <div class="entry-meta media mt-0 no-bg no-border">
-                        <div class="media-body pl-15">
-                            <div class="event-content   flip">
-                                <h5 style="text-align: center;">
-                                    {{ trans('frontend.member_text') }}
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-2 col-sm-6">
-
-        </div>
-    </section>-->
-
-
-
-    <!-- Section: Volunteer -->
-    <section>
-        <div class="container pt-70 pb-40">
-            <div class="section-content">
-                <div class="row">
-
-                   @foreach ($supervisoryboard as $ssboard)
-
-                    <div class="col-sm-6 col-md-3 mb-30">
-                        <div style="width: 100%;" class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center  ">
-                            <div class="thumb">
-                            <a class="text-theme-colored" > <img style="max-height: 280px;" class="img-fullwidth" src="{{asset('uploads/teams')}}/{{$ssboard->image}}" alt="{{ $ssboard->name_tr}}"></a></div>
-                            <div class="content p-20 text-center">
-                                <h4 class="name mb-0 mt-0"><a class="text-theme-colored" >{{ $ssboard->name_tr}}</a></h4>
- 
-                                   
-                                <!-- <p>{{ $ssboard->company_name}}</p> -->
-                                <p>{{ $ssboard->position_tr}}</p>
-                                <p>{{ $ssboard->e_mail}}</p>
-                                <p>{!! $ssboard->text_tr !!}</p>
-
-                                <p class="mb-20"></p>
-                                <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-                                        <li><a href="{{$ssboard->instagram}}"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="{{$ssboard->facebook}}"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="{{$ssboard->twitter}}"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="{{$ssboard->linkedin}}"><i class="fa fa-linkedin"></i></a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    @endforeach
-
-
-
-
-
-                </div>
-
-            </div>
-            <nav>
-                <ul class="pagination theme-colored">
-                   
-                </ul>
-            </nav>
-        </div>
-
-    </section>
-
-
-
-</div>
-<!-- end main-content -->
+          <section class="uk-section uk-section-small">
+              <div class="uk-container">
+                  <div class="uk-child-width-1-4@m" uk-grid uk-height-match="target: > article > .uk-card;">
+                  @foreach ($supervisoryboard as $ssboard)
+                      <article>
+                          <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
+                              <div class="tm-card-media uk-text-center">
+                                  <img  src="{{asset('uploads/teams')}}/{{$ssboard->image}}" alt="{{ $ssboard->name_tr}}"
+                                     uk-img>
+                              </div>
+                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $ssboard->name_tr}}</h5>
+                              <p class="uk-text-small">{{ $ssboard->position_tr}}</p>
+                          </div>
+                      </article>
+                      @endforeach
+                  </div>
+              </div>
+          </section>
 
 @endsection
