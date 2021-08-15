@@ -5,70 +5,49 @@
 @section('content')
 
 
-<!-- Start main-content -->
-<div class="main-content">
-    <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5">
-        <div class="container pt-10 pb-10">
-            <!-- Section Content -->
-            <div class="section-content pt-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="title text-white">Anlaşmalı Firmalar</h3>
-                    </div>
+
+<section class="uk-section uk-section-small ">
+    <div class="uk-container">
+
+        <div class="uk-flex uk-flex-middle uk-grid-small" uk-grid>
+            <div class="uk-panel uk-width-1-3@m"><h2>Anlaşmalı Firmalar</h2>
+                <div class="tm-title-border-top span-block uk-width-2-4@m">
+                    
                 </div>
             </div>
+
+            <div class="uk-width-expand">
+
+            </div>
         </div>
-    </section>
-    <br><br>
-    <div class="container">
-        <div class="row multi-row-clearfix">
-            <div class="blog-posts">
-                @foreach ($companies as $com )
-                <div class="col-md-3">
-                    <article class="post clearfix mb-30 bg-lighter">
-                        <div class="entry-header">
-                            <div class="post-thumb thumb" style="max-height:180px; text-align:center; background-color: white;">
-                                <img src="{{ URL::to('uploads/company',$com->src)}}" width="auto" height="175" alt="{{$com->name}}" >
-                            </div>
-                        </div>
-                        <div class="entry-content p-20 pr-10" style="min-height:250px; max-height:250px; background-color: white;">
-                            <div class="entry-meta media mt-0 no-bg no-border">
-                                <div class="media-body" >
-                                    <div class="event-content  flip " style="text-align:center; background-color: white;">
-                                        <h4 class="entry-title text-white text-uppercase  m-0 mt-5" ><a
-                                                href="#">{{$com->name}}</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="height:1px; background-color:orange; margin-top:10px; margin-bottom:10px; "></div> 
-                            <p><b>Adres:</b> {{$com->adress}}</p>
-                            <span>{!!\Illuminate\Support\str::limit($com->detail,200)!!}</span>
+    </div>
+</section>
 
-                        </div>
-            
-                <div class="card-footer" style="bottom:0; text-align:center;background-color: white;">
+<section class="uk-section uk-section-small">
+    <div class="uk-container">
+        
 
-               
-                                <a href="{{route('frontend.companie',$com->slug)}}"><button type="button"
-                                        class="btn btn-warning">Anlaşma Şartlarını Gör</button></a>
-                                <div class="clearfix"></div>
-                            
+        <div class="uk-child-width-1-3@m" uk-grid  >
+        @foreach ($companies as $com )
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top" style="text-align:center;" >
+                        <img src="{{ URL::to('uploads/company',$com->src)}}" style="max-height:200px; min-height 200px;" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{{$com->name}}</h3>
+                        <p >{!!\Illuminate\Support\str::limit($com->detail,200)!!}</p>
+                    </div>
                 </div>
-                </article>
+             
             </div>
             @endforeach
         </div>
-        <div class="col-md-12">
-            <nav style="text-align:center;">
-            {{ $companies->links() }}
-            </nav>
-        </div>
-    </div>
+       
 </div>
-</div>
-</div>
-<!-- end main-content -->
+       
+</section>
+
 
 
 @endsection
