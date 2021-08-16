@@ -9,7 +9,7 @@
                     </li>
                   
                     <li class="uk-active">
-                        <a href="index.html" title="Harpsan">
+                        <a href="#" title="Harpsan">
                             <span>Hakkımızda</span>
                         </a>
                         <div class="uk-navbar-dropdown uk-width-4-5@m">
@@ -68,7 +68,7 @@
                 <a style="position: relative; left: -20px;" class="uk-navbar-toggle tm-text-white" href="#modal-search" uk-search-icon uk-toggle></a>
             </div>
 
-            <a href="index.html" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right" title="GYİAD">
+            <a href="{{route('frontend.index')}}" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right" title="GYİAD">
                 <img width="80" src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}" alt="{{ GeneralSiteSettings('site_title') }}">
             </a>
 

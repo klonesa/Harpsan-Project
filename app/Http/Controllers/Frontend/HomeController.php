@@ -29,12 +29,12 @@ class HomeController extends BaseFrontendController
 
         $sliders = slider::where('status',1)->paginate();
         $event = Event::where('start_date', '>=', date('Y-m-d'))->orderBy('start_date')->first();
-        $events = Event::where('start_date', '>=', date('Y-m-d'))->orderBy('start_date')->paginate(3);
+        $events = Event::orderBy("id", "desc")->paginate(3);
         $about = about::find(1);
         //its just a dummy data object.
         $testimonials = testimonial::all();
 
-        $posts = post::orderBy("id", "desc")->paginate(3);
+        $posts = post::orderBy("id", "desc")->paginate(6);
         $announcements = announcement::orderBy("id", "desc")->paginate(3);
 
          $advertisement = advertisement::orderBy("id", "desc")->Where('ad_order',1)->limit(1)->get();

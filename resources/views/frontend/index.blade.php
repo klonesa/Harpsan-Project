@@ -198,7 +198,7 @@
 
                 <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
 
-                    @foreach ($posts->take(3) as $post)
+                    @foreach ($posts as $post)
 
                     <li>
                         <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
@@ -330,7 +330,7 @@
                                     </a>
                                 </h4>
                                 <div class="uk-text-small">
-                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...')
+                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,10,'...')
                                         !!}</p>
                                 </div>
                                 <div class="uk-margin">
@@ -340,7 +340,9 @@
                                 </div>
                             </div>
                         </article>
-                    </li> @endforeach
+                    </li> 
+                    
+                    @endforeach
 
                 </ul>
 
