@@ -67,10 +67,7 @@
 
                 </div>
 
-                <div class="uk-navbar-center-left uk-hidden@m">
-                    <a style="position: relative; left: -20px;" class="uk-navbar-toggle tm-text-white"
-                        href="#modal-search" uk-search-icon uk-toggle></a>
-                </div>
+               
 
                 <a href="{{route('frontend.index')}}" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right"
                     title="GYİAD">

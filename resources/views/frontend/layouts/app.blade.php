@@ -41,8 +41,7 @@
 <script  src="{{asset('frontend/js/jquery-ui.min.js') }}" ></script>
 
 <script  src="{{asset('frontend/js/bootstrap.min.js') }}" ></script>
-<script  src="{{asset('frontend/js/jquery-plugin-collection.js') }}" ></script>
-<script  src="{{asset('frontend/js/revolution-slider/js/jquery.themepunch.tools.min.js') }}" ></script>
+ <script  src="{{asset('frontend/js/revolution-slider/js/jquery.themepunch.tools.min.js') }}" ></script>
 <script  src="{{asset('frontend/js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}" ></script>
         <script src="{{asset('frontend/js/app.js')}}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>     
