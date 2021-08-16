@@ -64,6 +64,23 @@
         @endif
     </a>
 </li>
+<li class=" nav-item ">
+    <a href="{{ route('admin.team.index') }}"><i class="feather icon-users"></i><span class="menu-title"
+            data-i18n="User">Başkanlarımız</span>
+    </a>
+</li>
+
+<li class=" nav-item ">
+    <a href="{{ route('admin.founding_members.index') }}"><i class="feather icon-users"></i><span class="menu-title"
+            data-i18n="User">Kurucu Üyeler</span>
+    </a>
+</li>
+
+<li class=" nav-item ">
+    <a href="{{ route('admin.supervisoryboard.index') }}"><i class="feather icon-users"></i><span class="menu-title"
+            data-i18n="User">Denetleme Kurulu</span>
+    </a>
+</li>
     </ul>
 </li>
 
@@ -118,7 +135,11 @@
             data-i18n="User">@lang('backend.gallery')</span>
     </a>
 </li>
-
+<li class=" nav-item ">
+    <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span class="menu-title"
+            data-i18n="User">Faaliyetler</span>
+    </a>
+</li>
 <li class=" nav-item ">
     <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span class="menu-title"
             data-i18n="User">@lang('backend.pages')</span>
@@ -160,23 +181,7 @@
 
 
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.team.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Başkanlarımız</span>
-    </a>
-</li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.founding_members.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Kurucu Üyeler</span>
-    </a>
-</li>
-
-<li class=" nav-item ">
-    <a href="{{ route('admin.supervisoryboard.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Denetleme Kurulu</span>
-    </a>
-</li>
 
 <li class=" nav-item ">
     <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-users"></i><span class="menu-title"
