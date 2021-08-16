@@ -25,7 +25,7 @@
                                         <th>Tarih</th>
                                         <th>Aidat</th>
                                         <th>Toplam</th>
-                                        <th>User</th>
+                                        <th>Üye Adı</th>
                                         <th>Açıklama</th>
                                     </tr>
                                 </thead>

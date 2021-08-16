@@ -55,6 +55,7 @@
     </head>
 
     <body>
+        
         <div id="wrapper" class="clearfix">
         
         @include('frontend.includes.header')

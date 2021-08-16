@@ -75,11 +75,14 @@
                 </a>
             </li>
 
-            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-activity"></i><span class="menu-item"
+            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span class="menu-item"
                                                                                                  data-i18n="Select">Aidat</span></a>
             </li>
 
 
+            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-shopping-cart"></i><span class="menu-item"
+                data-i18n="Select">Alış-Veriş</span></a>
+</li>
             <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
                         class="feather icon-edit"></i><span class="menu-item"
                                                             data-i18n="Select">{{ trans('backend.posts') }}</span></a>

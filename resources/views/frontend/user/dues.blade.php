@@ -19,9 +19,8 @@
                                 <thead>
                                     <tr>
                                         <th>Tarih</th>
-                                        <th>Aidat</th>
-                                        <th>Toplam</th>
-                                        <th>User</th>
+                                        <th>Aidat Tutarı</th>
+                                        <th>Toplam Tutar</th>
                                         <th>Açıklama</th>
                                     </tr>
                                 </thead>
@@ -32,8 +31,7 @@
                                         <td>{{ $ad->date }}</td>
                                         <td>{{ $ad->dues }}</td>
                                         <td>{{ $ad->total}}</td>
-                                        <td>{{ $ad->full_name_tr}}</td>
-                                        <td>{!!$ad->description!!}</td>
+                                         <td>{!!$ad->description!!}</td>
  
                                     </tr>
                                     @endforeach

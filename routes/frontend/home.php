@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\DuesController;
+use App\Http\Controllers\Frontend\User\ShoppingController;
 
 
 /*
@@ -142,6 +143,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
         Route::get('dues', [DuesController::class, 'index'])->name('dues');
+        Route::get('shopping', [ShoppingController::class, 'index'])->name('shopping');
 
         // User Profile Specific
         Route::patch('profile/updatePersonalInfo', [ProfileController::class, 'updatePersonalInfo'])->name('profile.updatePersonalInfo');
