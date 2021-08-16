@@ -85,7 +85,7 @@ class ActivityController extends BaseBackendController
 
 
 
-        $activity->slug =  Str::slug($request->title_en);
+        $activity->slug =  Str::slug($request->title_tr);
 
         $activity->date = $request->date;
 
@@ -205,7 +205,7 @@ class ActivityController extends BaseBackendController
 
 
 
-        $activity->slug =  Str::slug($request->title_en);
+        $activity->slug =  Str::slug($request->title_tr);
         $activity->date = $request->date;
 
 
