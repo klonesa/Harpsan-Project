@@ -198,7 +198,7 @@
 
                 <ul class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > li > article;">
 
-                    @foreach ($posts as $post)
+                    @foreach ($posts->take(3) as $post)
 
                     <li>
                         <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
