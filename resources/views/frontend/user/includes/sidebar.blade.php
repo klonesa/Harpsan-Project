@@ -41,8 +41,8 @@
                         class="menu-title" data-i18n="Dashboard">@lang('navs.frontend.dashboard')</span><span
                         class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
             </li>
-            <li class=" nav-item"><a href="{{route('frontend.user.dashboard')}}"><i class="feather icon-home"></i><span
-                        class="menu-title" data-i18n="Dashboard">@lang('navs.frontend.dashboard')</span><span
+            <li class=" nav-item"><a href="{{route('frontend.user.dues')}}"><i class="feather icon-check-square"></i><span
+                        class="menu-title" data-i18n="Aidat">Aidat</span><span
                         class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
             </li>
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\FrontPagesController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
+use App\Http\Controllers\Frontend\User\DuesController;
 
 
 /*
@@ -137,9 +138,10 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+ 
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
+        Route::get('dues', [DuesController::class, 'index'])->name('dues');
 
         // User Profile Specific
         Route::patch('profile/updatePersonalInfo', [ProfileController::class, 'updatePersonalInfo'])->name('profile.updatePersonalInfo');
