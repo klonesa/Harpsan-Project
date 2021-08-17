@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="tr" dir="ltr">
 
-<!-- Mirrored from gyiad.org.tr/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Aug 2021 07:21:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
