@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Frontend\BaseFrontendController;
 use App\Models\Auth\User;
-use App\Models\Frontend\Dues as BackendDues;
+use App\Models\Frontend\Dues;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +22,7 @@ class DuesController extends BaseFrontendController
  
         $userId = Auth::id();
          
-        $dues =BackendDues::orderBy('id','ASC')->where('user_id', '=', $userId )->limit(1)->get();
+        $dues =Dues::orderBy('id','ASC')->where('user_id', '=', $userId )->limit(1)->get();
         return view('frontend.user.dues', compact('dues'));
     }
 
