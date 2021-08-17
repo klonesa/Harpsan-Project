@@ -330,7 +330,7 @@
                                     </a>
                                 </h4>
                                 <div class="uk-text-small">
-                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,20,'...')
+                                    <p style="text-align: justify;" class="mt-10">{!! Str::words($post->text,10,'...')
                                         !!}</p>
                                 </div>
                                 <div class="uk-margin">
@@ -340,7 +340,9 @@
                                 </div>
                             </div>
                         </article>
-                    </li> @endforeach
+                    </li> 
+                    
+                    @endforeach
 
                 </ul>
 

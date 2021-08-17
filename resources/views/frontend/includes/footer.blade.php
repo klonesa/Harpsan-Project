@@ -96,7 +96,7 @@
   
  
 
-    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+     <script>
         var acceptButton = document.getElementById('acceptButton');
         var acceptCookies = new XMLHttpRequest();
         var cookiesRoute = 'index.html';

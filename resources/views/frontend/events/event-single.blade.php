@@ -7,98 +7,83 @@
 <!-- Start main-content -->
 <div class="main-content">
 
-    <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" >
-        <div class="container pt-10 pb-10">
-            <!-- Section Content -->
-            <div class="section-content pt-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="title text-white"> {{$event->name}} </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="text-theme-colored">{{$event->name}}</h2>
+    <div class="uk-section">
+        <div class="uk-container">
 
-                            <img src="{{asset('uploads/events/')}}/{{$event->image}}" alt="{{$event->name}}">
+            <div uk-grid>
+                <div class="uk-width-expand">
+                    <article class="uk-article uk-card uk-card-default uk-border-rounded">
 
-                </div>
-                <div class="col-md-6 mt-60">
-                    <ul>
-                        <li>
-                            <h4>{{ trans('frontend.topic') }}:</h4>
-                            <p>{{$event->name}}</p>
-                        </li>
-
-                        <li>
-                            <h4>{{ trans('frontend.location') }}:</h4>
-                            <p>{{$event->location}}</p>
-                        </li>
-                        <li>
-                            <h4>{{ trans('frontend.start_date') }}:</h4>
-                            <p>{{ date('d/m/Y - H:i',strtotime($event->start_date)) }}</p>
-                        </li>
-                        <li>
-                            <h4>{{ trans('frontend.end_date') }}:</h4>
-                            <p>{{ date('d/m/Y - H:i',strtotime($event->end_date)) }}</p>
-                        </li>
-                        <li>
-                            <h5>{{ trans('frontend.share') }}:</h5>
-                            <div class="styled-icons icon-dark icon-theme-colored icon-sm icon-circled">
-
-
-                                <a href="mailto:?Subject={{ $event->name }}&amp;Body={{url()->current()}}">
-
-                                        <i class="fa fa-envelope "></i> </a>
-
-                                    <a href="http://www.facebook.com/sharer.php?u={{url()->current()}}" target="_blank">
-
-                                        <i class="fa fa-facebook "></i> </a>
-
-                                    <a href="https://plus.google.com/share?url={{url()->current()}}" target="_blank">
-
-                                        <i class="fa fa-google-plus "></i> </a>
-
-
-
-
-                                    <a href="https://twitter.com/share?url={{url()->current()}}&amp;text={{ $event->name }}&amp;hashtags=int-sucsess.com"
-                                        target="_blank">
-
-                                        <i class="fa fa-twitter "></i> </a>
-
-
-
-                                    <a href="whatsapp://send?text={{url()->current()}}" data-action="share/whatsapp/share">
-
-
-                                    <i class="fa fa-whatsapp "></i>
-
-
-                                    </a>
+                        <div class="tm-event-media uk-card-media-top uk-grid-collapse" uk-grid>
+                            <div class="uk-width-3-5@m">
+                                <img src="{{  asset('uploads/events/')}}/{{ $event->image }}" alt="{{$event->name}}"
+                                    uk-img>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="uk-width-expand">
+                                <div class="uk-card uk-card-body">
+                                    <div class="tm-event date">
+                                        <p class="uk-text-small uk-margin-remove uk-text-danger">
+                                            {{ trans('frontend.start_date') }}</p>
+                                        <p>{{ date('d/m/Y - H:i',strtotime($event->start_date)) }}</p>
+                                    </div>
+                                    <div class="tm-event-name">
+                                        <h1 class="uk-h4 uk-text-bold uk-margin-small-bottom">{{$event->name}}</h1>
+                                    </div>
+                                    <p class="tm-event-location uk-margin-remove-top">{{$event->location}}</p>
+
+                                    <div class="tm-event-register uk-margin-medium-top">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tm-event-body uk-card-body">
+                            <div uk-grid>
+
+                                <div class="uk-width-3-5@m">
+                                    <div class="tm-event-details uk-panel">
+                                        <h4 class="uk-text-bold">Etkinlik Detayı</h4>
+
+                                        <div>
+                                            <p class="MsoNormal">{!! $event->text !!}
+                                            <p class="MsoNormal"></p>
+                                            <p></p>
+
+                                            <p class="MsoNormal"></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="uk-width-expand">
+                                    <div class="tm-event-meta uk-panel">
+                                        <h4 class="uk-text-bold uk-margin-remove-bottom">Başlangıç-Bitiş Zamanı</h4>
+                                        <p class="uk-margin-small">
+                                            {{ date('d/m/Y - H:i',strtotime($event->start_date)) }} /
+                                            {{ date('d/m/Y - H:i',strtotime($event->end_date)) }}
+                                        </p>
+                                        <h4 class="uk-text-bold uk-margin-remove-bottom uk-margin-small-top">Lokasyon
+                                        </h4>
+                                        <p class="uk-margin-remove-top">{{$event->location}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </article>
                 </div>
             </div>
-            <div class="row mt-60">
-                <div class="col-md-6">
-                    <h3 class="mt-0 text-theme-colored">{{ trans('frontend.details') }}:</h3>
-                    <p>{!! $event->text !!}</p>
-                </div>
-
-            </div>
-
 
         </div>
-    </section>
+    </div>
+
+
+
+</div>
+</section>
 </div>
 <!-- end main-content -->
 

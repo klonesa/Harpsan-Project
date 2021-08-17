@@ -1,5 +1,5 @@
 @impersonating
     <div class="alert alert-warning logged-in-as">
-        You are currently logged in as {{ auth()->user()->full_name }}. <a href="{{ route('impersonate.leave') }}">Return to your account</a>.
+        Şu anda şu şekilde giriş yaptınız: {{ auth()->user()->full_name }}. <a href="{{ route('impersonate.leave') }}">Hesabınıza geri dönün</a>.
     </div><!--alert alert-warning logged-in-as-->
 @endImpersonating

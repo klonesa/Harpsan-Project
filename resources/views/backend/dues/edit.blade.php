@@ -21,7 +21,7 @@
                                                 <div class="card-body">
                                                     <div class="form-group">
                                                         <label class="card-title control-label"
-                                                               for="date">Kullanıcı</label>
+                                                               for="date">Üye Seçimi</label>
 
                                                         <select id="user" name="user" class="form-control" required>
                                                             @foreach ($users as $user)
@@ -42,14 +42,14 @@
                                                                aria-required="true" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="card-title control-label" for="dues">Aidat</label>
+                                                        <label class="card-title control-label" for="dues">Aidat Tutarı</label>
                                                         <input id="dues" type="number" step="0.01" class="form-control"
                                                                name="dues" value="{{ $dues->dues }}"
                                                                aria-required="true" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="card-title control-label"
-                                                               for="total">Toplam</label>
+                                                               for="total">Toplam Tutar</label>
                                                         <input id="total" type="number" step="0.01" class="form-control"
                                                                name="total" value="{{ $dues->total }}"
                                                                aria-required="true" required>
