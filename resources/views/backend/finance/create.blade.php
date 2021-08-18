@@ -69,13 +69,10 @@
                                                     <div class="form-group">
                                                         <label class="card-title control-label" for="amount">Paranın
                                                             Alınacağı Ay</label>
-                                                        <div class="select-basic">
-                                                            <select class="form-control" name="get_month" id="get_month"
-                                                                    required>
-                                                                <option value="0">Paranın
-                                                                    Alınacağı Ay Seçiniz.</option>
-                                                            </select>
-                                                        </div>
+                                                        <input id="get_month" name="get_month"
+                                                               step="0.01"
+                                                               type="number" class="form-control" aria-required="true"
+                                                               required disabled>
                                                     </div>
 
                                                     <div class="form-group">
@@ -174,6 +171,7 @@
 
             $(document).on('change', '#amount', function (e) {
                 let selected = $(this).find(":selected").val();
+                first_payment_amount.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
                 if (selected === '10000') {
                     first_payment_amount.append(new Option("285", "285"));
                     first_payment_amount.append(new Option("444", "444"));
@@ -183,9 +181,9 @@
                     last_payment_amount.val('500');
                     number_of_payments.val('12');
                 } else if (selected === '20000') {
-                    first_payment_amount.append(new Option("285", "285"));
-                    first_payment_amount.append(new Option("444", "444"));
-                    first_payment_amount.append(new Option("1000", "1000"));
+                    first_payment_amount.append(new Option("533", "533"));
+                    first_payment_amount.append(new Option("800", "800"));
+                    first_payment_amount.append(new Option("1600", "1600"));
                     amount_payable.val('8000');
                     remaining_amount.val('12000');
                     last_payment_amount.val('1000');
