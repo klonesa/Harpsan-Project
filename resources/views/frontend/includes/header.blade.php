@@ -5,11 +5,74 @@
                 <div class="uk-navbar-center-left uk-visible@m uk-navbar-item">
 
                     <ul class="uk-navbar-nav">
-                        <li class="@if(Request::segment(1) == '') active @endif"><a
+
+                   <!--     <li class="@if(Request::segment(1) == '') active @endif"><a
                                 href="{{route('frontend.index')}}">{{ trans('frontend.home') }}</a>
                         </li>
+-->
+                        <li>
+                            <a href="#">Harp-San</a>
+                            <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
+                                            <li><a href="#">Vizyonumuz</a></li>
+                                            <li><a href="#">Misyonumuz</a></li>
+                                            <li class="@if(Request::segment(1) =='about') active @endif">
+                            <a href="{{URL('/media-gallery')}}"
+                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                        </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li><a href="{{URL('/about/founding_members')}}">Kurucu Üyeler</a></li>
+                                            <li><a href="{{URL('/about/executive-management')}}">Başkanlarımız</a></li>
+                                            <li><a href="#">Danışma ve İstişare Kurulu</a></li>
+                                            <li><a href="{{URL('/about/board-of-directors')}}">Yönetim Kurulu</a></li>
+                                            <li><a href="{{URL('/about/supervisoryboard')}}">Denetleme Kurulu</a></li>
+                                            <li><a href="{{URL('/about/bylaws')}}">Dernek Tüzüğü</a></li>
 
-                        <li class="uk-active">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                <a href="#">Faaliyetlerimiz</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                    
+
+                        <li><a href="#">Harp-San Finans</a></li>
+                        <li><a href="#">Harp-San Tüketim</a></li>
+                        <li><a href="#">Harp-San Firmalar</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="@if(Request::segment(1) =='about') active @endif">
+                            <a href="{{URL('/events')}}"
+                                title="{{ trans('frontend.events') }}">Etkinliklerimiz</a>
+                        </li>
+                        <li class="@if(Request::segment(1) =='about') active @endif">
+                            <a href="#">
+                                <span>Haberler & Duyurular</span>
+                            </a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    
+                                    <li class="@if(Request::segment(1) =='about') active @endif">
+                                        <a href="{{URL('/news')}}" title="Haberler">Haberler</a>
+                                    </li>
+                                    <li class="@if(Request::segment(1) =='about') active @endif">
+                                        <a href="{{URL('/announcements')}}" title="Duyurular">Duyurular</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!--   <li class="uk-active">
                             <a href="#" title="Harpsan">
                                 <span>Hakkımızda</span>
                             </a>
@@ -42,32 +105,20 @@
                                 </ul>
                             </div>
                         </li>
+
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="{{URL('/activities')}}">
                                 <span>{{ trans('frontend.activities') }}</span>
                             </a>
                         </li>
-                        <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="#">
-                                <span>Haberler & Duyurular</span>
-                            </a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li class="@if(Request::segment(1) =='about') active @endif">
-                                        <a href="{{URL('/news')}}" title="Haberler">Haberler</a>
-                                    </li>
-                                    <li class="@if(Request::segment(1) =='about') active @endif">
-                                        <a href="{{URL('/announcements')}}" title="Duyurular">Duyurular</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        -->
+                  
 
                     </ul>
 
                 </div>
 
-               
+
 
                 <a href="{{route('frontend.index')}}" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right"
                     title="GYİAD">
@@ -91,13 +142,19 @@
                             <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Anlaşmalı Firmalar</a>
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/events')}}"
-                                title="{{ trans('frontend.events') }}">{{ trans('frontend.events') }}</a>
+                            <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Üye İlanları</a>
                         </li>
-                        <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/media-gallery')}}"
-                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
-                        </li>
+                        <li>
+                <a href="#">Harp-San Ürünler</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+                        
                     </ul>
 
                     <div>
@@ -120,10 +177,10 @@
 
 
                 <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-                <li>
-                                <a href="{{route('frontend.index')}}">{{ trans('frontend.home') }}</a>
-                            </li>
-                            <li class="uk-nav-divider"></li>
+                    <li>
+                        <a href="{{route('frontend.index')}}">{{ trans('frontend.home') }}</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
 
                     <li class="uk-parent">
                         <a href="index.html" title="Harpsan">Harpsan</a>
@@ -161,31 +218,31 @@
                     </li>
                     <li class="uk-nav-divider"></li>
                     <li>
-                                        <a href="{{URL('/news')}}" title="Haberler">Haberler</a>
-                                    </li>
-                                    <li class="uk-nav-divider"></li>
+                        <a href="{{URL('/news')}}" title="Haberler">Haberler</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
 
-                                    <li>
-                                        <a href="{{URL('/announcements')}}" title="Duyurular">Duyurular</a>
-                                    </li>
+                    <li>
+                        <a href="{{URL('/announcements')}}" title="Duyurular">Duyurular</a>
+                    </li>
                     <li class="uk-nav-divider"></li>
                     <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Anlaşmalı Firmalar</a>
-                        </li>
+                        <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Anlaşmalı Firmalar</a>
+                    </li>
                     <li class="uk-nav-divider"></li>
                     <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/events')}}"
-                                title="{{ trans('frontend.events') }}">{{ trans('frontend.events') }}</a>
-                        </li>
+                        <a href="{{URL('/events')}}"
+                            title="{{ trans('frontend.events') }}">{{ trans('frontend.events') }}</a>
+                    </li>
                     <li class="uk-nav-divider"></li>
                     <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/media-gallery')}}"
-                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
-                        </li>
+                        <a href="{{URL('/media-gallery')}}"
+                            title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                    </li>
                     <li class="uk-nav-divider"></li>
                     <li>
                         <a href="{{route('frontend.auth.login')}}">
-                            <span uk-icon="icon: sign-in; ratio: .8;"></span>  Portal Giriş
+                            <span uk-icon="icon: sign-in; ratio: .8;"></span> Portal Giriş
                         </a>
                     </li>
                 </ul>
