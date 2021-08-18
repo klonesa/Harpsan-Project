@@ -105,7 +105,8 @@
     </div>
     <!-- END: Content-->
     @include('backend.includes.footer')
-    
+
+    @yield('script')
     @yield('some-js')
 </body>
 </html>
