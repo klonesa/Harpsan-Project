@@ -12,6 +12,8 @@ use App\Models\backend\activity;
 use App\Models\backend\StaticPages;
 use App\Models\backend\testimonial;
 use App\Models\backend\advertisement;
+use App\Models\backend\Company;
+
 
 use App\Http\Controllers\Frontend\BaseFrontendController;
 
@@ -45,10 +47,17 @@ class HomeController extends BaseFrontendController
 
         $bylaws = StaticPages::where('id', 1)->select( 'g_title_tr', 'g_text_tr', 'g_pdf')->get()->first();
 
-
-
+      
 
 
         return view('frontend.index',compact('sliders', 'announcements','advertisement','advertisementleft','advertisementright','event', 'events', 'about', 'testimonials', 'posts', 'activities', 'bylaws'));
+    }
+     public function companies()
+    {
+        $companiesa = Company::orderBy("id", "desc")->Where('category','Araç')->limit(3)->get();
+        $companiesb = Company::orderBy("id", "desc")->Where('category','Konut')->limit(3)->get();
+        $companiesc = Company::orderBy("id", "desc")->Where('category','Mobilya')->limit(3)->get();
+        
+        return view('frontend.companies.companies',compact('companiesa','companiesb','companiesc'));
     }
 }

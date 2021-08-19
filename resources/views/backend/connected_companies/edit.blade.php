@@ -24,6 +24,23 @@
                                     <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Firma Adı" value="{{ old('name', $company->name) }}">
                                 </div>
                             
+                                <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="header">
+                                                        <h2>Kategori</h2>
+                                                    </div>
+                                                    <div class="body">
+                                                        <div class="multiselect_div">
+                                                            <select id="single-selection" name="category"
+                                                                class="multiselect multiselect-custom">
+                                                                <option value="Araç">Araç</option>
+                                                                <option value="Konut">Konut</option>
+                                                                <option value="Mobilya">Mobilya</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                         
                             <div class="form-row">
                                 <div class="form-group col-md-6">

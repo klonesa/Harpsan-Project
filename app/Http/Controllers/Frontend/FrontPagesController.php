@@ -153,12 +153,25 @@ class FrontPagesController extends BaseFrontendController
     }
 
     
-    public function companies()
+    public function companies(Company $companies)
+    {
+      
+        $companiesa = Company::Where('category','Konut')->limit(3)->get();
+        $companiesb = Company::Where('category','Araç')->limit(3)->get();;
+        $companiesc = Company::Where('category','Mobilya')->limit(3)->get();;
+
+        
+        return view('frontend.companies.companies', compact('companiesa','companiesb','companiesc'));
+    }
+    
+
+
+   /* public function companies()
     {
 
         $companies = Company::orderBy("id", "desc")->paginate(4);
         return view('frontend.companies.companies', compact('companies'));
-    }
+    }*/
     public function companie(Company $companie)
     {
 

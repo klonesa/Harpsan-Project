@@ -55,8 +55,8 @@ class CompanyController extends Controller
       
         $company = new Company;
         $company->src = $fileNameToStore;
-
         $company->name = $request->name;
+        $company->category = $request->category;
         $company->adress = $request->adress;
         $company->konum = $request->konum;
          $company->detail = $request->detail;
@@ -130,6 +130,8 @@ class CompanyController extends Controller
         }
         $company = Company::find($id);
         $company->name = $request->name;
+        $company->category = $request->category;
+
         $company->adress = $request->adress;
         $company->konum = $request->konum;
         

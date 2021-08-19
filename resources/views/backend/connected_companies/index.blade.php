@@ -23,6 +23,7 @@
                                     <tr>
                                         <th scope="col">Logo</th>
                                         <th scope="col">Firma Adı</th>
+                                        <th scope="col">Kategori</th>
                                         <th scope="col">Adres</th>
                                         <th scope="col">Konum</th>
                                         <th scope="col">Detaylar</th>
@@ -36,6 +37,7 @@
 
                                         <th scope="col"><img src="{{ URL::to('uploads/company',$com->src)}}" style="width:50px;"></th>
                                         <th scope="col">{{$com->name}} </th>
+                                        <th scope="col">{{$com->category}}</th>
                                         <th scope="col">{{$com->adress}}</th>
                                         <th scope="col">{{$com->konum}} </th>
                                         <th scope="col">{!! $com->detail !!} </th>
