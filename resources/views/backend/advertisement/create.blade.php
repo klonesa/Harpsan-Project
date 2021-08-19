@@ -65,7 +65,7 @@
                                             <div class="col-sm-6">
                                                 <div class="card">
                                                     <div class="header">
-                                                        <h2>{{ trans('backend.ad_order') }}</h2>
+                                                        <h2>Pozisyon</h2>
                                                     </div>
                                                     <div class="body">
                                                         <div class="multiselect_div">
