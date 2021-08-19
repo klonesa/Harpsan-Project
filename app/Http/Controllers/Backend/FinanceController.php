@@ -43,13 +43,18 @@ class FinanceController extends Controller
      */
     public function store(Request $request)
     {
-        // $total = Finance::query()->select(DB::raw('total + ' . $request->finance . ' AS total'))->orderByDesc('id')->first();
         $finance = new Finance();
-        $finance->date = $request->date;
-        $finance->finance = $request->finance;
-        //$finance->total = $total->total ?? $request->finance;
-        $finance->total = $request->total;
         $finance->user_id = $request->user;
+        $finance->name = $request->name;
+        $finance->amount = $request->amount;
+        $finance->first_payment_amount = $request->first_payment_amount;
+        $finance->get_month = $request->get_month;
+        $finance->amount_payable = $request->amount_payable;
+        $finance->remaining_amount = $request->remaining_amount;
+        $finance->last_payment_amount = $request->last_payment_amount;
+        $finance->number_of_payments = $request->number_of_payments;
+        $finance->participation_fee = $request->participation_fee;
+        $finance->deposit = $request->deposit;
         $finance->description = $request->description;
         $finance->save();
 
@@ -73,12 +78,17 @@ class FinanceController extends Controller
     public function update(Request $request, $id)
     {
         $finance = Finance::find($id);
-        $finance->date = $request->date;
-        $finance->finance = $request->finance;
-        //$total = Finance::query()->select(DB::raw('SUM(finance) + ' . $request->finance . ' AS total'))->groupBy('id')->orderByDesc('id')->whereNotIn('id', [$id])->first();
-        //$finance->total = $total->total ?? $request->finance;
-        $finance->total = $request->total;
         $finance->user_id = $request->user;
+        $finance->name = $request->name;
+        $finance->amount = $request->amount;
+        $finance->first_payment_amount = $request->first_payment_amount;
+        $finance->get_month = $request->get_month;
+        $finance->amount_payable = $request->amount_payable;
+        $finance->remaining_amount = $request->remaining_amount;
+        $finance->last_payment_amount = $request->last_payment_amount;
+        $finance->number_of_payments = $request->number_of_payments;
+        $finance->participation_fee = $request->participation_fee;
+        $finance->deposit = $request->deposit;
         $finance->description = $request->description;
         $finance->save();
 

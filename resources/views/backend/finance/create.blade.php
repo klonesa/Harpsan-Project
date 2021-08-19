@@ -162,6 +162,65 @@
 @section('script')
     <script>
         $(document).ready(function () {
+            let data = {
+                "10000": {
+                    "first_payment_amount": {
+                        "285": "14",
+                        "444": "9",
+                        "1000": "5"
+                    },
+                    "amount_payable": "4000",
+                    "remaining_amount": "6000",
+                    "last_payment_amount": "500",
+                    "number_of_payments": "12"
+                },
+                "20000": {
+                    "first_payment_amount": {
+                        "533": "15",
+                        "800": "10",
+                        "1600": "5"
+                    },
+                    "amount_payable": "8000",
+                    "remaining_amount": "12000",
+                    "last_payment_amount": "1000",
+                    "number_of_payments": "12"
+                },
+                "30000": {
+                    "first_payment_amount": {
+                        "750": "16",
+                        "1090": "11",
+                        "2000": "6"
+                    },
+                    "amount_payable": "12000",
+                    "remaining_amount": "18000",
+                    "last_payment_amount": "1285",
+                    "number_of_payments": "14"
+                },
+                "40000": {
+                    "first_payment_amount": {
+                        "940": "17",
+                        "1333": "12",
+                        "2285": "7"
+                    },
+                    "amount_payable": "16000",
+                    "remaining_amount": "24000",
+                    "last_payment_amount": "1500",
+                    "number_of_payments": "16"
+                },
+                "50000": {
+                    "first_payment_amount": {
+                        "1111": "18",
+                        "1538": "13",
+                        "2500": "8"
+                    },
+                    "amount_payable": "20000",
+                    "remaining_amount": "30000",
+                    "last_payment_amount": "1666",
+                    "number_of_payments": "18"
+                }
+            };
+
+            let amount = $('#amount');
             let first_payment_amount = $('#first_payment_amount');
             let get_month = $('#get_month');
             let amount_payable = $('#amount_payable');
@@ -170,57 +229,27 @@
             let number_of_payments = $('#number_of_payments');
 
             $(document).on('change', '#amount', function (e) {
-                let selected = $(this).find(":selected").val();
                 first_payment_amount.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
-                if (selected === '10000') {
-                    first_payment_amount.append(new Option("285", "285"));
-                    first_payment_amount.append(new Option("444", "444"));
-                    first_payment_amount.append(new Option("1000", "1000"));
-                    amount_payable.val('4000');
-                    remaining_amount.val('6000');
-                    last_payment_amount.val('500');
-                    number_of_payments.val('12');
-                } else if (selected === '20000') {
-                    first_payment_amount.append(new Option("533", "533"));
-                    first_payment_amount.append(new Option("800", "800"));
-                    first_payment_amount.append(new Option("1600", "1600"));
-                    amount_payable.val('8000');
-                    remaining_amount.val('12000');
-                    last_payment_amount.val('1000');
-                    number_of_payments.val('12');
-                } else if (selected === '30000') {
-                    first_payment_amount.append(new Option("285", "285"));
-                    first_payment_amount.append(new Option("444", "444"));
-                    first_payment_amount.append(new Option("1000", "1000"));
-                    amount_payable.val('12000');
-                    remaining_amount.val('18000');
-                    last_payment_amount.val('1285');
-                    number_of_payments.val('14');
-                } else if (selected === '40000') {
-                    first_payment_amount.append(new Option("285", "285"));
-                    first_payment_amount.append(new Option("444", "444"));
-                    first_payment_amount.append(new Option("1000", "1000"));
-                    amount_payable.val('16000');
-                    remaining_amount.val('24000');
-                    last_payment_amount.val('1500');
-                    number_of_payments.val('16');
-                } else if (selected === '50000') {
-                    first_payment_amount.append(new Option("285", "285"));
-                    first_payment_amount.append(new Option("444", "444"));
-                    first_payment_amount.append(new Option("1000", "1000"));
-                    amount_payable.val('20000');
-                    remaining_amount.val('30000');
-                    last_payment_amount.val('1666');
-                    number_of_payments.val('18');
-                } else {
-                    first_payment_amount.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
+                get_month.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
 
-                    amount_payable.val('');
-                    remaining_amount.val('');
-                    last_payment_amount.val('');
-                    number_of_payments.val('');
-                }
+                let selected = $(this).find(":selected").val();
+                let sel = data[selected];
+                amount_payable.val(sel.amount_payable);
+                remaining_amount.val(sel.remaining_amount);
+                last_payment_amount.val(sel.last_payment_amount);
+                number_of_payments.val(sel.number_of_payments);
 
+                $.each(sel.first_payment_amount, function (key, value) {
+                    first_payment_amount.append(new Option(key, key));
+                });
+
+            });
+            $(document).on('change', '#first_payment_amount', function (e) {
+                get_month.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
+                let selected = $(this).find(":selected").val();
+                let selectedAmount = amount.find(":selected").val();
+                let sel = data[selectedAmount].first_payment_amount[selected];
+                get_month.val(sel);
             });
         });
     </script>
