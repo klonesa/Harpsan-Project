@@ -15,7 +15,9 @@ use App\Models\backend\StaticPages;
 use App\Models\backend\activity_type;
 use App\Models\backend\advertisement;
 use App\Models\backend\FoundingMembers;
+use App\Models\backend\AdvisoryBoard;
 use App\Models\backend\SupervisoryBoard;
+
 use App\Models\backend\ShoppingModel;
 
 
@@ -135,8 +137,14 @@ class FrontPagesController extends BaseFrontendController
         $supervisoryboard = SupervisoryBoard::all();
         return view('frontend.supervisoryboard.supervisoryboard', compact('supervisoryboard'));
     }
+    public function advisory()
+    {
+        $advisory = AdvisoryBoard::all();
+        return view('frontend.advisory.advisory', compact('advisory'));
+    }
 
 
+ 
 
 
 

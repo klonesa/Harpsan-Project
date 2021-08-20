@@ -31,6 +31,8 @@ Route::resource('team', 'TeamController');
 Route::resource('founding_members', 'founding_members_Controller');
 
 Route::resource('supervisoryboard', 'Supervisory_Board_Controller');
+Route::resource('advisory', 'Advisory_Board');
+
 
 // activity
 Route::resource('activity', 'ActivityController');

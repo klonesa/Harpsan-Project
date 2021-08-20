@@ -29,9 +29,9 @@
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
                                             <li><a href="{{URL('/about/founding_members')}}">Kurucu Üyeler</a></li>
                                             <li><a href="{{URL('/about/executive-management')}}">Başkanlarımız</a></li>
-                                            <li><a href="#">Danışma ve İstişare Kurulu</a></li>
                                             <li><a href="{{URL('/about/board-of-directors')}}">Yönetim Kurulu</a></li>
                                             <li><a href="{{URL('/about/supervisoryboard')}}">Denetleme Kurulu</a></li>
+                                            <li><a href="{{URL('/about/advisory')}}">Danışma ve İstişare Kurulu</a></li>
                                             <li><a href="{{URL('/about/bylaws')}}">Dernek Tüzüğü</a></li>
 
                                         </ul>
