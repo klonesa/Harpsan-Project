@@ -167,7 +167,7 @@
                     "first_payment_amount": {
                         "285": "14",
                         "444": "9",
-                        "1000": "5"
+                        "1000": "4"
                     },
                     "amount_payable": "4000",
                     "remaining_amount": "6000",
