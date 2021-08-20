@@ -54,9 +54,9 @@ class HomeController extends BaseFrontendController
     }
      public function companies()
     {
-        $companiesa = Company::orderBy("id", "desc")->Where('category','Araç')->limit(3)->get();
-        $companiesb = Company::orderBy("id", "desc")->Where('category','Konut')->limit(3)->get();
-        $companiesc = Company::orderBy("id", "desc")->Where('category','Mobilya')->limit(3)->get();
+        $companiesa = Company::orderBy("id", "desc")->Where('category','Araç')->get();
+        $companiesb = Company::orderBy("id", "desc")->Where('category','Konut')->get();
+        $companiesc = Company::orderBy("id", "desc")->Where('category','Mobilya')->get();
         
         return view('frontend.companies.companies',compact('companiesa','companiesb','companiesc'));
     }
