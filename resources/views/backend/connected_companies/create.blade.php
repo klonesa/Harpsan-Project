@@ -27,9 +27,12 @@
                                                         <div class="multiselect_div">
                                                             <select id="single-selection" name="category"
                                                                 class="multiselect multiselect-custom">
-                                                                <option value="Araç">Araç</option>
-                                                                <option value="Konut">Konut</option>
-                                                                <option value="Mobilya">Mobilya</option>
+                                                                <option value="Mobilya-Beyaz Eşya">Mobilya-Beyaz Eşya</option>
+                                                                <option value="Ayakkabı - Giyim">Ayakkabı - Giyim</option>
+                                                                <option value="Yiyecek - İçecek">Yiyecek - İçecek</option>
+                                                                <option value="Sağlık - Eğitim">Sağlık - Eğitim</option>
+                                                                <option value="Otomotiv">Otomotiv</option>
+                                                                <option value="Diğerleri">Diğerleri</option>
                                                             </select>
                                                         </div>
                                                     </div>

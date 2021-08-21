@@ -110,9 +110,9 @@ class CompanyController extends Controller
         if ($request->hasFile('src')) {
             $postx = Company::find($id);  // here to store image alone
             // Delete a style_logo_en photo
-            if ($postx->src != "") {
+          /*  if ($postx->src != "f_image") {
                 unlink('uploads/company/' . $postx->src);
-            }
+            }*/
 
             $fileNameWithExt = $request->file('src')->getClientOriginalName();
             // get file name
