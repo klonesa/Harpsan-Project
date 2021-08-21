@@ -48,6 +48,10 @@
                         <li><a href="#">Harp-San Finans</a></li>
                         <li><a href="#">Harp-San Tüketim</a></li>
                         <li><a href="#">Harp-San Firmalar</a></li>
+                        <li><a href="#">Harp-San Sosyal</a></li>
+                        <li><a href="#">Harp-San Yapı</a></li>
+
+
                     </ul>
                 </div>
             </li>
@@ -142,7 +146,7 @@
                             <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Anlaşmalı Firmalar</a>
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Üye İlanları</a>
+                            <a href="{{URL('/companies')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
                 <a href="#">Harp-San Ürünler</a>
