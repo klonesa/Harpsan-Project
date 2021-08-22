@@ -26,109 +26,126 @@
     margin-top: 55px;
 ">
 
-<li class=" nav-item"><a href="{{ route('admin.dashboard') }}"><i class="feather icon-home"></i><span class="menu-title"
-            data-i18n="Dashboard">@lang('menus.backend.sidebar.dashboard')</span><span
-            class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-</li>
+                <li class=" nav-item"><a href="{{ route('admin.dashboard') }}"><i class="feather icon-home"></i><span
+                            class="menu-title"
+                            data-i18n="Dashboard">@lang('menus.backend.sidebar.dashboard')</span><span
+                            class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+                </li>
 
 
+                <li class="nav-item has-sub @if(Request::segment(3) == "user" ) open @endif">
+                    <a href="#"><i class="feather icon-users"></i>
+                        <span class="menu-title"
+                              data-i18n="Data List">@lang('labels.backend.access.users.management')</span>
+                    </a>
+                    <ul class="menu-content" style="">
+                        <li>
+                            <a href="{{ route('admin.auth.user.index') }}"><i class="feather icon-user-check"></i>
+                                <span class="menu-title" data-i18n="User">@lang('menus.backend.access.users.all')</span>
+                                @if ($all_count > 0)
+                                    <span
+                                        class="badge badge badge-primary badge-pill float-right ">{{ $all_count }}</span>
+                                @endif
+                            </a>
+                        </li>
+                        <li class="@if(Request::segment(4) == "deactivated" ) active @endif">
+                            <a href="{{ route('admin.auth.user.deactivated') }}"><i class="feather icon-user-x"></i>
+                                <span style="font-size: 14px;" class="menu-title"
+                                      data-i18n="User">@lang('backend.pending_approval')</span>
+                                @if ($pending_approval > 0)
+                                    <span
+                                        class="badge badge badge-primary badge-pill float-right ">{{ $pending_approval }}</span>
+                                @endif
+                            </a>
+                        </li>
+                        <li class="@if(Request::segment(4) == "deleted" ) active @endif">
+                            <a href="{{ route('admin.auth.user.deleted') }}"><i class="feather icon-user-x"></i>
+                                <span class="menu-title"
+                                      data-i18n="User">@lang('menus.backend.access.users.deleted')</span>
+                                @if ($deleted_users > 0)
+                                    <span
+                                        class="badge badge badge-primary badge-pill float-right ">{{ $deleted_users }}</span>
+                                @endif
+                            </a>
+                        </li>
+                        <li class=" nav-item ">
+                            <a href="{{ route('admin.team.index') }}"><i class="feather icon-users"></i><span
+                                    class="menu-title"
+                                    data-i18n="User">Başkanlarımız</span>
+                            </a>
+                        </li>
+                        <li class=" nav-item ">
+                            <a href="{{ route('admin.founding_members.index') }}"><i
+                                    class="feather icon-users"></i><span class="menu-title"
+                                                                         data-i18n="User">Kurucu Üyeler</span>
+                            </a>
+                        </li>
+                        <li class=" nav-item ">
+                            <a href="{{ route('admin.supervisoryboard.index') }}"><i
+                                    class="feather icon-users"></i><span class="menu-title"
+                                                                         data-i18n="User">Denetleme Kurulu</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
 
+                <li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
+                    <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('labels.backend.access.roles.management')</span>
+                    </a>
+                </li>
 
-<li class="nav-item has-sub @if(Request::segment(3) == "user" ) open @endif">
-    <a href="#"><i class="feather icon-users"></i>
-    <span class="menu-title"
-            data-i18n="Data List">@lang('labels.backend.access.users.management')</span>
-    </a>
-    <ul class="menu-content" style="">
-<li>
-    <a href="{{ route('admin.auth.user.index') }}"><i class="feather icon-user-check"></i>
-        <span class="menu-title" data-i18n="User">@lang('menus.backend.access.users.all')</span>
-        @if ($all_count > 0)
-        <span class="badge badge badge-primary badge-pill float-right ">{{ $all_count }}</span>
-        @endif
-    </a>
-</li>
-<li class="@if(Request::segment(4) == "deactivated" ) active @endif">
-    <a href="{{ route('admin.auth.user.deactivated') }}"><i class="feather icon-user-x"></i>
-        <span style="font-size: 14px;" class="menu-title" data-i18n="User">@lang('backend.pending_approval')</span>
-        @if ($pending_approval > 0)
-        <span class="badge badge badge-primary badge-pill float-right ">{{ $pending_approval }}</span>
-        @endif
-    </a>
-</li>
-<li class="@if(Request::segment(4) == "deleted" ) active @endif">
-    <a href="{{ route('admin.auth.user.deleted') }}"><i class="feather icon-user-x"></i>
-        <span class="menu-title" data-i18n="User">@lang('menus.backend.access.users.deleted')</span>
-        @if ($deleted_users > 0)
-            <span class="badge badge badge-primary badge-pill float-right ">{{ $deleted_users }}</span>
-        @endif
-    </a>
-</li>
-<li class=" nav-item ">
-    <a href="{{ route('admin.team.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Başkanlarımız</span>
-    </a>
-</li>
+                <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+                            class="menu-item"
+                            data-i18n="Select">Aidat</span></a>
+                </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.founding_members.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Kurucu Üyeler</span>
-    </a>
-</li>
+                <li class="nav-item has-sub @if(Request::segment(2) == "finance" ) open @endif">
+                    <a href="#"><i class="feather icon-feather"></i>
+                        <span class="menu-title" data-i18n="finance">Finans</span>
+                    </a>
+                    <ul class="menu-content" style="">
+                        <li class="@if(Request::segment(2) == "finance" ) active @endif">
+                            <a href="{{ route('admin.finance.index') }}"><i class="feather icon-feather"></i>
+                                <span class="menu-item" data-i18n="Select">Kayıt</span></a>
+                        </li>
+                        <li class="@if(Request::segment(2) == "financePayment" ) active @endif">
+                            <a href="{{ route('admin.financePayment.index') }}"><i class="feather icon-archive"></i>
+                                <span class="menu-item" data-i18n="Select">Ödeme</span></a>
+                        </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.supervisoryboard.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Denetleme Kurulu</span>
-    </a>
-</li>
-<li class=" nav-item ">
-    <a href="{{ route('admin.advisory.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Danışma ve İstişare Kurulu</span>
-    </a>
-</li>
-    </ul>
-</li>
+                    </ul>
+                </li>
 
 
-            <li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
-                <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span
-                        class="menu-title"
-                        data-i18n="User">@lang('labels.backend.access.roles.management')</span>
-                </a>
-            </li>
+                <li><a href="{{ route('admin.shopping.index') }}"><i class="feather icon-shopping-cart"></i><span
+                            class="menu-item"
+                            data-i18n="Select">Alış-Veriş</span></a>
+                </li>
+                <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
+                            class="feather icon-edit"></i><span class="menu-item"
+                                                                data-i18n="Select">{{ trans('backend.posts') }}</span></a>
+                </li>
+                <li class="@if(Request::segment(2) == "announcement" ) active @endif"><a
+                        href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span
+                            class="menu-item"
+                            data-i18n="Select">Duyurular</span></a>
+                </li>
+                <li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span
+                            class="menu-item"
+                            data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
+                </li>
 
-            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span class="menu-item"
-                                                                                                 data-i18n="Select">Aidat</span></a>
-            </li>
-            <li><a href="{{ route('admin.finance.index') }}"><i class="feather icon-feather"></i><span class="menu-item"
-                                                                                                     data-i18n="Select">Finans</span></a>
-            </li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.sliders')</span>
+                    </a>
+                </li>
 
-            <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-shopping-cart"></i><span class="menu-item"
-                data-i18n="Select">Alış-Veriş</span></a>
-</li>
-            <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
-                        class="feather icon-edit"></i><span class="menu-item"
-                                                            data-i18n="Select">{{ trans('backend.posts') }}</span></a>
-            </li>
-            <li class="@if(Request::segment(2) == "announcement" ) active @endif"><a
-                    href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span
-                        class="menu-item"
-                        data-i18n="Select">Duyurular</span></a>
-            </li>
-            <li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span
-                        class="menu-item"
-                        data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
-            </li>
-
-            <li class=" nav-item ">
-                <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span class="menu-title"
-                                                                                                      data-i18n="User">@lang('backend.sliders')</span>
-                </a>
-            </li>
-
-        <!-- <li class=" nav-item ">
+            <!-- <li class=" nav-item ">
     <a href="{{ route('admin.testimonial.index') }}"><i class="feather icon-message-circle"></i><span class="menu-title"
             data-i18n="User">@lang('backend.testimonials')</span>
     </a>
