@@ -27,42 +27,45 @@
                                     @foreach ($payment as $i => $item )
                                         <tr>
                                             <td>
-                                                <input id="type" type="text" class="form-control"
-                                                       name="type"
+                                                <input id="type{{$item->id}}" type="text" class="form-control"
+                                                       name="type{{$item->id}}"
                                                        value="{{ $item->type == 'before' ? 'Ödeme Öncesi' : 'Ödeme Sonrası' }}"
                                                        aria-required="true"
                                                        readonly>
                                             </td>
                                             <td>
-                                                <input id="number_of_payments" type="text" class="form-control"
-                                                       name="number_of_payments"
+                                                <input id="number_of_payments{{$item->id}}" type="text"
+                                                       class="form-control"
+                                                       name="number_of_payments{{$item->id}}"
                                                        value="{{ $item->number_of_payments }}" aria-required="true"
                                                        readonly>
                                             </td>
                                             <td>
-                                                <input id="paid" type="checkbox" class="form-control"
-                                                       name="paid"
+                                                <input id="paid{{$item->id}}" type="checkbox" class="form-control"
+                                                       name="paid{{$item->id}}"
                                                        value="{{ $item->paid }}" aria-required="true"
-                                                       required>
+                                                       required  @if ($item->paid === 1) checked @endif>
                                             </td>
                                             <td>
-                                                <input id="payment_date" type="date" class="form-control"
-                                                       name="payment_date"
+                                                <input id="payment_date{{$item->id}}" type="date" class="form-control"
+                                                       name="payment_date{{$item->id}}"
                                                        value="{{ $item->payment_date }}" aria-required="true"
                                                        required>
                                             </td>
                                             <td>
-                                                <input id="description" type="text" class="form-control"
-                                                       name="description"
+                                                <input id="description{{$item->id}}" type="text" class="form-control"
+                                                       name="description{{$item->id}}"
                                                        value="{!!$item->description!!}" aria-required="true"
                                                        required>
                                             </td>
 
                                             <td>
-                                                <a href="#">
-                                                    <i class="feather icon-edit font-medium-5"></i>
-                                                </a>
-                                                <a href="{{   route('admin.financePayment.update',$item->id) }}">
+                                                {{-- <a href="#">
+                                                     <i class="feather icon-edit font-medium-5"></i>
+                                                 </a>--}}
+                                                <a href="#"
+                                                   id="{{$item->id}}"
+                                                   class="submit ">
                                                     <i class="feather icon-save font-medium-5"></i>
                                                 </a>
                                             </td>
@@ -87,6 +90,37 @@
 @section('script')
     <script>
         $(document).ready(function () {
+            $(document).on("click", ".submit", function (e) {
+                let id = this.id;
+
+                let paid = document.querySelector('#paid' + id).checked;
+                //$('#paid' + id + ':checked').val();
+                let date = $('#payment_date' + id).val();
+                let desc = $('#description' + id).val();
+                var data = {};
+                data.paid = paid;
+                data.date = date;
+                data.desc = desc;
+
+                $.ajax({
+                    url: "{{  route('admin.financePayment.update', ':key')  }}".replace(':key', id),
+                    type: 'PUT',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: data,
+                    /* cache: false,
+                     processData: false,
+                     contentType: false,*/
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            });
+
 
         });
     </script>
