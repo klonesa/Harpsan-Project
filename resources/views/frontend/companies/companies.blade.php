@@ -9,12 +9,20 @@
     <div class="uk-navbar-center">
 
         <ul class="uk-navbar-nav" style="text-color:white; text-align:center;">
-            <li><a href="#mobilya">Mobilya - Beyaz Eşya</a></li>
-            <li><a href="#giyim">Ayakkabı - Giyim </a></li>
-            <li><a href="#icecek">Yiyecek - İçecek</a></li>
-            <li><a href="#saglik">Sağlık - Eğitim</a></li>
-            <li><a href="#otomotiv">Otomotiv</a></li>
-            <li><a href="#digerleri">Diğerleri</a></li>
+        <p uk-margin>
+    <button class="uk-button uk-button-primary uk-button-small"><li><a style="color:white;" href="#mobilya">Mobilya - Beyaz Eşya</a></li></button>
+    <button class="uk-button uk-button-primary uk-button-small"><li><a style="color:white;" href="#giyim">Ayakkabı - Giyim </a></li></button>
+    <button class="uk-button uk-button-primary uk-button-small"><li><a style="color:white;" href="#icecek">Yiyecek - İçecek</a></li></button>
+    <button class="uk-button uk-button-primary uk-button-small"> <li><a style="color:white;" href="#saglik">Sağlık - Eğitim</a></li></button>
+    <button class="uk-button uk-button-primary uk-button-small">  <li><a style="color:white;" href="#otomotiv">Otomotiv</a></li></button>
+    <button class="uk-button uk-button-primary uk-button-small"><li><a style="color:white;" href="#digerleri">Diğerleri</a></li></button>
+</p>
+            
+            
+            
+           
+          
+            
 
         </ul>
 
@@ -56,7 +64,10 @@
                                         <h3 class="uk-card-title">{{$coma->name}}</h3>
                                     </a>
                                     <p>{!!\Illuminate\Support\str::limit($coma->detail,200)!!}</p>
+                                    <a href="{{route('frontend.companie',$coma->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
                                 </div>
+                                
+
                             </div>
 
                         </div>
@@ -107,11 +118,16 @@
                                 <h3 class="uk-card-title">{{$comb->name}}</h3>
                             </a>
                             <p>{!!\Illuminate\Support\str::limit($comb->detail,200)!!}</p>
+                            <a href="{{route('frontend.companie',$comb->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
+
                         </div>
+                        
                     </div>
 
                 </div>
+                
             </li>
+            
             @endforeach
         </ul>
 
@@ -158,6 +174,8 @@
                                 <h3 class="uk-card-title">{{$comc->name}}</h3>
                             </a>
                             <p>{!!\Illuminate\Support\str::limit($comc->detail,200)!!}</p>
+                            <a href="{{route('frontend.companie',$comc->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
+
                         </div>
                     </div>
 
@@ -209,6 +227,8 @@
                                 <h3 class="uk-card-title">{{$comd->name}}</h3>
                             </a>
                             <p>{!!\Illuminate\Support\str::limit($comd->detail,200)!!}</p>
+                            <a href="{{route('frontend.companie',$comd->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
+
                         </div>
                     </div>
 
@@ -260,6 +280,8 @@
                                         <h3 class="uk-card-title">{{$come->name}}</h3>
                                     </a>
                                     <p>{!!\Illuminate\Support\str::limit($come->detail,200)!!}</p>
+                                    <a href="{{route('frontend.companie',$come->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
+
                                 </div>
                             </div>
 
@@ -311,6 +333,8 @@
                                         <h3 class="uk-card-title">{{$comf->name}}</h3>
                                     </a>
                                     <p>{!!\Illuminate\Support\str::limit($comf->detail,200)!!}</p>
+                                    <a href="{{route('frontend.companie',$comf->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
+
                                 </div>
                             </div>
 
