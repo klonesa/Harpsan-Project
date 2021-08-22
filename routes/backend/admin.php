@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CompanyController;
+use App\Http\Controllers\Backend\DashboardController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -9,11 +9,10 @@ Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
-
 // blgo
 // Route::resource('tag', 'TagController');
 Route::resource('post', 'PostController');
- Route::resource('category', 'CategoryController');
+Route::resource('category', 'CategoryController');
 
 Route::delete('post/image/{id}', 'PostController@deleteImage');
 Route::resource('announcement', 'AnnouncementController');
@@ -46,11 +45,9 @@ Route::resource('activitytype', 'ActivityTypeController');
 Route::resource('unittype', 'UnitTypeController');
 
 
-
 // sectors and fields
 Route::resource('sector', 'SectorController');
 Route::resource('field', 'FieldController');
-
 
 
 //gallery
@@ -59,14 +56,10 @@ Route::resource('gallery', 'GalleryController');
 Route::delete('gallery/image/{id}', 'GalleryController@deleteImage');
 
 
-
-
-
 // contacts form
 Route::get('contact_forms', 'Contact_FormsController@index')->name('contact_forms.index');
 Route::get('contact_forms/show/{id}', 'Contact_FormsController@show');
 Route::delete('contact_forms/{id}', 'Contact_FormsController@destroy');
-
 
 
 // settings
@@ -92,7 +85,7 @@ Route::resource('events', 'EventController');
 
 //anlaşmalı firmalar
 Route::resource('company', 'CompanyController');
-Route::get('/company_delete/{id}',[CompanyController::class,'delete'])->name('delete.company');
+Route::get('/company_delete/{id}', [CompanyController::class, 'delete'])->name('delete.company');
 // slider
 Route::resource('slider', 'SliderController');
 
@@ -105,6 +98,7 @@ Route::resource('testimonial', 'TestimonialController');
 Route::resource('dues', 'DuesController');
 //Finance
 Route::resource('finance', 'FinanceController');
+Route::resource('financePayment', 'FinancePaymentController');
 
 //Shopping
 Route::resource('shopping', 'ShoppingController');

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class FinanceTable extends Migration
 {
@@ -17,16 +17,16 @@ class FinanceTable extends Migration
             $table->increments('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('name');
-            $table->decimal('amount')->comment('Üyenin çekeceği miktar');
-            $table->decimal('first_payment_amount')->comment('Ödeme öncesi taksit miktarı');
+            $table->integer('amount')->comment('Üyenin çekeceği miktar');
+            $table->integer('first_payment_amount')->comment('Ödeme öncesi taksit miktarı');
             $table->integer('get_month')->comment('paranın alınacağı ay');
-            $table->decimal('amount_payable')->comment('Üyenin ödeyeceği miktar');
-            $table->decimal('remaining_amount')->comment('Kalan ödeme miktarı');
-            $table->decimal('last_payment_amount')->comment('Ödeme sonrası taksit miktarı');
+            $table->integer('amount_payable')->comment('Üyenin ödeyeceği miktar');
+            $table->integer('remaining_amount')->comment('Kalan ödeme miktarı');
+            $table->integer('last_payment_amount')->comment('Ödeme sonrası taksit miktarı');
             $table->integer('number_of_payments')->comment('Taksit sayısı');
             $table->integer('participation_fee')->comment('Katılım masrafı');
-            $table->decimal('deposit')->comment('Depozito');
-            $table->text('description')->comment('Açıklama');
+            $table->integer('deposit')->comment('Depozito')->nullable(false)->default(0);
+            $table->text('description')->comment('Açıklama')->nullable(false);
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')

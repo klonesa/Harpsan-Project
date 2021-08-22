@@ -7,8 +7,10 @@
             <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                     <div class="brand-logo"></div>
-                   <img src="https://harpsantuketim.com/uploads/settings/16260374462255.png" style="width: 100px;padding: 3px;height: auto;text-align: center;" alt="{{ GeneralSiteSettings('site_title')}}">
-                  </a></li>
+                    <img src="https://harpsantuketim.com/uploads/settings/16260374462255.png"
+                         style="width: 100px;padding: 3px;height: auto;text-align: center;"
+                         alt="{{ GeneralSiteSettings('site_title')}}">
+                </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
                         class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i
                         class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary"
@@ -17,11 +19,10 @@
     </div>
 
 
-
     <div class="shadow-bottom"></div>
     @if ($logged_in_user->isAdmin())
-<div class="main-menu-content">
-<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="
     margin-top: 55px;
 ">
 
@@ -134,35 +135,40 @@
 </li>
 -->
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.events.index') }}"><i class="feather icon-share-2"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.events')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.events.index') }}"><i class="feather icon-share-2"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.events')</span>
+                    </a>
+                </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.gallery')</span>
-    </a>
-</li>
-<li class=" nav-item ">
-    <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span class="menu-title"
-            data-i18n="User">Faaliyetler</span>
-    </a>
-</li>
-<li class=" nav-item ">
-    <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.pages')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.gallery')</span>
+                    </a>
+                </li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span
+                            class="menu-title"
+                            data-i18n="User">Faaliyetler</span>
+                    </a>
+                </li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.pages')</span>
+                    </a>
+                </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.about.edit') }}"><i class="feather icon-help-circle"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.about')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.about.edit') }}"><i class="feather icon-help-circle"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.about')</span>
+                    </a>
+                </li>
 
-<!--<li class=" nav-item ">
+            <!--<li class=" nav-item ">
     <a href="{{ route('admin.company.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
             data-i18n="User">@lang('backend.sectors')</span>
     </a>
@@ -170,38 +176,37 @@
 -->
 
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.company.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
-            data-i18n="User">Anlaşmalı Firmalar</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.company.index') }}"><i class="feather icon-cpu"></i><span
+                            class="menu-title"
+                            data-i18n="User">Anlaşmalı Firmalar</span>
+                    </a>
+                </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.advertisement.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
-            data-i18n="User">Reklamlar</span>
-    </a>
-</li>
-
-
-<li class=" nav-item ">
-    <a href="{{ route('admin.field.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.fields')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.advertisement.index') }}"><i class="feather icon-cpu"></i><span
+                            class="menu-title"
+                            data-i18n="User">Reklamlar</span>
+                    </a>
+                </li>
 
 
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.field.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
+                                                                                                     data-i18n="User">@lang('backend.fields')</span>
+                    </a>
+                </li>
 
 
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-users"></i><span
+                            class="menu-title"
+                            data-i18n="User">Ürünler</span>
+                    </a>
+                </li>
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-users"></i><span class="menu-title"
-            data-i18n="User">Ürünler</span>
-    </a>
-</li>
 
-
-
-<!--
+            <!--
 <li class=" nav-item ">
     <a href="{{ route('admin.activitytype.index') }}"><i class="feather icon-activity"></i><span class="menu-title"
             data-i18n="User">@lang('backend.activitytype')</span>
@@ -209,37 +214,38 @@
 </li>
 -->
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.unittype.index') }}"><i class="feather icon-server"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.unittype')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.unittype.index') }}"><i class="feather icon-server"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.unittype')</span>
+                    </a>
+                </li>
 
 
-            {{--
-            <li class=" nav-item ">
-                <a href="{{ URL('/admin/forum/category')}}"><i class="feather icon-message-square"></i><span class="menu-title"
-                        data-i18n="User">@lang('backend.forum_category')</span>
-                </a>
-            </li> --}}
+                {{--
+                <li class=" nav-item ">
+                    <a href="{{ URL('/admin/forum/category')}}"><i class="feather icon-message-square"></i><span class="menu-title"
+                            data-i18n="User">@lang('backend.forum_category')</span>
+                    </a>
+                </li> --}}
 
 
-<li class=" nav-item ">
-    <a href="{{ route('admin.setting.edit') }}"><i class="feather icon-settings"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.setting')</span>
-    </a>
-</li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.setting.edit') }}"><i class="feather icon-settings"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.setting')</span>
+                    </a>
+                </li>
 
-{{-- <li class=" nav-item ">
-    <a href="{{ URL('/translations')}}"><i class="feather icon-globe"></i><span class="menu-title"
-            data-i18n="User">@lang('backend.translations')</span>
-    </a>
-</li> --}}
+                {{-- <li class=" nav-item ">
+                    <a href="{{ URL('/translations')}}"><i class="feather icon-globe"></i><span class="menu-title"
+                            data-i18n="User">@lang('backend.translations')</span>
+                    </a>
+                </li> --}}
 
 
-
-        </ul>
-    </div>
+            </ul>
+        </div>
     @endif
 </div>
 <!-- END: Main Menu-->
