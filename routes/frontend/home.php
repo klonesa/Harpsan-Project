@@ -87,6 +87,10 @@ Route::get('/events', 'FrontPagesController@events')->name('events');
 // event single
 Route::get('/events/single/{event?}', 'FrontPagesController@event')->name('event');
 
+
+Route::get('/member_postings', 'FrontPagesController@memberPostings')->name('member_postings');
+
+
 Route::get('/companies', 'FrontPagesController@companies')->name('companies');
 Route::get('companies/companie-detail/{companie?}', 'FrontPagesController@companie')->name('companie');
 

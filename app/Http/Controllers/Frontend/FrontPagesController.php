@@ -160,6 +160,12 @@ class FrontPagesController extends BaseFrontendController
         return view('frontend.events.event-single', compact('event'));
     }
 
+    public function memberPostings()
+    {
+        
+
+         return view('frontend.member_postings.member postings');
+    }
     
     public function companies(Company $companies)
     {

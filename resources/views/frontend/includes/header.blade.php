@@ -150,7 +150,7 @@
                             <a href="{{URL('/companies')}}" title="Anlaşmalı Firmalar">Anlaşmalı Firmalar</a>
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/companies')}}" title="Üye İlanları">Üye İlanları</a>
+                            <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
                 <a href="#">Harp-San Market</a>
