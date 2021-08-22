@@ -151,9 +151,9 @@ class founding_members_Controller extends Controller
   
            if ($request->$formFileName != "") {
                $teamx = FoundingMembers::find($id);  // here to store image alone
-              if ($teamx->image != "") {
+            /*  if ($teamx->image != "") {
                   unlink('uploads/teams/' . $teamx->image);
-              }
+              }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
                $request->file($formFileName)->move($path, $fileFinalName);

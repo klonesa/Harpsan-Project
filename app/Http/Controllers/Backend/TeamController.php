@@ -160,9 +160,9 @@ class  TeamController extends BaseBackendController
 
          if ($request->$formFileName != "") {
              $teamx = team::find($id);  // here to store image alone
-            if ($teamx->image != "") {
+          /*  if ($teamx->image != "") {
                 unlink('uploads/teams/' . $teamx->image);
-            }
+            }*/
              $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
              $path = $this->getUploadPath();
              $request->file($formFileName)->move($path, $fileFinalName);

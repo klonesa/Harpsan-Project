@@ -129,9 +129,9 @@ class Advisory_Board extends Controller
   
            if ($request->$formFileName != "") {
                $teamx = AdvisoryBoard::find($id);  // here to store image alone
-              if ($teamx->image != "") {
+             /* if ($teamx->image != "") {
                   unlink('uploads/advisory/' . $teamx->image);
-              }
+              }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
                $request->file($formFileName)->move($path, $fileFinalName);
