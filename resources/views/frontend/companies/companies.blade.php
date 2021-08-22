@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', GeneralSiteSettings('site_title') . ' | ' . 'Öneri & Şikayet')
+@section('title', GeneralSiteSettings('site_title') . ' | ' . 'Anlaşmalı Firmalar')
 
 @section('content')
 
