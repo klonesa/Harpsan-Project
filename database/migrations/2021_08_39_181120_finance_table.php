@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class FinanceTable extends Migration
 {
@@ -25,8 +25,8 @@ class FinanceTable extends Migration
             $table->integer('last_payment_amount')->comment('Ödeme sonrası taksit miktarı');
             $table->integer('number_of_payments')->comment('Taksit sayısı');
             $table->integer('participation_fee')->comment('Katılım masrafı');
-            $table->integer('deposit')->comment('Depozito');
-            $table->text('description')->comment('Açıklama');
+            $table->integer('deposit')->comment('Depozito')->nullable(false)->default(0);
+            $table->text('description')->comment('Açıklama')->nullable(false);
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')

@@ -72,7 +72,7 @@
                                                         <input id="get_month" name="get_month"
                                                                step="0.01"
                                                                type="number" class="form-control" aria-required="true"
-                                                               required disabled>
+                                                               required readonly>
                                                     </div>
 
                                                     <div class="form-group">
@@ -81,7 +81,7 @@
                                                         <input id="amount_payable" name="amount_payable"
                                                                step="0.01"
                                                                type="number" class="form-control" aria-required="true"
-                                                               required disabled>
+                                                               required readonly>
                                                     </div>
 
                                                     <div class="form-group">
@@ -90,7 +90,7 @@
                                                         <input id="remaining_amount" name="remaining_amount"
                                                                step="0.01"
                                                                type="number" class="form-control" aria-required="true"
-                                                               required disabled>
+                                                               required readonly>
                                                     </div>
 
                                                     <div class="form-group">
@@ -99,7 +99,7 @@
                                                         <input id="last_payment_amount" name="last_payment_amount"
                                                                step="0.01"
                                                                type="number" class="form-control" aria-required="true"
-                                                               required disabled>
+                                                               required readonly>
                                                     </div>
 
                                                     <div class="form-group">
@@ -108,7 +108,7 @@
                                                         <input id="number_of_payments" name="number_of_payments"
                                                                step="0.01"
                                                                type="number" class="form-control" aria-required="true"
-                                                               required disabled>
+                                                               required readonly>
                                                     </div>
 
                                                     <div class="form-group">
@@ -120,13 +120,13 @@
                                                                required>
                                                     </div>
 
-                                                    <div class="form-group">
+                                                    {{--<div class="form-group">
                                                         <label class="card-title control-label"
                                                                for="name">Depozito</label>
                                                         <input id="deposit" type="text" name="deposit" step="0.01"
                                                                class="form-control"
                                                                aria-required="true" required>
-                                                    </div>
+                                                    </div>--}}
 
                                                     <div class="form-group">
                                                         <label class="card-title control-label" for="description">Açıklama</label>
@@ -230,22 +230,29 @@
 
             $(document).on('change', '#amount', function (e) {
                 first_payment_amount.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
-                get_month.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
+                get_month.val('0');
 
                 let selected = $(this).find(":selected").val();
                 let sel = data[selected];
-                amount_payable.val(sel.amount_payable);
-                remaining_amount.val(sel.remaining_amount);
-                last_payment_amount.val(sel.last_payment_amount);
-                number_of_payments.val(sel.number_of_payments);
-
-                $.each(sel.first_payment_amount, function (key, value) {
-                    first_payment_amount.append(new Option(key, key));
-                });
+                if (sel) {
+                    amount_payable.val(sel.amount_payable);
+                    remaining_amount.val(sel.remaining_amount);
+                    last_payment_amount.val(sel.last_payment_amount);
+                    number_of_payments.val(sel.number_of_payments);
+                    $.each(sel.first_payment_amount, function (key, value) {
+                        first_payment_amount.append(new Option(key, key));
+                    });
+                } else {
+                    amount_payable.val('0');
+                    remaining_amount.val('0');
+                    last_payment_amount.val('0');
+                    number_of_payments.val('0');
+                    get_month.val('0');
+                }
 
             });
             $(document).on('change', '#first_payment_amount', function (e) {
-                get_month.find('option').remove().end().append('<option value="0">Taksit Miktarı Seçiniz.</option>').val('0');
+                get_month.val('0');
                 let selected = $(this).find(":selected").val();
                 let selectedAmount = amount.find(":selected").val();
                 let sel = data[selectedAmount].first_payment_amount[selected];
