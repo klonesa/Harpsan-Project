@@ -23,7 +23,6 @@ class FinancePaymentController extends Controller
             ->join('finance', 'finance.id', '=', 'finance_payment.finance_id')
             ->distinct()
             ->select(
-                'finance_payment.id',
                 'users.full_name_tr',
                 'finance.*'
             )->get();
@@ -90,22 +89,12 @@ class FinancePaymentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $finance = Finance::find($id);
-        $finance->user_id = $request->user;
-        $finance->name = $request->name;
-        $finance->amount = $request->amount;
-        $finance->first_payment_amount = $request->first_payment_amount ?? '';
-        $finance->get_month = $request->get_month ?? '';
-        $finance->amount_payable = $request->amount_payable ?? '';
-        $finance->remaining_amount = $request->remaining_amount ?? '';
-        $finance->last_payment_amount = $request->last_payment_amount ?? '';
-        $finance->number_of_payments = $request->number_of_payments ?? '';
-        $finance->participation_fee = $request->participation_fee ?? '';
-        //$finance->deposit = $request->deposit?? '';
-        $finance->description = $request->description ?? '';
-        $finance->save();
+        $payment = FinancePayment::find($id);
+        dd($payment);
+        //$payment->description = $request->description ?? '';
+        //$payment->save();
 
-        return redirect(route('admin.finance.index'));
+        return redirect(route('admin.financePayment.edit', $id));
     }
 
     /**
