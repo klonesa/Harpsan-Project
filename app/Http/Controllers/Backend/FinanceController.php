@@ -98,40 +98,44 @@ class FinanceController extends Controller
     public function update(Request $request, $id)
     {
         $finance = Finance::find($id);
-        $finance->user_id = $request->user;
-        $finance->name = $request->name;
-        $finance->amount = $request->amount;
-        $finance->first_payment_amount = $request->first_payment_amount ?? 0;
-        $finance->get_month = $request->get_month ?? 0;
-        $finance->amount_payable = $request->amount_payable ?? 0;
-        $finance->remaining_amount = $request->remaining_amount ?? 0;
-        $finance->last_payment_amount = $request->last_payment_amount ?? 0;
-        $finance->number_of_payments = $request->number_of_payments ?? 0;
-        $finance->participation_fee = $request->participation_fee ?? 0;
-        $finance->deposit = $request->deposit ?? 0;
-        $finance->description = $request->description ?? '';
-        $finance->save();
+        $payment = FinancePayment::where('finance_id', '=', $id)->where('user_id', '=', $finance->user_id);
+        $count = $payment->where('paid', '=', 1)->count();
+        if ($count == 0) {
+            $finance->user_id = $request->user;
+            $finance->name = $request->name;
+            $finance->amount = $request->amount;
+            $finance->first_payment_amount = $request->first_payment_amount ?? 0;
+            $finance->get_month = $request->get_month ?? 0;
+            $finance->amount_payable = $request->amount_payable ?? 0;
+            $finance->remaining_amount = $request->remaining_amount ?? 0;
+            $finance->last_payment_amount = $request->last_payment_amount ?? 0;
+            $finance->number_of_payments = $request->number_of_payments ?? 0;
+            $finance->participation_fee = $request->participation_fee ?? 0;
+            $finance->deposit = $request->deposit ?? 0;
+            $finance->description = $request->description ?? '';
+            $finance->save();
 
-        FinancePayment::where('finance_id', '=', $id)->where('user_id', '=', $finance->user_id)->delete();
-        for ($i = 1; $i <= $finance->get_month; $i++) {
-            $payment = new FinancePayment();
-            $payment->user_id = $finance->user_id;
-            $payment->finance_id = $finance->id;
-            $payment->type = 'before';
-            $payment->number_of_payments = $i;
-            $payment->paid = false;
-            $payment->description = '';
-            $payment->save();
-        }
-        for ($i = 1; $i <= $finance->number_of_payments; $i++) {
-            $payment = new FinancePayment();
-            $payment->user_id = $finance->user_id;
-            $payment->finance_id = $finance->id;
-            $payment->type = 'after';
-            $payment->number_of_payments = $i;
-            $payment->paid = false;
-            $payment->description = '';
-            $payment->save();
+            $payment->delete();
+            for ($i = 1; $i <= $finance->get_month; $i++) {
+                $payment = new FinancePayment();
+                $payment->user_id = $finance->user_id;
+                $payment->finance_id = $finance->id;
+                $payment->type = 'before';
+                $payment->number_of_payments = $i;
+                $payment->paid = false;
+                $payment->description = '';
+                $payment->save();
+            }
+            for ($i = 1; $i <= $finance->number_of_payments; $i++) {
+                $payment = new FinancePayment();
+                $payment->user_id = $finance->user_id;
+                $payment->finance_id = $finance->id;
+                $payment->type = 'after';
+                $payment->number_of_payments = $i;
+                $payment->paid = false;
+                $payment->description = '';
+                $payment->save();
+            }
         }
 
         return redirect(route('admin.finance.index'));

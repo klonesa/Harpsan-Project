@@ -18,7 +18,7 @@ class FinancePaymentTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('finance_id')->unsigned();
             $table->string('type')->comment('Taksit Tipi Ödeme Öncesimi-Sonrasımı');
-            $table->dateTime('payment_date')->comment('Ödeme Tarihi')->nullable(true);
+            $table->date('payment_date')->comment('Ödeme Tarihi')->nullable(true);
             $table->integer('number_of_payments')->comment('Taksit Sayısı');
             $table->boolean('paid')->default(false)->comment('Taksit ödendi mi');
             $table->text('description')->comment('Açıklama')->nullable(true);

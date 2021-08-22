@@ -90,11 +90,23 @@ class FinancePaymentController extends Controller
     public function update(Request $request, $id)
     {
         $payment = FinancePayment::find($id);
-        dd($payment);
-        //$payment->description = $request->description ?? '';
-        //$payment->save();
 
-        return redirect(route('admin.financePayment.edit', $id));
+        $paid = 0;
+        if (isset($request->paid)) {
+            if ($request->paid) {
+                $paid = 1;
+            } else {
+                $paid = 0;
+            }
+        }
+        $payment->paid = $paid;
+        $payment->payment_date = $request->date;
+        $payment->description = $request->desc;
+        $payment->save();
+
+
+
+        return $payment;
     }
 
     /**
