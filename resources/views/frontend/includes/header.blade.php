@@ -126,9 +126,12 @@
 
 
                 <a href="{{route('frontend.index')}}" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right"
-                    title="GYİAD">
-                    <img width="80" src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}"
-                        alt="{{ GeneralSiteSettings('site_title') }}">
+                    title="Harp-San Tüketim">
+                    <img src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}"
+                        alt="{{ GeneralSiteSettings('site_title') }}" style="
+                        width: 110px;
+                        height: 110px;
+                    ">
                 </a>
 
                 <div class="uk-navbar-center-right uk-hidden@m">
