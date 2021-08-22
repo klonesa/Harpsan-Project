@@ -15,27 +15,56 @@
                                 <table class="table add-rows">
                                     <thead>
                                     <tr>
-                                        <th>Tip</th>
-                                        <th>Tarih</th>
-                                        <th>Taksit</th>
-                                        <th>Ödeme</th>
+                                        <th class="col-sm-2">Tip</th>
+                                        <th class="col-sm-1">Taksit</th>
+                                        <th class="col-sm-1">Ödeme</th>
+                                        <th class="col-sm-2">Tarih</th>
                                         <th>Açıklama</th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
-                                    @foreach ($payment as $item)
+                                    @foreach ($payment as $i => $item )
                                         <tr>
-                                            <td>{{ $item->type }}</td>
-                                            <td>{{ $item->payment_date }}</td>
-                                            <td>{{ $item->number_of_payments}}</td>
-                                            <td>{{ $item->paid}}</td>
-                                            <td>{!!$item->description!!}</td>
+                                            <td>
+                                                <input id="type" type="text" class="form-control"
+                                                       name="type"
+                                                       value="{{ $item->type == 'before' ? 'Ödeme Öncesi' : 'Ödeme Sonrası' }}"
+                                                       aria-required="true"
+                                                       readonly>
+                                            </td>
+                                            <td>
+                                                <input id="number_of_payments" type="text" class="form-control"
+                                                       name="number_of_payments"
+                                                       value="{{ $item->number_of_payments }}" aria-required="true"
+                                                       readonly>
+                                            </td>
+                                            <td>
+                                                <input id="paid" type="checkbox" class="form-control"
+                                                       name="paid"
+                                                       value="{{ $item->paid }}" aria-required="true"
+                                                       required>
+                                            </td>
+                                            <td>
+                                                <input id="payment_date" type="date" class="form-control"
+                                                       name="payment_date"
+                                                       value="{{ $item->payment_date }}" aria-required="true"
+                                                       required>
+                                            </td>
+                                            <td>
+                                                <input id="description" type="text" class="form-control"
+                                                       name="description"
+                                                       value="{!!$item->description!!}" aria-required="true"
+                                                       required>
+                                            </td>
 
                                             <td>
-                                                <a href="{{   route('admin.financePayment.edit',$item->id) }}"> <i
-                                                        class="feather icon-edit font-medium-5"></i> </a>
-
+                                                <a href="#">
+                                                    <i class="feather icon-edit font-medium-5"></i>
+                                                </a>
+                                                <a href="{{   route('admin.financePayment.update',$item->id) }}">
+                                                    <i class="feather icon-save font-medium-5"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
