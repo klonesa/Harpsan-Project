@@ -17,12 +17,13 @@
                                     <div>
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
                                             <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
-                                            <li><a href="#">Vizyonumuz</a></li>
-                                            <li><a href="#">Misyonumuz</a></li>
+                                            <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
+                                            <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
                                             <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="{{URL('/media-gallery')}}"
                                 title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
                         </li>
+                        <li><a href="{{URL('/contact')}}">Öneri ve Şikayet</a></li>
                                         </ul>
                                     </div>
                                     <div>
@@ -149,12 +150,16 @@
                             <a href="{{URL('/companies')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
-                <a href="#">Harp-San Ürünler</a>
+                <a href="#">Harp-San Market</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Temel Gıdalar</a></li>
+                        <li><a href="#">Kuru Yemiş</a></li>
+                        <li><a href="#">Kuru Gıdalar</a></li>
+                        <li><a href="#">Sıvı Gıdalar</a></li>
+                        <li><a href="#">Baharat</a></li>
+                        <li><a href="#">Diğerleri</a></li>
+                        <li><a href="#">Tüm Liste</a></li>
                     </ul>
                 </div>
             </li>
@@ -205,10 +210,18 @@
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/supervisoryboard')}}">Denetleme Kurulu</a>
                             </li>
+                            <li><a href="{{URL('/about/advisory')}}">Danışma ve İstişare Kurulu</a></li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a
                                     href="{{URL('/about/organizational-structure')}}">{{ trans('frontend.organizational_structure') }}</a>
                             </li>
+                            <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
+                                            <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
+                                            <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
+                                            <li class="@if(Request::segment(1) =='about') active @endif">
+                            <a href="{{URL('/media-gallery')}}"
+                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                        </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/bylaws')}}">{{ trans('frontend.bylaws') }}</a>
                             </li>

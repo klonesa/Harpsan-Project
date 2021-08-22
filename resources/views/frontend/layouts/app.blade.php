@@ -11,6 +11,7 @@
     <link href="{{asset('uploads/settings')}}/{{GeneralSiteSettings('site_icon')}}" rel="apple-touch-icon" sizes="72x72">
     <link href="{{asset('uploads/settings')}}/{{GeneralSiteSettings('site_icon')}}" rel="apple-touch-icon" sizes="114x114">
     <link href="{{asset('uploads/settings')}}/{{GeneralSiteSettings('site_icon')}}" rel="apple-touch-icon" sizes="144x144">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta name="author" content="@yield('meta_author', 'IBDA By kodatik.com')">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="ta4quNci4hT8RcQFRS8ur1FXvVdhZGzIE3j2KOHb">
@@ -38,7 +39,9 @@
 <link href="{{asset('frontend/js/revolution-slider/css/navigation.css') }}" rel="stylesheet" type="text/css" />
 <script  src="{{asset('frontend/js/jquery-2.2.4.min.js') }}" ></script>
 <script  src="{{asset('frontend/js/jquery-ui.min.js') }}" ></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 <script  src="{{asset('frontend/js/bootstrap.min.js') }}" ></script>
  <script  src="{{asset('frontend/js/revolution-slider/js/jquery.themepunch.tools.min.js') }}" ></script>
 <script  src="{{asset('frontend/js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}" ></script>

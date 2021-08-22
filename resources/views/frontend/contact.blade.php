@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row pt-10">
                 <div class="col-md-7">
-                    <h4 class="mt-0 mb-30 line-bottom">{{ trans('frontend.send_a_message') }}</h4>
+                    <h4 class="mt-0 mb-30 line-bottom text-center">Öneri & Şikayet</h4>
                     <!-- Contact Form -->
 
                         <div class="row">
@@ -148,16 +148,9 @@
                             </div>
 
                         </div>
-                        <h5 class="widget-title mb-10">{{ trans('frontend.connect_with_us') }}</h5>
-                        <ul class="styled-icons icon-dark icon-theme-colored icon-circled icon-sm">
-                            <li><a href="{{ GeneralSiteSettings('site_facebook_url')}}"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="{{ GeneralSiteSettings('site_twitter_url')}}"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="{{ GeneralSiteSettings('site_whatsapp_url')}}"><i class="fa fa-whatsapp"></i></a></li>
-                            <li><a href="{{ GeneralSiteSettings('site_youtube_url')}}"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="{{ GeneralSiteSettings('site_instagram_url')}}"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="{{ GeneralSiteSettings('site_linkedin_url')}}"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                    
                 </div>
+                <br><br>
                 <div class="col-md-4 col-md-offset-1">
                     <div class="contact-info text-center pt-40 pb-40 mt-10 bg-light border-bottom border-theme-colored">
                         <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
@@ -180,9 +173,9 @@
             </div>
         </div>
     </section>
+<br><br>
 
-
-<iframe
+<iframe class="mt-4"
     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4855.640207185046!2d28.82497093901256!3d40.99675087186761!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x74affbfcc3b71087!2sNish%20%C4%B0stanbul!5e0!3m2!1sen!2str!4v1583454788741!5m2!1sen!2str"
     width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </section>
