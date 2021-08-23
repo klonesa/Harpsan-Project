@@ -56,10 +56,6 @@
                     </ul>
                 </div>
             </li>
-            <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/events')}}"
-                                title="{{ trans('frontend.events') }}">Etkinliklerimiz</a>
-                        </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
                                 <span>Haberler & Duyurular & Etkinlikler </span>
