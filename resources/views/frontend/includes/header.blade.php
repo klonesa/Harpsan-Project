@@ -58,7 +58,7 @@
             </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
-                                <span>Haberler & Duyurular & Etkinlikler </span>
+                                <span>Haberler & Duyurular </span>
                             </a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
