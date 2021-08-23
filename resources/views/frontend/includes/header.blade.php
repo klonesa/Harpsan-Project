@@ -62,7 +62,7 @@
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
-                                <span>Haberler & Duyurular</span>
+                                <span>Haberler & Duyurular & Etkinlikler </span>
                             </a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -72,6 +72,10 @@
                                     </li>
                                     <li class="@if(Request::segment(1) =='about') active @endif">
                                         <a href="{{URL('/announcements')}}" title="Duyurular">Duyurular</a>
+                                    </li>
+                                    <li class="@if(Request::segment(1) =='about') active @endif">
+                                        <a href="{{URL('/events')}}"
+                                           title="{{ trans('frontend.events') }}">Etkinlikler</a>
                                     </li>
 
                                 </ul>
