@@ -58,7 +58,7 @@
             </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
-                                <span>Haberler & Duyurular </span>
+                                <span>Haberler & Duyurular & Etkinlikler </span>
                             </a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -153,7 +153,7 @@
                             <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
-                <a href="#">Harp-San Market</a>
+                <a href="#">Market</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="#">Temel Gıdalar</a></li>
