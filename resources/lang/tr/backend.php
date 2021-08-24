@@ -112,6 +112,7 @@ return array (
   'teams' => 'Üst Yönetim',
   'testimonials' => 'Üye Yorumları',
   'position' => 'Pozisyon',
+  'yposition' => 'Yönetim Kurulu Pozisyonu',
   'contact_name' => 'Kişi Adı',
   'contact_text' => ' İletişim Metni',
   'contact_image' => 'İletişim Resmi',

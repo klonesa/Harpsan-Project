@@ -125,7 +125,7 @@
                             data-i18n="Select">Alış-Veriş</span></a>
                 </li>
                 <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
-                            class="feather icon-edit"></i><span class="menu-item"
+                            class="feather icon-message-square"></i><span class="menu-item"
                                                                 data-i18n="Select">{{ trans('backend.posts') }}</span></a>
                 </li>
                 <li class="@if(Request::segment(2) == "announcement" ) active @endif"><a
@@ -194,14 +194,14 @@
 
 
                 <li class=" nav-item ">
-                    <a href="{{ route('admin.company.index') }}"><i class="feather icon-cpu"></i><span
+                    <a href="{{ route('admin.company.index') }}"><i class="feather icon-link-2"></i><span
                             class="menu-title"
                             data-i18n="User">Anlaşmalı Firmalar</span>
                     </a>
                 </li>
 
                 <li class=" nav-item ">
-                    <a href="{{ route('admin.advertisement.index') }}"><i class="feather icon-cpu"></i><span
+                    <a href="{{ route('admin.advertisement.index') }}"><i class="feather icon-airplay"></i><span
                             class="menu-title"
                             data-i18n="User">Reklamlar</span>
                     </a>
@@ -209,14 +209,14 @@
 
 
                 <li class=" nav-item ">
-                    <a href="{{ route('admin.field.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
+                    <a href="{{ route('admin.field.index') }}"><i class="feather icon-command"></i><span class="menu-title"
                                                                                                      data-i18n="User">@lang('backend.fields')</span>
                     </a>
                 </li>
 
 
                 <li class=" nav-item ">
-                    <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-users"></i><span
+                    <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-shopping-bag"></i><span
                             class="menu-title"
                             data-i18n="User">Ürünler</span>
                     </a>
