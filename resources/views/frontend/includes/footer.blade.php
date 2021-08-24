@@ -82,7 +82,19 @@
             </div>
 
         </div>
+<div class="row" style="text-align:center;">
+<div class="col">
+<a href="{{ GeneralSiteSettings('site_facebook_url')}}" target="_blank" uk-icon="facebook"></a>&nbsp;
+<a href="{{ GeneralSiteSettings('site_instagram_url')}}" target="_blank" uk-icon="instagram"></a>&nbsp;
+<a href="{{ GeneralSiteSettings('site_linkedin_url')}}" target="_blank" uk-icon="linkedin"></a>&nbsp;
+<a href="{{ GeneralSiteSettings('site_twitter_url')}}" target="_blank" uk-icon="twitter"></a>&nbsp;
+</div>
 
+
+
+
+
+</div>
         <hr class="uk-margin-large-top">
 
         <div class="uk-flex uk-flex-between">

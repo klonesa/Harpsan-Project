@@ -146,7 +146,7 @@
 
                             <div class="form-group">
                                 <div class="controls">
-                                    <label>{{ trans('backend.position') }} </label>
+                                    <label>{{ trans('backend.yposition') }} </label>
                                     <input type="text" name="position_tr" class="form-control"
                                         placeholder="{{ trans('backend.position') }}" value="{{ $user->position_tr}}">
                                 </div>
