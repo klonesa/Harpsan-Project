@@ -74,7 +74,8 @@ class founding_members_Controller extends Controller
   
   
           $founding_member->text_tr = $request->text_tr;
-  
+          $founding_member->phone = $request->phone;
+
           $founding_member->e_mail = $request->e_mail;
           $founding_member->instagram = $request->instagram;
           $founding_member->facebook = $request->facebook;

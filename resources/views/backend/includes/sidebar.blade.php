@@ -86,6 +86,20 @@
                                                                          data-i18n="User">Denetleme Kurulu</span>
                             </a>
                         </li>
+                        <li class=" nav-item ">
+                            <a href="{{ route('admin.supervisoryboard.index') }}"><i
+                                    class="feather icon-users"></i><span class="menu-title"
+                                                                         data-i18n="User">Danışma & istişare Kurulu</span>
+                            </a>
+                        </li>
+
+                        <li class=" nav-item ">
+                            <a href="{{ route('admin.boardofdirectory.index') }}"><i
+                                    class="feather icon-users"></i><span class="menu-title"
+                                                                         data-i18n="User">Yönetim Kurulu</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

@@ -84,6 +84,7 @@ class  TeamController extends BaseBackendController
 
 
         $team->text_tr = $request->text_tr;
+        $team->phone = $request->phone;
 
         $team->e_mail = $request->e_mail;
         $team->instagram = $request->instagram;

@@ -29,7 +29,7 @@
 
                                         <th>{{ trans('backend.name') }}</th>
                                         <th>{{ trans('backend.position') }}</th>
-                                        <th>{{ trans('backend.text') }}</th>
+                                        <th>{{ trans('backend.resume') }}</th>
 
 
 

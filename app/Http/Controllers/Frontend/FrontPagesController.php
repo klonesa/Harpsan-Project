@@ -17,6 +17,8 @@ use App\Models\backend\advertisement;
 use App\Models\backend\FoundingMembers;
 use App\Models\backend\AdvisoryBoard;
 use App\Models\backend\SupervisoryBoard;
+use App\Models\backend\BoardofDirectors;
+
 
 use App\Models\backend\ShoppingModel;
 
@@ -143,7 +145,11 @@ class FrontPagesController extends BaseFrontendController
         return view('frontend.advisory.advisory', compact('advisory'));
     }
 
-
+    public function boardofdirectory()
+    {
+        $boardofdirectory = BoardofDirectors::all();
+        return view('frontend.boardofdirectory.boardofdirectory', compact('boardofdirectory'));
+    }
  
 
 

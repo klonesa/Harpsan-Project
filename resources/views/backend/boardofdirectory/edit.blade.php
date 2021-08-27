@@ -7,13 +7,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ trans('backend.teams') }}</h4>
+                    <h4 class="card-title">Yönetim Kurulu</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
 
 
-                        <form role="form" action="{{ route('admin.founding_members.update',$founding_member->id) }}" method="post"
+                        <form role="form" action="{{ route('admin.boardofdirectory.update',$boardofdirectory->id) }}" method="post"
                             enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="body">
                                             <input type="file" class="form-control dropify" id="image"
-                                                data-default-file="{{ URL::to('uploads/teams', $founding_member->image) }}"
+                                                data-default-file="{{ URL::to('uploads/boardofdirectors', $boardofdirectory->image) }}"
                                                 data-allowed-file-extensions="png jpg jpeg" name="image">
                                         </div>
                                     </div>
@@ -43,28 +43,28 @@
                                                 <div class="tab-content pt-1">
                                                     <div class="tab-pane active" id="home-team" role="tabpanel"
                                                         aria-labelledby="home-tab-justified">
-                                                       
+                                                       <br>
                                                         <h4 class="card-title">
                                                             {{ trans('backend.name') }}</h4>
 
                                                         <input type="text" class="form-control" name="name_tr"
-                                                            value="{{   $founding_member->name_tr }}" aria-required="true">
+                                                            value="{{   $boardofdirectory->name_tr }}" aria-required="true"><br>
                                                             <h4 class="card-title">
                                                                                 {{ trans('backend.position') }}</h4>
 
-                                                                            <input type="text" class="form-control" name="position_tr" value="{{ $founding_member->position_tr }}" aria-required="true">
+                                                                            <input type="text" class="form-control" name="position_tr" value="{{ $boardofdirectory->position_tr }}" aria-required="true">
 
-
+<br>
                                                         <h4 class="card-title">
                                                             {{ trans('backend.resume') }}</h4>
                                                         <textarea type="text" class="form-control"
-                                                            name="text_tr">{!! $founding_member->text_tr !!}</textarea>
+                                                            name="text_tr">{!! $boardofdirectory->text_tr !!}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-<div class="row clealfix">
+<div class="row">
     <div class="col-sm-6">
         <div class="card">
             <div class="header">
@@ -72,7 +72,7 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="phone"  value="{{ $founding_member->phone }}" class="form-control">
+                <input type="text" autocomplete="off" name="phone"  value="{{ $boardofdirectory->phone }}" class="form-control">
 
             </div>
         </div>
@@ -84,11 +84,12 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="e_mail"  value="{{ $founding_member->e_mail }}" class="form-control">
+                <input type="text" autocomplete="off" name="e_mail"  value="{{ $boardofdirectory->e_mail }}" class="form-control">
 
             </div>
         </div>
     </div>
+
 
 </div>
 
@@ -100,7 +101,7 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="twitter"  value="{{ $founding_member->twitter }}" class="form-control">
+                <input type="text" autocomplete="off" name="twitter"  value="{{ $boardofdirectory->twitter }}" class="form-control">
 
             </div>
         </div>
@@ -113,7 +114,7 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="facebook" value="{{ $founding_member->facebook }}" class="form-control">
+                <input type="text" autocomplete="off" name="facebook" value="{{ $boardofdirectory->facebook }}" class="form-control">
 
             </div>
         </div>
@@ -131,7 +132,7 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="instagram" value="{{ $founding_member->instagram }}"  class="form-control">
+                <input type="text" autocomplete="off" name="instagram" value="{{ $boardofdirectory->instagram }}"  class="form-control">
 
             </div>
         </div>
@@ -144,7 +145,7 @@
             </div>
             <div class="body">
 
-                <input type="text" autocomplete="off" name="linkedin"  value="{{ $founding_member->linkedin }}" class="form-control">
+                <input type="text" autocomplete="off" name="linkedin"  value="{{ $boardofdirectory->linkedin }}" class="form-control">
 
             </div>
         </div>
@@ -167,7 +168,7 @@
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                 <a type="button" class="btn btn-warning"
-                                    href="{{   route('admin.founding_members.index')   }}">{{ trans('backend.back') }}</a>
+                                    href="{{   route('admin.boardofdirectory.index')   }}">{{ trans('backend.back') }}</a>
                             </div>
 
                         </form>

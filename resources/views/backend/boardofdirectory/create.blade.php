@@ -7,13 +7,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Kurucu Üyeler</h4>
+                    <h4 class="card-title">Yönetim Kurulu</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
 
 
-                        <form role="form" action="{{ route('admin.founding_members.store') }}" method="post"
+                        <form role="form" action="{{ route('admin.boardofdirectory.store') }}" method="post"
                             enctype="multipart/form-data">
                             {{ csrf_field() }}
 
@@ -43,18 +43,18 @@
                                                 <div class="tab-content pt-1">
                                                     <div class="tab-pane active" id="home-unit" role="tabpanel"
                                                         aria-labelledby="home-tab-justified">
-                                                        
+                                                        <br>
                                                         <h4 class="card-title">
                                                             {{ trans('backend.name') }}</h4>
 
                                                         <input type="text" class="form-control" name="name_tr"
                                                             aria-required="true">
-
+<br>
                                                             <h4 class="card-title">
                                                                 {{ trans('backend.position') }}</h4>
                                                             <input type="text" class="form-control" name="position_tr" aria-required="true">
 
-
+<br>
                                                         <h4 class="card-title">
                                                             {{ trans('backend.resume') }}</h4>
                                                         <textarea type="text" class="form-control"
@@ -78,10 +78,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                       
-                                        
-                                     
                                             <div class="col-sm-6">
                                                 <div class="card">
                                                     <div class="header">
@@ -170,7 +166,7 @@
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                 <a type="button" class="btn btn-warning"
-                                    href="{{   route('admin.founding_members.index')   }}">{{ trans('backend.back') }}</a>
+                                    href="{{   route('admin.boardofdirectory.index')   }}">{{ trans('backend.back') }}</a>
                             </div>
                         </form>
 

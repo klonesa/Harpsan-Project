@@ -54,6 +54,8 @@ Route::get('about/founding_members', 'FrontPagesController@founding_members')->n
 //Denetleme Kurulu
 Route::get('about/supervisoryboard', 'FrontPagesController@supervisoryboard')->name('supervisoryboard');
 Route::get('about/advisory', 'FrontPagesController@advisory')->name('advisory');
+Route::get('about/boardofdirectory', 'FrontPagesController@boardofdirectory')->name('boardofdirectory');
+
 
 
 //getting bylaws

@@ -35,9 +35,15 @@
                                   <img  src="{{asset('uploads/advisory')}}/{{$ad->image}}" alt="{{ $ad->name_tr}}"
                                      uk-img>
                               </div>
-                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $ad->name_tr}}</h5>
-                              <p class="uk-text-small">{{ $ad->position_tr}}</p>
-                          </div>
+                              <div class="uk-card-media-left uk-cover-container">
+
+                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $ad->name_tr}} - {{ $ad->position_tr}}</h5>
+                             
+                              Telefon : {!! $ad->phone !!} <br>
+                             E-Posta : {!! $ad->e_mail !!} 
+                              <p style="color:Red;">Özgeçmiş</p>
+                              <p class="uk-text-small">{!! $ad->text_tr !!}</p>
+                          </div> </div>
                       </article>
                       @endforeach
                   </div>

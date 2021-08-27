@@ -56,7 +56,7 @@
 
 
                                                         <h4 class="card-title">
-                                                            {{ trans('backend.text') }}</h4>
+                                                            {{ trans('backend.resume') }}</h4>
                                                         <textarea type="text" class="form-control"
                                                             name="text_tr"> </textarea>
 
@@ -65,8 +65,20 @@
                                             </div>
                                         </div>
 
-                                        <div class="row clealfix">
-                                            <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="header">
+                                                        <h2>{{ trans('backend.phone') }}</h2>
+                                                    </div>
+                                                    <div class="body">
+
+                                                        <input type="text" autocomplete="off" name="phone" class="form-control">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
                                                 <div class="card">
                                                     <div class="header">
                                                         <h2>{{ trans('backend.email') }}</h2>

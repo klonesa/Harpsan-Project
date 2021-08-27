@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\backend\AdvisoryBoard;
-class Advisory_Board extends Controller
+use App\Models\backend\BoardofDirectors;
+
+class Board_of_Directors extends Controller
 {
-    private $uploadPath = "uploads/advisory/";
+    private $uploadPath = "uploads/boardofdirectors/";
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +16,8 @@ class Advisory_Board extends Controller
      */
     public function index()
     {
-        $advisory = AdvisoryBoard::all();
-        return view('backend.advisory.index',compact('advisory'));
+        $boardofdirectory = BoardofDirectors::all();
+        return view('backend.boardofdirectory.index',compact('boardofdirectory'));
     }
 
     /**
@@ -26,7 +27,7 @@ class Advisory_Board extends Controller
      */
     public function create()
     {
-        return view('backend.advisory.create');    }
+        return view('backend.boardofdirectory.create');    }
 
     /**
      * Store a newly created resource in storage.
@@ -58,19 +59,19 @@ class Advisory_Board extends Controller
   
         // End of Upload Files
   
-          $advisory = new AdvisoryBoard;
-          $advisory->image = $fileFinalName; 
-          $advisory->name_tr = $request->name_tr;
-          $advisory->position_tr = $request->position_tr;  
-          $advisory->text_tr = $request->text_tr;
-          $advisory->e_mail = $request->e_mail;
+          $boardofdirectory = new BoardofDirectors;
+          $boardofdirectory->image = $fileFinalName; 
+          $boardofdirectory->name_tr = $request->name_tr;
+          $boardofdirectory->position_tr = $request->position_tr;  
+          $boardofdirectory->text_tr = $request->text_tr;
+          $boardofdirectory->e_mail = $request->e_mail;
           $supervisoryboard->phone = $request->phone;
-          $advisory->instagram = $request->instagram;
-          $advisory->facebook = $request->facebook;
-          $advisory->twitter = $request->twitter;
-          $advisory->linkedin = $request->linkedin;
-          $advisory->save();
-          return redirect(route('admin.advisory.index'))->with('message', trans('backend.created_successfully'));
+          $boardofdirectory->instagram = $request->instagram;
+          $boardofdirectory->facebook = $request->facebook;
+          $boardofdirectory->twitter = $request->twitter;
+          $boardofdirectory->linkedin = $request->linkedin;
+          $boardofdirectory->save();
+          return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.created_successfully'));
       }
   
       public function getUploadPath()
@@ -105,9 +106,9 @@ class Advisory_Board extends Controller
      */
     public function edit($id)
     {
-        $advisory = AdvisoryBoard::find($id);
+        $boardofdirectory = BoardofDirectors::find($id);
 
-        return view('backend.advisory.edit',compact('advisory'));
+        return view('backend.boardofdirectory.edit',compact('boardofdirectory'));
     }
 
     /**
@@ -129,9 +130,9 @@ class Advisory_Board extends Controller
            $fileFinalName = "";
   
            if ($request->$formFileName != "") {
-               $teamx = AdvisoryBoard::find($id);  // here to store image alone
+               $teamx = BoardofDirectors::find($id);  // here to store image alone
              /* if ($teamx->image != "") {
-                  unlink('uploads/advisory/' . $teamx->image);
+                  unlink('uploads/teams/' . $teamx->image);
               }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
@@ -143,11 +144,11 @@ class Advisory_Board extends Controller
   
   
            // End of Upload Files
-          $advisory = AdvisoryBoard::where('id',$id)->update($request->except('_token','_method','image'));
+          $boardofdirectory = BoardofDirectors::where('id',$id)->update($request->except('_token','_method','image'));
         // except image cus we handle it aboves
   
   
-          return redirect(route('admin.advisory.index'))->with('message', trans('backend.updated_successfully'));
+          return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.updated_successfully'));
   
   
   
@@ -162,9 +163,9 @@ class Advisory_Board extends Controller
      */
     public function destroy($id)
     {
-        $advisory = AdvisoryBoard::where('id', $id)->first();
-        unlink('uploads/advisory/' . $advisory->image);
-        $advisory->delete();
+        $boardofdirectory = BoardofDirectors::where('id', $id)->first();
+        unlink('uploads/teams/' . $boardofdirectory->image);
+        $boardofdirectory->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 
     }
