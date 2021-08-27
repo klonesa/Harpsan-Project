@@ -35,17 +35,22 @@
 
           <section class="uk-section uk-section-small">
               <div class="uk-container">
-                  <div class="uk-child-width-1-4@m" uk-grid uk-height-match="target: > article > .uk-card;">
+                  <div class="uk-child-width-1-3@m" uk-grid uk-height-match="target: > article > .uk-card;">
                   @foreach ($teams as $team)
                       <article>
                           <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
                               <div class="tm-card-media uk-text-center">
+
                                   <img src="{{asset('uploads/teams')}}/{{$team->image}}" alt="{{ $team->full_name}}"
                                      uk-img>
                               </div>
-                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $team->name}}</h5>
-                              <p class="uk-text-small">{{ $team->position }}</p>
-                          </div>
+                              <div class="uk-card-media-left uk-cover-container">
+                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $team->name}} - {{ $team->position }}</h5>
+                              Telefon : {!! $team->phone !!} <br>
+                             E-Posta : {!! $team->e_mail !!} 
+                              <p style="color:Red;">Özgeçmiş</p>
+                              <p class="uk-text">{!! $team->text_tr !!}</p>
+                          </div></div>
                       </article>
                       @endforeach
                   </div>

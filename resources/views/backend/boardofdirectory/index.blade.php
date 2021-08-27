@@ -13,8 +13,8 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-<h4>Kurucu Üyeler </h4>
-                        <a href="{{   route('admin.founding_members.create')   }}" class="btn btn-primary mb-2 float-right"><i
+<h4>Yönetim Kurulu </h4>
+                        <a href="{{   route('admin.boardofdirectory.create')   }}" class="btn btn-primary mb-2 float-right"><i
                                 class="feather icon-plus"></i>&nbsp;
                             {{ trans('backend.new') }}
                         </a>
@@ -40,29 +40,29 @@
                                 <tbody>
 
 
-                                    @foreach ($founding_members as $f_members)
+                                    @foreach ($boardofdirectory as $sboard)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
 
 
                                         <td align="left"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{  URL::to('uploads/teams/')}}/{{ $f_members->image }}"></td>
+                                                src="{{  URL::to('uploads/boardofdirectors/')}}/{{ $sboard->image }}"></td>
 
 
-                                        <td>{{ $f_members->name_tr }}</td>
+                                        <td>{{ $sboard->name_tr }}</td>
 
-                                        <td>{{ $f_members->position_tr }}</td>
+                                        <td>{{ $sboard->position_tr }}</td>
 
-                                        <td>{!! $f_members->text_tr !!}</td>
+                                        <td>{!! $sboard->text_tr !!}</td>
 
                                         <td>
-                                            <a href="{{   route('admin.founding_members.edit',$f_members->id) }}"> <i
+                                            <a href="{{   route('admin.boardofdirectory.edit',$sboard->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $f_members->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $sboard->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
-                                            <form id="delete-form-{{ $f_members->id }}" method="post"
-                                                action="{{ route('admin.founding_members.destroy',$f_members->id) }}">
+                                            <form id="delete-form-{{ $sboard->id }}" method="post"
+                                                action="{{ route('admin.boardofdirectory.destroy',$sboard->id) }}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                             </form>

@@ -31,6 +31,7 @@ Route::resource('founding_members', 'founding_members_Controller');
 
 Route::resource('supervisoryboard', 'Supervisory_Board_Controller');
 Route::resource('advisory', 'Advisory_Board');
+Route::resource('boardofdirectory', 'Board_of_Directors');
 
 
 // activity

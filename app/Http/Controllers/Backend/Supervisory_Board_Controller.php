@@ -64,6 +64,8 @@ class Supervisory_Board_Controller extends Controller
           $supervisoryboard->name_tr = $request->name_tr;
           $supervisoryboard->position_tr = $request->position_tr;  
           $supervisoryboard->text_tr = $request->text_tr;
+          $supervisoryboard->phone = $request->phone;
+
           $supervisoryboard->e_mail = $request->e_mail;
           $supervisoryboard->instagram = $request->instagram;
           $supervisoryboard->facebook = $request->facebook;

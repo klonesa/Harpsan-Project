@@ -35,9 +35,15 @@
                                   <img  src="{{asset('uploads/teams')}}/{{$ssboard->image}}" alt="{{ $ssboard->name_tr}}"
                                      uk-img>
                               </div>
-                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $ssboard->name_tr}}</h5>
-                              <p class="uk-text-small">{{ $ssboard->position_tr}}</p>
-                          </div>
+                              <div class="uk-card-media-left uk-cover-container">
+
+                              <h5 class="tm-text-primary uk-margin-remove-bottom uk-margin-top uk-text-bold">{{ $ssboard->name_tr}} -  {{ $ssboard->position_tr}}</h5>
+                              Telefon : {!! $ssboard->phone !!} <br>
+                             E-Posta : {!! $ssboard->e_mail !!} 
+                              <p style="color:Red;">Özgeçmiş</p>
+                              <p class="uk-text-small">{!! $ssboard->text_tr !!}</p>
+                             
+                          </div></div>
                       </article>
                       @endforeach
                   </div>
