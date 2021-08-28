@@ -172,6 +172,13 @@ class FrontPagesController extends BaseFrontendController
 
          return view('frontend.member_postings.member postings');
     }
+    public function markets()
+    {
+        
+
+         return view('frontend.markets.markets');
+    }
+    
     
     public function companies(Company $companies)
     {

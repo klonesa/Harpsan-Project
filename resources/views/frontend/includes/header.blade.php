@@ -173,7 +173,7 @@
                             <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
-                            <a href="#">Market</a>
+                            <a href="{{URL('/markets')}}">Market</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="#">Temel Gıdalar</a></li>
