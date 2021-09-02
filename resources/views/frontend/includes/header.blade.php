@@ -41,7 +41,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#">Faaliyetlerimiz</a>
+                            <a href="{{URL('/activities')}}">Faaliyetlerimiz</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
