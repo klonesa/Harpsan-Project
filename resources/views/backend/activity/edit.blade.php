@@ -192,33 +192,7 @@ selectYears: 20
                 </div>
 
 
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="header">
-                            <h2>{{ trans('backend.unit_type') }}</h2>
-                        </div>
-                        <div class="body">
-
-<select id="single-selection" name="unit_type">
-
-
-    @foreach ($unit_types as $unit_type)
-    <option value="{{ $unit_type->id }}" @foreach ($activity->unit_types as $activityu)
-        @if ($activityu->id == $unit_type->id)
-        selected
-        @endif
-        @endforeach
-        > {{ $unit_type->name }} </option>
-    @endforeach
-
-
-    </select>
-
-
-
-                        </div>
-                    </div>
-                </div>
+               
 
 
 
@@ -228,32 +202,7 @@ selectYears: 20
 
 
 
-
-
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="header">
-                            <h2>{{ trans('backend.activity_type') }}</h2>
-                        </div>
-                        <div class="body">
-                            <div class="multiselect_div">
-                                <select id="single-selection" name="activity_type">
-                              @foreach ($activity_types as $activity_type)
-                                <option value="{{ $activity_type->id }}"
-                                    @foreach ($activity->activity_types as $activityt)
-                                    @if ($activityt->id == $activity_type->id)
-                                    selected
-                                    @endif
-                                    @endforeach
-                                    > {{ $activity_type->name }} </option>
-                                @endforeach
-
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+ 
 
 
 
