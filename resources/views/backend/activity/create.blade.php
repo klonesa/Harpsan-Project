@@ -130,43 +130,8 @@ selectYears: 20
 
 
 
-
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="header">
-                            <h2>{{ trans('backend.unit_type') }}</h2>
-                        </div>
-                        <div class="body">
-                            <div class="multiselect_div">
-                                <select id="single-selection" name="unit_type"  >
-
-                                    @foreach ($unit_types as $unit_type)
-                                        <option value="{{ $unit_type->id }}"> {{ $unit_type->name }} </option>
-                                        @endforeach
-
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="header">
-                            <h2>{{ trans('backend.activity_type') }}</h2>
-                        </div>
-                        <div class="body">
-                            <div class="multiselect_div">
-                                <select id="single-selection" name="activity_type">
-                                    @foreach ($activity_types as $activity_type)
-                                    <option value="{{ $activity_type->id }}"> {{ $activity_type->name }} </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+ 
+ 
 
 
 
