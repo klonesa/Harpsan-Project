@@ -46,11 +46,11 @@
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
 
-                                    <li><a href="#">Harp-San Finans</a></li>
-                                    <li><a href="#">Harp-San Tüketim</a></li>
-                                    <li><a href="#">Harp-San Firmalar</a></li>
-                                    <li><a href="#">Harp-San Sosyal</a></li>
-                                    <li><a href="#">Harp-San Yapı</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
 
 
                                 </ul>
@@ -258,11 +258,11 @@
                                     <span>{{ trans('frontend.activities') }}</span>
                                 </a>
                             </li>
-                            <li><a href="#">Harp-San Finans</a></li>
-                            <li><a href="#">Harp-San Tüketim</a></li>
-                            <li><a href="#">Harp-San Firmalar</a></li>
-                            <li><a href="#">Harp-San Sosyal</a></li>
-                            <li><a href="#">Harp-San Yapı</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
 
                         </ul>
                     </li>
