@@ -18,6 +18,12 @@ use App\Models\backend\FoundingMembers;
 use App\Models\backend\AdvisoryBoard;
 use App\Models\backend\SupervisoryBoard;
 use App\Models\backend\BoardofDirectors;
+use App\Models\backend\Member_Posting;
+use App\Models\frontend\member_post;
+
+
+
+
 
 
 use App\Models\backend\ShoppingModel;
@@ -75,6 +81,11 @@ class FrontPagesController extends BaseFrontendController
     {
         return view('frontend.news.new-single', compact('post'));
     }
+
+
+    
+
+
 
 
     public function unit_type_news(unit_type $unittype)
@@ -161,17 +172,29 @@ class FrontPagesController extends BaseFrontendController
     }
 
 
+
+
     public function event(Event $event)
     {
         return view('frontend.events.event-single', compact('event'));
     }
 
-    public function memberPostings()
+    
+    public function member_postings()
     {
-        
 
-         return view('frontend.member_postings.member postings');
+        $member_postings = member_posting::orderBy("id", "desc")->paginate(6);
+        return view('frontend.member_postings.member_postings', compact('member_postings'));
     }
+
+    public function member_posting_single(Member_Posting $member_posting)
+    {
+        return view('frontend.member_postings.member_posting-single', compact('member_posting'));
+    }
+
+  
+
+
     public function markets()
     {
         
@@ -267,6 +290,7 @@ class FrontPagesController extends BaseFrontendController
     }
 
 
+  
 
 
 

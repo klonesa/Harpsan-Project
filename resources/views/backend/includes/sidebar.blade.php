@@ -179,6 +179,13 @@
                             data-i18n="User">@lang('backend.gallery')</span>
                     </a>
                 </li>
+
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.member_postings.index') }}"><i class="feather icon-image"></i><span
+                            class="menu-title"
+                            data-i18n="User">Üye İlanları</span>
+                    </a>
+                </li>
                 <li class=" nav-item ">
                     <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span
                             class="menu-title"

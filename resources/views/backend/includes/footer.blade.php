@@ -7,7 +7,7 @@
     <p class="clearfix blue-grey lighten-2 mb-0"><span
             class="float-md-left d-block d-md-inline-block mt-25">{{ GeneralSiteSettings('site_title') }}<a
                 class="text-bold-800 grey darken-2" href="#" target="_blank"></a></span><span
-            class="float-md-right  d-md-block">{{ trans('frontend.Developedby:') }} <a href="https://themedyacreative.com/" target="_blank"> The Medya Yazılım & Tasarım {{ trans('frontend.Developedby:') }}
+            class="float-md-right  d-md-block"> <a href="https://themedyacreative.com/" target="_blank"> The Medya Yazılım & Tasarım {{ trans('frontend.Developedby:') }}
     </a> 
     </p>
 </footer>
