@@ -20,6 +20,9 @@ use App\Models\backend\SupervisoryBoard;
 use App\Models\backend\BoardofDirectors;
 use App\Models\backend\Member_Posting;
 use App\Models\frontend\member_post;
+use App\Models\backend\ShoppingController;
+
+
 
 
 
@@ -195,13 +198,7 @@ class FrontPagesController extends BaseFrontendController
   
 
 
-    public function markets()
-    {
-        
-
-         return view('frontend.markets.markets');
-    }
-    
+ 
     
     public function companies(Company $companies)
     {
@@ -216,7 +213,20 @@ class FrontPagesController extends BaseFrontendController
         
         return view('frontend.companies.companies', compact('companiesa','companiesb','companiesc','companiesd','companiese','companiesf'));
     }
-    
+
+    public function markets(ShoppingModel $markets)
+    {
+        $marketsa = ShoppingModel::Where('category','Temel Gıdalar')->paginate(4);
+        $marketsb = ShoppingModel::Where('category','Kuru Yemiş')->paginate(4);
+        $marketsc = ShoppingModel::Where('category','Kuru Gıdalar')->paginate(4);
+        $marketsd = ShoppingModel::Where('category','Sıvı Gıdalar')->paginate(4);
+        $marketse = ShoppingModel::Where('category','Baharat')->paginate(4);
+        $marketsf = ShoppingModel::Where('category','Diğerleri')->paginate(4);
+
+
+        
+        return view('frontend.markets.markets', compact('marketsa','marketsb','marketsc','marketsd','marketse','marketsf'));
+    }
 
 
    /* public function companies()
@@ -229,6 +239,11 @@ class FrontPagesController extends BaseFrontendController
     {
 
         return view('frontend.companies.companie-single', compact('companie'));
+    }
+    public function market(ShoppingModel $market)
+    {
+
+        return view('frontend.markets.markets-single', compact('market'));
     }
 
     public function advertisement(advertisement $advertisement)

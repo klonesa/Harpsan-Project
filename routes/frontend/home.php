@@ -102,6 +102,8 @@ Route::get('/member_postings/single/{member_posting?}', 'FrontPagesController@me
 
 
 Route::get('/markets', 'FrontPagesController@markets')->name('markets');
+Route::get('/markets/single/{market?}', 'FrontPagesController@market')->name('market');
+
 
 Route::get('/companies', 'FrontPagesController@companies')->name('companies');
 Route::get('companies/companie-detail/{companie?}', 'FrontPagesController@companie')->name('companie');

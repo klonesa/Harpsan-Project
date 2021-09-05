@@ -52,6 +52,7 @@ class ShoppingController extends Controller
         $shopping = new ShoppingModel;
         $shopping->image = $fileNameToStore;
         $shopping->name = $request->name;
+        $shopping->category = $request->category;
         $shopping->description = $request->description;
         $shopping->type = $request->type;
         $shopping->price = $request->price;
@@ -118,6 +119,8 @@ class ShoppingController extends Controller
         $shopping->name = $request->name;
         $shopping->description = $request->description;
         $shopping->type = $request->type;
+        $shopping->category = $request->category;
+
         $shopping->price = $request->price;
         $shopping->slug =  Str::slug($request->name);
          $shopping->save();

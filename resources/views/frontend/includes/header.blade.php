@@ -176,13 +176,12 @@
                             <a href="#">Market</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Temel Gıdalar</a></li>
-                                    <li><a href="#">Kuru Yemiş</a></li>
-                                    <li><a href="#">Kuru Gıdalar</a></li>
-                                    <li><a href="#">Sıvı Gıdalar</a></li>
-                                    <li><a href="#">Baharat</a></li>
-                                    <li><a href="#">Diğerleri</a></li>
-                                    <li><a href="#">Tüm Liste</a></li>
+                                <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
+                                    <li><a href="{{URL('/market')}}#kuru">Kuru Yemiş</a></li>
+                                    <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
+                                    <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -307,13 +306,12 @@
                     <li class="uk-parent">
                         <a href="index.html" title="Harpsan">Market</a>
                         <ul class="uk-nav-sub">
-                        <li><a href="#">Temel Gıdalar</a></li>
-                                    <li><a href="#">Kuru Yemiş</a></li>
-                                    <li><a href="#">Kuru Gıdalar</a></li>
-                                    <li><a href="#">Sıvı Gıdalar</a></li>
-                                    <li><a href="#">Baharat</a></li>
-                                    <li><a href="#">Diğerleri</a></li>
-                                    <li><a href="#">Tüm Liste</a></li>
+                        <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
+                                    <li><a href="{{URL('/market')}}#kuru">Kuru Yemiş</a></li>
+                                    <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
+                                    <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
                         </ul>
                     </li>
                     <li class="uk-nav-divider"></li>
