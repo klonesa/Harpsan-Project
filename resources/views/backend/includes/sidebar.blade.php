@@ -221,12 +221,12 @@
                 </li>
 
 
-                <li class=" nav-item ">
+                {{-- <li class=" nav-item ">
                     <a href="{{ route('admin.shopping.index') }}"><i class="feather icon-shopping-bag"></i><span
                             class="menu-title"
                             data-i18n="User">Ürünler</span>
                     </a>
-                </li>
+                </li> --}}
 
 
             <!--
