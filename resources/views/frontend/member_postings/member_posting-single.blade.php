@@ -55,11 +55,8 @@
 
                                 <div class="uk-width-expand">
                                     <div class="tm-event-meta uk-panel">
-                                        <h4 class="uk-text-bold uk-margin-remove-bottom">Başlangıç-Bitiş Zamanı</h4>
-                                       
-                                        <h4 class="uk-text-bold uk-margin-remove-bottom uk-margin-small-top">Lokasyon
-                                        </h4>
-                                        <p class="uk-margin-remove-top">{{$member_posting->location}}</p>
+                                       <b>Lokasyon: </b> 
+                                        <p class="uk-margin-remove-top">{{$member_posting->location_tr}}</p>
                                     </div>
                                 </div>
 
