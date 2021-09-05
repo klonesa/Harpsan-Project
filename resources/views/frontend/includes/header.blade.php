@@ -132,15 +132,15 @@
                         alt="{{ GeneralSiteSettings('site_title') }}"style="width: 135px;height: 135px;">
                 </a>
 
-                <div class="uk-navbar-center-right uk-hidden@m" style="
-                margin-top: 30px;
-            ">
+                <div class="uk-navbar-center-right uk-hidden@m" >
                     <a class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon tm-text-white "
                         href="#offcanvas-nav" uk-navbar-toggle-icon uk-toggle> <span
                             class="uk-margin-small-right">Menu</span></a>
                 </div>
 
-                <div class="uk-navbar-center-right uk-visible@m uk-navbar-item" >
+                <div class="uk-navbar-center-right uk-visible@m uk-navbar-item" style="
+                margin-top: 30px;
+            ">
 
                     <ul class="uk-navbar-nav uk-margin-small-right">
 
