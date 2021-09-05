@@ -49,6 +49,28 @@
                                                         <input type="text" class="form-control" name="description"
                                                             aria-required="true">
 
+                                                        <div class="col-sm-6">
+                                                            <div class="card">
+                                                                <div class="header">
+                                                                    <h2>Kategori</h2>
+                                                                </div>
+                                                                <div class="body">
+                                                                    <div class="multiselect_div">
+                                                                        <select id="single-selection" name="category"
+                                                                            class="multiselect multiselect-custom">
+                                                                            <option value="Temel Gıdalar">
+                                                                                Temel Gıdalar</option>
+                                                                            <option value="Kuru Yemiş">Kuru Yemiş</option>
+                                                                            <option value="Kuru Gıdalar">Kuru Gıdalar</option>
+                                                                            <option value="Sıvı Gıdalar">Sıvı Gıdalar</option>
+                                                                            <option value="Baharat">Baharat </option>
+                                                                            <option value="Diğerleri">Diğerleri</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
                                                         <h4 class="card-title">Birim </h4>
                                                         <select name="type" class="form-select"
                                                             aria-label="Default select example">

@@ -18,6 +18,15 @@ use App\Models\backend\FoundingMembers;
 use App\Models\backend\AdvisoryBoard;
 use App\Models\backend\SupervisoryBoard;
 use App\Models\backend\BoardofDirectors;
+use App\Models\backend\Member_Posting;
+use App\Models\frontend\member_post;
+use App\Models\backend\ShoppingController;
+
+
+
+
+
+
 
 
 use App\Models\backend\ShoppingModel;
@@ -75,6 +84,11 @@ class FrontPagesController extends BaseFrontendController
     {
         return view('frontend.news.new-single', compact('post'));
     }
+
+
+    
+
+
 
 
     public function unit_type_news(unit_type $unittype)
@@ -161,24 +175,30 @@ class FrontPagesController extends BaseFrontendController
     }
 
 
+
+
     public function event(Event $event)
     {
         return view('frontend.events.event-single', compact('event'));
     }
 
-    public function memberPostings()
-    {
-        
-
-         return view('frontend.member_postings.member postings');
-    }
-    public function markets()
-    {
-        
-
-         return view('frontend.markets.markets');
-    }
     
+    public function member_postings()
+    {
+
+        $member_postings = member_posting::orderBy("id", "desc")->paginate(6);
+        return view('frontend.member_postings.member_postings', compact('member_postings'));
+    }
+
+    public function member_posting_single(Member_Posting $member_posting)
+    {
+        return view('frontend.member_postings.member_posting-single', compact('member_posting'));
+    }
+
+  
+
+
+ 
     
     public function companies(Company $companies)
     {
@@ -193,7 +213,20 @@ class FrontPagesController extends BaseFrontendController
         
         return view('frontend.companies.companies', compact('companiesa','companiesb','companiesc','companiesd','companiese','companiesf'));
     }
-    
+
+    public function markets(ShoppingModel $markets)
+    {
+        $marketsa = ShoppingModel::Where('category','Temel Gıdalar')->paginate(4);
+        $marketsb = ShoppingModel::Where('category','Kuru Yemiş')->paginate(4);
+        $marketsc = ShoppingModel::Where('category','Kuru Gıdalar')->paginate(4);
+        $marketsd = ShoppingModel::Where('category','Sıvı Gıdalar')->paginate(4);
+        $marketse = ShoppingModel::Where('category','Baharat')->paginate(4);
+        $marketsf = ShoppingModel::Where('category','Diğerleri')->paginate(4);
+
+
+        
+        return view('frontend.markets.markets', compact('marketsa','marketsb','marketsc','marketsd','marketse','marketsf'));
+    }
 
 
    /* public function companies()
@@ -206,6 +239,11 @@ class FrontPagesController extends BaseFrontendController
     {
 
         return view('frontend.companies.companie-single', compact('companie'));
+    }
+    public function market(ShoppingModel $market)
+    {
+
+        return view('frontend.markets.markets-single', compact('market'));
     }
 
     public function advertisement(advertisement $advertisement)
@@ -267,6 +305,7 @@ class FrontPagesController extends BaseFrontendController
     }
 
 
+  
 
 
 

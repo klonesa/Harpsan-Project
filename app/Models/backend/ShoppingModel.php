@@ -8,7 +8,7 @@ class ShoppingModel extends Model
 {
     protected $table = 'products';
     protected $fillable = [
-        'name','description','type',
+        'name','description','type','category',
            ];
 
 public function getRouteKeyName()

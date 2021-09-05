@@ -41,16 +41,16 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{URL('/activities')}}">Faaliyetlerimiz</a>
+                            <a href="#">Faaliyetlerimiz</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
 
-                                    <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
+                                    <li><a href="#">Harp-San Finans</a></li>
+                                    <li><a href="#">Harp-San Tüketim</a></li>
+                                    <li><a href="#">Harp-San Firmalar</a></li>
+                                    <li><a href="#">Harp-San Sosyal</a></li>
+                                    <li><a href="#">Harp-San Yapı</a></li>
 
 
                                 </ul>
@@ -173,7 +173,7 @@
                             <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
-                            <a href="{{URL('/markets')}}">Market</a>
+                            <a href="#">Market</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
@@ -258,11 +258,11 @@
                                     <span>{{ trans('frontend.activities') }}</span>
                                 </a>
                             </li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
+                            <li><a href="#">Harp-San Finans</a></li>
+                            <li><a href="#">Harp-San Tüketim</a></li>
+                            <li><a href="#">Harp-San Firmalar</a></li>
+                            <li><a href="#">Harp-San Sosyal</a></li>
+                            <li><a href="#">Harp-San Yapı</a></li>
 
                         </ul>
                     </li>
@@ -307,6 +307,7 @@
                     <li class="uk-parent">
                         <a href="index.html" title="Harpsan">Market</a>
                         <ul class="uk-nav-sub">
+<<<<<<< HEAD
                         <li><a href="{{URL('/markets')}}">Temel Gıdalar</a></li>
                         <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
                         <li><a href="{{URL('/markets')}}#kuru">Kuru Yemiş</a></li>
@@ -315,6 +316,14 @@
                         <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
                         <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
                         <li><a href="{{URL('/markets')}}">Tüm Liste</a></li>
+=======
+                        <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
+                                    <li><a href="{{URL('/market')}}#kuru">Kuru Yemiş</a></li>
+                                    <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
+                                    <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
+>>>>>>> 504fd05ea797538f17b0874d13080044a9e5601e
                         </ul>
                     </li>
                     <li class="uk-nav-divider"></li>

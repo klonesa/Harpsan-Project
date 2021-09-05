@@ -84,6 +84,9 @@ Route::post('about', 'AboutController@update')->name('about.update');
 Route::get('events/{id}', 'EventController@show')->where('id', '[0-9]+');
 Route::resource('events', 'EventController');
 
+Route::get('member_postings/{id}', 'Member_Postings@show')->where('id', '[0-9]+');
+Route::resource('member_postings', 'Member_Postings');
+
 //anlaşmalı firmalar
 Route::resource('company', 'CompanyController');
 Route::get('/company_delete/{id}', [CompanyController::class, 'delete'])->name('delete.company');

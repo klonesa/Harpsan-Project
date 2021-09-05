@@ -2,6 +2,8 @@
 
 
 use App\Http\Controllers\Backend\EventController;
+use App\Http\Controllers\Backend\member_post;
+
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -12,6 +14,7 @@ use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\DuesController;
 use App\Http\Controllers\Frontend\User\ShoppingController;
+
 
 
 /*
@@ -86,13 +89,21 @@ Route::get('activities/single/{activity}', 'FrontPagesController@activity')->nam
 // events
 Route::get('/events', 'FrontPagesController@events')->name('events');
 
+Route::get('/member_postings', 'FrontPagesController@member_postings')->name('member_postings');
+
+
 // event single
 Route::get('/events/single/{event?}', 'FrontPagesController@event')->name('event');
 
+Route::get('/member_postings/single/{member_posting?}', 'FrontPagesController@member_posting_single')->name('member_posting');
 
-Route::get('/member_postings', 'FrontPagesController@memberPostings')->name('member_postings');
+
+
+
 
 Route::get('/markets', 'FrontPagesController@markets')->name('markets');
+Route::get('/markets/single/{market?}', 'FrontPagesController@market')->name('market');
+
 
 Route::get('/companies', 'FrontPagesController@companies')->name('companies');
 Route::get('companies/companie-detail/{companie?}', 'FrontPagesController@companie')->name('companie');

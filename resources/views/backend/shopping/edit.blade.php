@@ -51,22 +51,33 @@
                                                             aria-required="true"
                                                             value="{{ old('name', $shopping->name) }}">
 
+                                                       
+                                                            <br>
+                                                                    <h4 class="card-title">Kategori</h4>
+                                                                </div>
+                                                                <div class="body">
+                                                                    <div class="multiselect_div">
+                                                                        <select id="single-selection" name="category"
+                                                                            class="form-control">
+                                                                            <option value="Temel Gıdalar">
+                                                                                Temel Gıdalar</option>
+                                                                            <option value="Kuru Yemiş">Kuru Yemiş</option>
+                                                                            <option value="Kuru Gıdalar">Kuru Gıdalar</option>
+                                                                            <option value="Sıvı Gıdalar">Sıvı Gıdalar</option>
+                                                                            <option value="Baharat">Baharat </option>
+                                                                            <option value="Diğerleri">Diğerleri</option>
+                                                                        </select>
+                                                                
+                                                          
+                                                        </div>
                                                         <h4 class="card-title"> Açıklama </h4>
                                                         <input type="text" class="form-control" name="description"
                                                             aria-required="true"
                                                             value="{{ old('description', $shopping->description) }}">
 
 
-
-
-
-                                                       
-                                                           
-                                                       
-
                                                         <h4 for="inputState">Birim </h4>
-                                                        <select id="type" name="type" class="form-control"
-                                                            >
+                                                        <select id="type" name="type" class="form-control">
                                                             <option value="">Seçiniz...</option>
                                                             <option name="choice1"
                                                                 {{ ($shopping->type) == 'Kilogram' ? 'selected' : '' }}
@@ -80,7 +91,7 @@
                                                             <option name="choice4"
                                                                 {{ ($shopping->type) == 'Santimetre' ? 'selected' : '' }}
                                                                 value="Santimetre">Santimetre</option>
-                                                        </select> 
+                                                        </select>
                                                         <h4 class="card-title">
                                                             Fiyat</h4>
 
