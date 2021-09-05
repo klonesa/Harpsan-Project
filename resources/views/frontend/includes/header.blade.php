@@ -5,7 +5,7 @@
                 <div class="uk-navbar-center-left uk-visible@m uk-navbar-item">
 
                     <ul class="uk-navbar-nav" style="
-                    margin-top: 20px;
+                    margin-top: 30px;
                 ">
 
                         <!--     <li class="@if(Request::segment(1) == '') active @endif"><a
