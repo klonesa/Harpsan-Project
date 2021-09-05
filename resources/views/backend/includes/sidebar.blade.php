@@ -214,11 +214,11 @@
                 </li>
 
 
-                <li class=" nav-item ">
+                {{-- <li class=" nav-item ">
                     <a href="{{ route('admin.field.index') }}"><i class="feather icon-command"></i><span class="menu-title"
                                                                                                      data-i18n="User">@lang('backend.fields')</span>
                     </a>
-                </li>
+                </li> --}}
 
 
                 {{-- <li class=" nav-item ">
