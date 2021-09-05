@@ -190,10 +190,10 @@
                     </ul>
 
                     <div>
-                        <a class="uk-button tm-button-outline-black uk-button-small" style="    border: cadetblue;
+                        <a class="uk-button tm-button-outline-black uk-button-small" style="    border: inset #0e0e0e;
     border-style: inset;
     background-color: whitesmoke;" href="{{route('frontend.auth.login')}}">
-                            Portal Giriş
+                          <b> Üye Girişi </b> 
                         </a>
 
                     </div>
@@ -320,7 +320,7 @@
                     <li class="uk-nav-divider"></li>
                     <li>
                         <a href="{{route('frontend.auth.login')}}">
-                            <span uk-icon="icon: sign-in; ratio: .8;"></span> Portal Giriş
+                            <span uk-icon="icon: sign-in; ratio: .8;"></span>                  <b> Üye Girişi </b> 
                         </a>
                     </li>
                 </ul>
