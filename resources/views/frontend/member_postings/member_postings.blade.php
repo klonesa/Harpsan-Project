@@ -30,7 +30,8 @@
                                 <div class="uk-flex uk-flex-middle uk-flex-between">
                                     <div>
                                         <p class="uk-margin-remove">
-                                       <b>Konum</b>     {{$post->location_tr }}</p>
+                                       <b>Konum</b>   <br>
+                                         {{$post->location_tr }}</p>
 <b>Açıklama</b> <br>
                                         <div class="uk-margin">{!! $post->text_tr !!}</div>
                                     </div>
