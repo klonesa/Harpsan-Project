@@ -111,10 +111,7 @@
                     </a>
                 </li>
 
-                <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
-                            class="menu-item"
-                            data-i18n="Select">Aidat</span></a>
-                </li>
+            
 
                 <li class="nav-item has-sub @if(Request::segment(2) == "finance" ) open @endif">
                     <a href="#"><i class="feather icon-feather"></i>
@@ -152,12 +149,7 @@
                             data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
                 </li>
 
-                <li class=" nav-item ">
-                    <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span
-                            class="menu-title"
-                            data-i18n="User">@lang('backend.sliders')</span>
-                    </a>
-                </li>
+         
 
             <!-- <li class=" nav-item ">
     <a href="{{ route('admin.testimonial.index') }}"><i class="feather icon-message-circle"></i><span class="menu-title"
@@ -196,13 +188,6 @@
                     <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span
                             class="menu-title"
                             data-i18n="User">@lang('backend.pages')</span>
-                    </a>
-                </li>
-
-                <li class=" nav-item ">
-                    <a href="{{ route('admin.about.edit') }}"><i class="feather icon-help-circle"></i><span
-                            class="menu-title"
-                            data-i18n="User">@lang('backend.about')</span>
                     </a>
                 </li>
 
@@ -251,13 +236,13 @@
     </a>
 </li>
 -->
-
+{{-- 
                 <li class=" nav-item ">
                     <a href="{{ route('admin.unittype.index') }}"><i class="feather icon-server"></i><span
                             class="menu-title"
                             data-i18n="User">@lang('backend.unittype')</span>
                     </a>
-                </li>
+                </li> --}}
 
 
                 {{--
@@ -266,7 +251,22 @@
                             data-i18n="User">@lang('backend.forum_category')</span>
                     </a>
                 </li> --}}
-
+                <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+                    class="menu-item"
+                    data-i18n="Select">Aidat Modülü</span></a>
+        </li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.sliders')</span>
+                    </a>
+                </li>
+                <li class=" nav-item ">
+                    <a href="{{ route('admin.about.edit') }}"><i class="feather icon-help-circle"></i><span
+                            class="menu-title"
+                            data-i18n="User">@lang('backend.about')</span>
+                    </a>
+                </li>
 
                 <li class=" nav-item ">
                     <a href="{{ route('admin.setting.edit') }}"><i class="feather icon-settings"></i><span
