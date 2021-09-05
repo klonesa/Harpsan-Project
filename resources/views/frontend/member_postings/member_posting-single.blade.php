@@ -28,8 +28,7 @@
                                     <div class="tm-event-name">
                                         <h1 class="uk-h4 uk-text-bold uk-margin-small-bottom">{{$member_posting->name_tr}}</h1>
                                     </div>
-                                    <p class="tm-event-location uk-margin-remove-top">{{$member_posting->location_tr}}</p>
-
+ 
                                     <div class="tm-event-register uk-margin-medium-top">
                                     </div>
                                 </div>
