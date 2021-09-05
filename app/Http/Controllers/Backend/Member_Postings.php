@@ -59,8 +59,8 @@ class Member_Postings extends Controller
         $member_postings->save();
 
         // Start of Upload Files
-        if ($request->hasFile('gallery_images')) {
-            $all_images = $request->file('gallery_images');
+        if ($request->hasFile('member_postings')) {
+            $all_images = $request->file('member_postings');
             $path = $this->getUploadPath();
             foreach ($all_images as $file) {
                 $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
