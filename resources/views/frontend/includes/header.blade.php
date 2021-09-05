@@ -133,12 +133,14 @@
                 </a>
 
                 <div class="uk-navbar-center-right uk-hidden@m">
-                    <a class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon tm-text-white"
+                    <a class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon tm-text-white " style="
+                    margin-top: 30px;
+                "
                         href="#offcanvas-nav" uk-navbar-toggle-icon uk-toggle> <span
                             class="uk-margin-small-right">Menu</span></a>
                 </div>
 
-                <div class="uk-navbar-center-right uk-visible@m uk-navbar-item">
+                <div class="uk-navbar-center-right uk-visible@m uk-navbar-item" >
 
                     <ul class="uk-navbar-nav uk-margin-small-right">
 
