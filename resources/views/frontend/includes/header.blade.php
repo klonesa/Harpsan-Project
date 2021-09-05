@@ -1,5 +1,5 @@
 <div id="app">
-    <header class="uk-position-relative" style="background-color:#F5F5F5;">
+    <header class="uk-position-relative" style="background-color:rgb(23 34 72)">
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
             <div class="uk-navbar-center">
                 <div class="uk-navbar-center-left uk-visible@m uk-navbar-item">
