@@ -30,7 +30,8 @@
                                 <div class="uk-flex uk-flex-middle uk-flex-between">
                                     <div>
                                         <p class="uk-margin-remove">
-                                            {{ trans('frontend.location')." : ".$post->location_tr }}</p>
+                                       <b>Konum</b>     {{$post->location_tr }}</p>
+<b>Açıklama</b> <br>
                                         <div class="uk-margin">{!! $post->text_tr !!}</div>
                                     </div>
                                     <div class="uk-text-small uk-margin-medium-left uk-flex-none">
