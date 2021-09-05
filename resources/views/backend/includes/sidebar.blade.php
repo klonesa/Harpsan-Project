@@ -136,7 +136,7 @@
 
                 <li><a href="{{ route('admin.shopping.index') }}"><i class="feather icon-shopping-cart"></i><span
                             class="menu-item"
-                            data-i18n="Select">Alış-Veriş</span></a>
+                            data-i18n="Select">Market Modülü</span></a>
                 </li>
                 <li class="@if(Request::segment(2) == "post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i
                             class="feather icon-message-square"></i><span class="menu-item"
