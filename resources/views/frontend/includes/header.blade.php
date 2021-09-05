@@ -41,16 +41,16 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#">Faaliyetlerimiz</a>
+                            <a href="{{URL('/activities')}}">Faaliyetlerimiz</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
 
 
-                                    <li><a href="#">Harp-San Finans</a></li>
-                                    <li><a href="#">Harp-San Tüketim</a></li>
-                                    <li><a href="#">Harp-San Firmalar</a></li>
-                                    <li><a href="#">Harp-San Sosyal</a></li>
-                                    <li><a href="#">Harp-San Yapı</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
+                                    <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
 
 
                                 </ul>
@@ -173,7 +173,7 @@
                             <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
                         </li>
                         <li>
-                            <a href="#">Market</a>
+                            <a href="{{URL('/markets')}}">Market</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
@@ -193,7 +193,7 @@
                         <a class="uk-button tm-button-outline-black uk-button-small" style="    border: cadetblue;
     border-style: inset;
     background-color: whitesmoke;" href="{{route('frontend.auth.login')}}">
-                         Üye Girişi
+                            Portal Giriş
                         </a>
 
                     </div>
@@ -258,11 +258,11 @@
                                     <span>{{ trans('frontend.activities') }}</span>
                                 </a>
                             </li>
-                            <li><a href="#">Harp-San Finans</a></li>
-                            <li><a href="#">Harp-San Tüketim</a></li>
-                            <li><a href="#">Harp-San Firmalar</a></li>
-                            <li><a href="#">Harp-San Sosyal</a></li>
-                            <li><a href="#">Harp-San Yapı</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
+                            <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
 
                         </ul>
                     </li>
@@ -307,29 +307,20 @@
                     <li class="uk-parent">
                         <a href="index.html" title="Harpsan">Market</a>
                         <ul class="uk-nav-sub">
-<<<<<<< HEAD
-                        <li><a href="{{URL('/markets')}}">Temel Gıdalar</a></li>
-                        <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
-                        <li><a href="{{URL('/markets')}}#kuru">Kuru Yemiş</a></li>
-                        <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
-                        <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
-                        <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
-                        <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
-                        <li><a href="{{URL('/markets')}}">Tüm Liste</a></li>
-=======
-                        <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
-                                    <li><a href="{{URL('/market')}}#kuru">Kuru Yemiş</a></li>
+                        <li><a href="#">Temel Gıdalar</a></li>
+                               <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
+                                    <li><a href="{{URL('/markets')}}#kuru">Kuru Yemiş</a></li>
                                     <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
                                     <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
                                     <li><a href="{{URL('/markets')}}#baharat">Baharat</a></li>
                                     <li><a href="{{URL('/markets')}}#digerleri">Diğerleri</a></li>
->>>>>>> 504fd05ea797538f17b0874d13080044a9e5601e
+                                    <li><a href="{{URL('/markets')}}">Tüm Liste</a></li>
                         </ul>
                     </li>
                     <li class="uk-nav-divider"></li>
                     <li>
                         <a href="{{route('frontend.auth.login')}}">
-                            <span uk-icon="icon: sign-in; ratio: .8;"></span> Üye Girişi
+                            <span uk-icon="icon: sign-in; ratio: .8;"></span> Portal Giriş
                         </a>
                     </li>
                 </ul>
