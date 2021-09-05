@@ -14,7 +14,7 @@
                         class="uk-card uk-card-default uk-card-body uk-card-small uk-margin-medium-top uk-box-shadow-hover-xlarge">
                         <div class="uk-flex uk-flex-middle" uk-grid>
                             <div class="uk-width-1-5@m">
-                                <a href="{{ route('frontend.posting',$post->slug) }}">
+                                <a href="{{ route('frontend.member_posting',$post->slug) }}">
                                     <img src="{{  asset('uploads/member_postings/')}}/{{ $post->image }}"
                                         alt=" {{ $post->name_tr }}" uk-img>
                                 </a>
@@ -22,7 +22,7 @@
                             <div class="uk-width-expand">
                                 <h4 class="uk-margin-small">
                                     <a class="uk-link-text uk-text-bold"
-                                       href="{{ route('frontend.posting',$post->slug) }}" 
+                                       href="{{ route('frontend.member_posting',$post->slug) }}" 
                                         title=" {{ $post->name_tr }}">
                                         {{ $post->name_tr }}
                                     </a>
@@ -34,7 +34,7 @@
                                         <div class="uk-margin">{!! $post->text_tr !!}</div>
                                     </div>
                                     <div class="uk-text-small uk-margin-medium-left uk-flex-none">
-                                        <a href="{{ route('frontend.posting',$post->slug) }}"> Detaylı Bilgi<span
+                                        <a href="{{ route('frontend.member_posting',$post->slug) }}"> Detaylı Bilgi<span
                                                 uk-icon="icon: arrow-right;"></span></a>
                                     </div>
                                 </div>
