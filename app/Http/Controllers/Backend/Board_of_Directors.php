@@ -131,9 +131,6 @@ class Board_of_Directors extends Controller
   
            if ($request->$formFileName != "") {
                $teamx = BoardofDirectors::find($id);  // here to store image alone
-             /* if ($teamx->image != "") {
-                  unlink('uploads/teams/' . $teamx->image);
-              }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
                $request->file($formFileName)->move($path, $fileFinalName);
