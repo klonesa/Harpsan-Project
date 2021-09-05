@@ -4,7 +4,9 @@
             <div class="uk-navbar-center">
                 <div class="uk-navbar-center-left uk-visible@m uk-navbar-item">
 
-                    <ul class="uk-navbar-nav">
+                    <ul class="uk-navbar-nav" style="
+                    margin-top: 20px;
+                ">
 
                         <!--     <li class="@if(Request::segment(1) == '') active @endif"><a
                                 href="{{route('frontend.index')}}">{{ trans('frontend.home') }}</a>
@@ -127,10 +129,7 @@
                 <a href="{{route('frontend.index')}}" class="uk-navbar-item uk-logo uk-margin-left uk-margin-right"
                     title="Harp-San Tüketim">
                     <img src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}"
-                        alt="{{ GeneralSiteSettings('site_title') }}" style="
-                        width: 110px;
-                        height: 110px;
-                    ">
+                        alt="{{ GeneralSiteSettings('site_title') }}"style="width: 135px;height: 135px;">
                 </a>
 
                 <div class="uk-navbar-center-right uk-hidden@m">
