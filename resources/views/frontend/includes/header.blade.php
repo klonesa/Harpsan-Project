@@ -204,7 +204,7 @@
                     <li class="uk-nav-divider"></li>
 
                     <li class="uk-parent">
-                        <a href="index.html" title="Harpsan">Harpsan</a>
+                        <a href="index.html" title="Harpsan">Harp-San</a>
                         <ul class="uk-nav-sub">
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about')}}">{{ trans('frontend.about') }}</a>
