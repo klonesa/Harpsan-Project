@@ -238,14 +238,12 @@
                                 <a href="{{URL('/about/bylaws')}}">{{ trans('frontend.bylaws') }}</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> 
+                    
                     <li class="uk-nav-divider"></li>
-                    <li class="uk-parent">
-                        <a href="{{ trans('backend.gallery') }}" title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
-                       
-                       
-                    </li>
-                  
+                    <li class="@if(Request::segment(1) =='about') active @endif">
+                                <a href="{{URL('/media-gallery')}}">Medya Galeri</a>
+                            </li>
 
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent">
