@@ -243,7 +243,7 @@
                     <li class="uk-parent">
                         <a href="{{ trans('backend.gallery') }}" title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
                        
-                        </ul>
+                       
                     </li>
                   
 
