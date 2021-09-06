@@ -21,9 +21,9 @@
                                             <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
                                             <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
                                             <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
+                                        
                                             <li class="@if(Request::segment(1) =='about') active @endif">
-                                                <a href="{{URL('/media-gallery')}}"
-                                                    title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                                                <a href="{{URL('/activities')}}" title="Faaliyetlerimiz">Faaliyetlerimiz</a>
                                             </li>
                                             <li><a href="{{URL('/contact')}}">Öneri ve Şikayet</a></li>
                                         </ul>
@@ -42,21 +42,10 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <a href="{{URL('/activities')}}">Faaliyetlerimiz</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-
-
-                                    <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
-                                    <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
-
-
-                                </ul>
-                            </div>
+                      
+                        <li class="@if(Request::segment(1) =='about') active @endif">
+                            <a href="{{URL('/media-gallery')}}"
+                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
@@ -242,8 +231,8 @@
                             <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
                             <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/media-gallery')}}"
-                                    title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                                <a href="{{URL('/activities')}}"
+                                    title="Faaliyetler">Faaliyetler</a>
                             </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/bylaws')}}">{{ trans('frontend.bylaws') }}</a>
@@ -252,21 +241,11 @@
                     </li>
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent">
-                        <a href="index.html" title="Harpsan">{{ trans('frontend.activities') }}</a>
-                        <ul class="uk-nav-sub">
-                            <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/activities')}}">
-                                    <span>{{ trans('frontend.activities') }}</span>
-                                </a>
-                            </li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Finans</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Tüketim</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Firmalar</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Sosyal</a></li>
-                            <li><a href="{{URL('/activities')}}">Harp-San Yapı</a></li>
-
+                        <a href="{{ trans('backend.gallery') }}" title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                       
                         </ul>
                     </li>
+                  
 
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent">
