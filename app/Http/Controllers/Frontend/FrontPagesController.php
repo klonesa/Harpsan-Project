@@ -216,12 +216,12 @@ class FrontPagesController extends BaseFrontendController
 
     public function markets(ShoppingModel $markets)
     {
-        $marketsa = ShoppingModel::Where('category','Temel Gıdalar')->paginate(4);
-        $marketsb = ShoppingModel::Where('category','Kuru Yemiş')->paginate(4);
-        $marketsc = ShoppingModel::Where('category','Kuru Gıdalar')->paginate(4);
-        $marketsd = ShoppingModel::Where('category','Sıvı Gıdalar')->paginate(4);
-        $marketse = ShoppingModel::Where('category','Baharat')->paginate(4);
-        $marketsf = ShoppingModel::Where('category','Diğerleri')->paginate(4);
+        $marketsa = ShoppingModel::Where('category','Temel Gıdalar')->paginate(20);
+        $marketsb = ShoppingModel::Where('category','Kuru Yemiş')->paginate(20);
+        $marketsc = ShoppingModel::Where('category','Kuru Gıdalar')->paginate(20);
+        $marketsd = ShoppingModel::Where('category','Sıvı Gıdalar')->paginate(20);
+        $marketse = ShoppingModel::Where('category','Baharat')->paginate(20);
+        $marketsf = ShoppingModel::Where('category','Diğerleri')->paginate(20);
 
 
         
