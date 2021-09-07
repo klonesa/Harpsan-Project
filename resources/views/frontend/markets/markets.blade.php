@@ -56,7 +56,7 @@
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top" style="text-align:center;">
                                     <a href="{{route('frontend.market',$coma->slug)}}"></a> <img
-                                        src="{{ URL::to('uploads/shopping/',$coma->image)}}" style="max-height:200px;"
+                                        src="{{ URL::to('uploads/shopping/',$coma->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                         alt=""></a>
                                 </div>
                                 <div class="uk-card-body">
@@ -110,7 +110,7 @@
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top" style="text-align:center;">
                             <a href="{{route('frontend.market',$comb->slug)}}"></a> <img
-                                src="{{ URL::to('uploads/shopping',$comb->image)}}" style="max-height:200px;"
+                                src="{{ URL::to('uploads/shopping',$comb->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                 alt=""></a>
                         </div>
                         <div class="uk-card-body">
@@ -166,7 +166,7 @@
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top" style="text-align:center;">
                             <a href="{{route('frontend.market',$comc->slug)}}"></a> <img
-                                src="{{ URL::to('uploads/shopping',$comc->image)}}" style="max-height:200px;"
+                                src="{{ URL::to('uploads/shopping',$comc->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                 alt=""></a>
                         </div>
                         <div class="uk-card-body">
@@ -219,7 +219,7 @@
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top" style="text-align:center;">
                             <a href="{{route('frontend.market',$comd->slug)}}"></a> <img
-                                src="{{ URL::to('uploads/shopping',$comd->image)}}" style="max-height:200px;"
+                                src="{{ URL::to('uploads/shopping',$comd->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                 alt=""></a>
                         </div>
                         <div class="uk-card-body">
@@ -272,7 +272,7 @@
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top" style="text-align:center;">
                                     <a href="{{route('frontend.market',$come->slug)}}"></a> <img
-                                        src="{{ URL::to('uploads/shopping',$come->image)}}" style="max-height:200px;"
+                                        src="{{ URL::to('uploads/shopping',$come->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                         alt=""></a>
                                 </div>
                                 <div class="uk-card-body">
@@ -325,7 +325,7 @@
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top" style="text-align:center;">
                                     <a href="{{route('frontend.market',$comf->slug)}}"></a> <img
-                                        src="{{ URL::to('uploads/shopping',$comf->image)}}" style="max-height:200px;"
+                                        src="{{ URL::to('uploads/shopping',$comf->image)}}" style="max-height: 200px;height: 150px;width: 150px;"
                                         alt=""></a>
                                 </div>
                                 <div class="uk-card-body">
