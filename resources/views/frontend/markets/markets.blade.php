@@ -4,7 +4,7 @@
 
 @section('content')
 
-<br><br>
+<br>
 <nav class="uk-navbar-container uk-margin" style="background-color:white; " uk-navbar="mode: click">
     <div class="uk-navbar-center">
 
