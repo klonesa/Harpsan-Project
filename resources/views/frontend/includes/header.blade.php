@@ -21,10 +21,7 @@
                                             <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
                                             <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
                                             <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
-                                        
-                                            <li class="@if(Request::segment(1) =='about') active @endif">
-                                                <a href="{{URL('/activities')}}" title="Faaliyetlerimiz">Faaliyetlerimiz</a>
-                                            </li>
+                                             <li><a href="{{URL('/media-gallery')}}">{{ trans('backend.gallery') }}</a></li>
                                             <li><a href="{{URL('/contact')}}">Öneri ve Şikayet</a></li>
                                         </ul>
                                     </div>
@@ -42,10 +39,10 @@
                                 </div>
                             </div>
                         </li>
-                      
+                     
+
                         <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/media-gallery')}}"
-                                title="{{ trans('backend.gallery') }}">{{ trans('backend.gallery') }}</a>
+                            <a href="{{URL('/activities')}}" title="Hizmetlerimiz">Hizmetlerimiz</a>
                         </li>
                         <li class="@if(Request::segment(1) =='about') active @endif">
                             <a href="#">
@@ -230,10 +227,7 @@
                             <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
                             <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
                             <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
-                            <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/activities')}}"
-                                    title="Faaliyetler">Faaliyetler</a>
-                            </li>
+                            <li><a href="{{URL('/media-gallery')}}">Medya Galeri</a></li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/bylaws')}}">{{ trans('frontend.bylaws') }}</a>
                             </li>
@@ -241,8 +235,10 @@
                     </li> 
                     
                     <li class="uk-nav-divider"></li>
-                    <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/media-gallery')}}">Medya Galeri</a>
+                
+                            <li class="@if(Request::segment(1) =='about') active @endif">
+                                <a href="{{URL('/activities')}}"
+                                    title="Hizmetlerimiz">Hizmetlerimiz</a>
                             </li>
 
                     <li class="uk-nav-divider"></li>
@@ -283,10 +279,9 @@
                             </li>
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent">
-                        <a href="index.html" title="Harpsan">Market</a>
+                        <a href="{{URL('/markets')}}" title="Harpsan">Market</a>
                         <ul class="uk-nav-sub">
-                        <li><a href="#">Temel Gıdalar</a></li>
-                               <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
+                                <li><a href="{{URL('/markets')}}#temel">Temel Gıdalar</a></li>
                                     <li><a href="{{URL('/markets')}}#kuru">Kuru Yemiş</a></li>
                                     <li><a href="{{URL('/markets')}}#kuru-gıda">Kuru Gıdalar</a></li>
                                     <li><a href="{{URL('/markets')}}#sıvı">Sıvı Gıdalar</a></li>
