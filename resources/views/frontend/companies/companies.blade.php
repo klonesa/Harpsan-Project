@@ -3,7 +3,7 @@
 @section('title', GeneralSiteSettings('site_title') . ' | ' . 'Anlaşmalı Firmalar')
 
 @section('content')
-
+<br>
 
 <nav class="uk-navbar-container uk-margin" style="background-color:white; " uk-navbar="mode: click">
     <div class="uk-navbar-center">

@@ -136,7 +136,7 @@
 
                         </li>
                         <li>
-                            <a href="#">Anlaşmalı Firmalar</a>
+                            <a href="{{URL('/companies')}}">Anlaşmalı Firmalar</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="{{URL('/companies')}}#mobilya">Mobilya - Beyaz Eşya</li>
@@ -150,15 +150,18 @@
                         </li>
 
 
-
-
-
-
-
-
-                        <li class="@if(Request::segment(1) =='about') active @endif">
-                            <a href="{{URL('/member_postings')}}" title="Üye İlanları">Üye İlanları</a>
+                        <li>
+                            <a href="{{URL('/member_postings')}}">Üye İlanları</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="{{URL('/member_postings')}}#konut">Konut İlanları</li>
+                                    <li><a href="{{URL('/member_postings')}}#arac">Araç İlanları </a></li>
+                                    <li><a href="{{URL('/member_postings')}}#diger">Diğer İlanlar</a></li>
+                                   
+                                </ul>
+                            </div>
                         </li>
+ 
                         <li>
                             <a href="{{URL('/markets')}}">Market</a>
                             <div class="uk-navbar-dropdown">
@@ -271,9 +274,17 @@
                         </ul>
                     </li>
                     <li class="uk-nav-divider"></li>
-                    <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/member_postings')}}">Üye İlanları</a>
-                            </li>
+                    <li>
+                        <a href="{{URL('/member_postings')}}">Üye İlanları</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="{{URL('/member_postings')}}#konut">Konut İlanları</li>
+                                <li><a href="{{URL('/member_postings')}}#arac">Araç İlanları </a></li>
+                                <li><a href="{{URL('/member_postings')}}#diger">Diğer İlanlar</a></li>
+                               
+                            </ul>
+                        </div>
+                    </li>
                     <li class="uk-nav-divider"></li>
                     <li class="uk-parent">
                         <a href="{{URL('/markets')}}" title="Harpsan">Market</a>
