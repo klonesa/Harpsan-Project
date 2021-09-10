@@ -64,7 +64,7 @@ class Advisory_Board extends Controller
           $advisory->position_tr = $request->position_tr;  
           $advisory->text_tr = $request->text_tr;
           $advisory->e_mail = $request->e_mail;
-          $supervisoryboard->phone = $request->phone;
+          $advisory->phone = $request->phone;
           $advisory->instagram = $request->instagram;
           $advisory->facebook = $request->facebook;
           $advisory->twitter = $request->twitter;

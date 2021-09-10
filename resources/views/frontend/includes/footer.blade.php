@@ -103,11 +103,22 @@
 
     </div>
 
-  
- 
+   <script>
+            $(function(){
+                // sayfa açılışında dialog kutusunun gelmesi için her hangi bir buton için yerleştirmedik
+                $("#uyari").dialog({
+                    width:600, //dialog kutusunun genişliği
+                    modal:true, //arkaplanın koyu olması
+                    autoOpen:true, //gerek yok ama otomatik açılması için
+                    position:  { my: "center top", at: "center top" } //konum
+                });
+            })
+            
+        </script>
 
      <script>
-        var acceptButton = document.getElementById('acceptButton');
+         
+         var acceptButton = document.getElementById('acceptButton');
         var acceptCookies = new XMLHttpRequest();
         var cookiesRoute = 'index.html';
         function acceptCookie() {
