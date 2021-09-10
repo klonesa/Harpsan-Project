@@ -177,16 +177,14 @@ class Member_Postings extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $member_postings = Member_Posting::find($id);
-        // Delete a style_logo_en photo
-        if ($member_postings->image != "") {
-            unlink('uploads/member_postings/' . $member_postings->image);
+  
+        public function destroy($id)
+        {
+            Member_Posting::where('id',$id)->delete();
+            return redirect()->back();
         }
-        $member_postings->delete();
-        return redirect('admin/member_postings')->with('success', trans('Information has been deleted sucessfully'));
-    }
+     
+    
 
 
 

@@ -45,13 +45,13 @@
                                      <td>
                                         <a href="{{route('admin.member_postings.edit',$mem->id) }}"> <i class="feather icon-edit font-medium-5"></i> </a>
                                         <a href=""
-                                            onclick="if(confirm('Are You sure you want to delete this')){mem.preventDefault();document.getElementById('delete-form-{{ $mem->id }}').submit();}else{mem.preventDefault();}">
-                                            <i class="feather icon-trash  font-medium-5"> </i></a>
-                                        <form id="delete-form-{{ $mem->id }}" method="post" action="{{ route('admin.member_postings.destroy',$mem->id) }}">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                        </form>
-
+                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $mem->id }}').submit();}else{event.preventDefault();}">
+                                                <i class="feather icon-trash  font-medium-5"> </i></a>
+                                            <form id="delete-form-{{ $mem->id }}" method="post"
+                                                action="{{ route('admin.member_postings.destroy',$mem->id) }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                            </form>
                                     </td>
                                     </tr>
                                     @endforeach
