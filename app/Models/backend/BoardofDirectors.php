@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BoardofDirectors extends Model
 {
     protected $fillable = [
-        'name_tr','text_tr','position_tr',
+      'id',  'name_tr','text_tr','position_tr',
            ];
        
            /**
