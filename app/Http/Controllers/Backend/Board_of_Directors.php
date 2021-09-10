@@ -161,8 +161,7 @@ class Board_of_Directors extends Controller
     public function destroy($id)
     {
         $boardofdirectory = BoardofDirectors::where('id', $id)->first();
-        unlink('uploads/' . $boardofdirectory->image);
-        $boardofdirectory->delete();
+         $boardofdirectory->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 
     }
