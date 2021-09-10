@@ -202,16 +202,26 @@ class FrontPagesController extends BaseFrontendController
     
     public function companies(Company $companies)
     {
-        $companiesa = Company::Where('category','Mobilya-Beyaz Eşya')->paginate(4);
-        $companiesb = Company::Where('category','Ayakkabı - Giyim')->paginate(4);
-        $companiesc = Company::Where('category','Yiyecek - İçecek')->paginate(4);
-        $companiesd = Company::Where('category','Sağlık - Eğitim')->paginate(4);
-        $companiese = Company::Where('category','Otomotiv')->paginate(4);
-        $companiesf = Company::Where('category','Diğerleri')->paginate(4);
+        $companiesa = Company::Where('category','Mobilya-Beyaz Eşya')->paginate(20);
+        $companiesb = Company::Where('category','Ayakkabı - Giyim')->paginate(20);
+        $companiesc = Company::Where('category','Yiyecek - İçecek')->paginate(20);
+        $companiesd = Company::Where('category','Sağlık - Eğitim')->paginate(20);
+        $companiese = Company::Where('category','Otomotiv')->paginate(20);
+        $companiesf = Company::Where('category','Diğerleri')->paginate(20);
 
 
         
         return view('frontend.companies.companies', compact('companiesa','companiesb','companiesc','companiesd','companiese','companiesf'));
+    }
+    public function member_posting(Member_Posting $member_postings)
+    {
+        $member_postingsa = Member_Posting::Where('category','Konut')->paginate(20);
+        $member_postingsb = Member_Posting::Where('category','Araç')->paginate(20);
+        $member_postingsc = Member_Posting::Where('category','Diğer')->paginate(20);
+      
+
+        
+        return view('frontend.member_postings.member_postings', compact('member_postingsa','member_postingsb','member_postingsc'));
     }
 
     public function markets(ShoppingModel $markets)
@@ -227,6 +237,8 @@ class FrontPagesController extends BaseFrontendController
         
         return view('frontend.markets.markets', compact('marketsa','marketsb','marketsc','marketsd','marketse','marketsf'));
     }
+
+
 
 
    /* public function companies()

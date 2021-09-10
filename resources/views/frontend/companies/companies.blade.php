@@ -17,13 +17,6 @@
     <button class="uk-button uk-button-primary uk-button-small">  <li><a style="color:white;" href="#otomotiv">Otomotiv</a></li></button>
     <button class="uk-button uk-button-primary uk-button-small"><li><a style="color:white;" href="#digerleri">Diğerleri</a></li></button>
 </p>
-            
-            
-            
-           
-          
-            
-
         </ul>
 
     </div>
