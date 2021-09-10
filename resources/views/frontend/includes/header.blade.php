@@ -322,7 +322,7 @@
               <p>Değerli üyelerimiz sizlerin talep ve destekleri ile çıktığımız bu yolda, daha iyi hizmet verebilmek için hazırladığımız internet sitemizi kullanımınıza sunuyoruz. Harbsan ailesi olarak bundan sonra yapacagimiz çalışmaları buradan takip edebilirsiniz. Sizin için çalışmaya devam ediyoruz. Bizi takip etmeye devam edin.</p>
             </div>
             <div class="modal-footer">
-                <a id="closemodal" href="https://harpsantuketim.com" class="btn btn-primary" >Hoşgeldiniz</a>
+                <a id="closemodal" href="{{route('frontend.index')}}" class="btn btn-primary" >Hoşgeldiniz</a>
               </div>
           </div>
       
