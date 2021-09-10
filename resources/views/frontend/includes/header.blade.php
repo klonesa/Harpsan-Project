@@ -211,7 +211,8 @@
                             </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a
-                                    href="{{URL('/about/board-of-directors')}}">{{ trans('frontend.board_of_directors') }}</a>
+                                
+                                    href="{{URL('/about/boardofdirectory')}}">{{ trans('frontend.board_of_directors') }}</a>
                             </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/executive-management')}}">Başkanlarımız</a>
