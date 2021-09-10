@@ -8,3 +8,5 @@
 vendor/composer/autoload_classmap.php
 .gitignore
 vendor/composer/installed.php
+/.env
+.env

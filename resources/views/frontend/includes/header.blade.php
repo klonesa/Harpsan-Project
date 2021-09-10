@@ -310,27 +310,4 @@
         </div>
 
     </header>  
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-      
-          <!-- Modal content-->
-          <div class="modal-content">
-          
-            <div class="modal-body">
-              <p>Değerli üyelerimiz sizlerin talep ve destekleri ile çıktığımız bu yolda, daha iyi hizmet verebilmek için hazırladığımız internet sitemizi kullanımınıza sunuyoruz. Harp-San ailesi olarak bundan sonra yapacagimiz çalışmaları buradan takip edebilirsiniz. Sizin için çalışmaya devam ediyoruz. Bizi takip etmeye devam edin.</p>
-            </div>
-             
-          </div>
-      
-        </div>
-      </div>
- 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-          <!-- JavaScript Bundle with Popper -->
-          <script type="text/javascript">
-        $(window).on('load', function() {
-            $('#myModal').modal('show');
-        });
-         
-    </script>
- 
+   
