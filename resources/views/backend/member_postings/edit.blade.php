@@ -19,7 +19,14 @@
                     <div class="card-content">
                     <div class="card-body">
 
+                        <div class="row">
 
+                             <div class="col-12">
+
+                                <div class="card">
+                                    <div class="header">
+                                        <h2>{{ trans('backend.images') }}</h2>
+ 
                         <section id="statistics-card">
                             <div class="row">
                                 @foreach ($member_postings->gallery_images as $gallery_images)
@@ -37,94 +44,39 @@
                                                 <button class="deleteimage" data-id="{{ $gallery_images->id }}"
                                                     data-token="{{ csrf_token() }}">{{ trans('backend.delete') }}</button>
                                             </div>
+ 
+                                    </div>
+                                    <div class="body">
+                                        <div class="file-loading">
+                                            <input id="file-1" type="file" name="gallery_image" multiple
+                                                class="file" data-overwrite-initial="false" data-min-file-count="0">
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
-                            </div>
-                        </section>
 
-
-                        <script>
-                        $(".deleteimage").click(function() {
-                            var id = $(this).data("id");
-                            var token = $(this).data("token");
-                            $.ajax({
-                                url: "<?php echo url('admin/member_postings/image') ?>/" + id,
-                                type: 'delete',
-                                dataType: "JSON",
-                                data: {
-                                    "id": id,
-                                    "_method": 'delete',
-                                    "_token": token,
-                                },
-                                success: function() {
-
-                                    console.log("it Work");
-                                    $('#' + id).hide();
-                                }
-                            });
-
-                        });
-                        </script>
-                        <form role="form" action="{{ route('admin.member_postings.update',$member_postings->id) }}" method="post"
-                            enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
-
-
-                            <div class="row">
-
-                                <div class="col-8">
-
-                                    <div class="card">
-                                        <div class="header">
-                                            <h2>{{ trans('backend.images') }}</h2>
-                                        </div>
-                                        <div class="body">
-                                            <div class="file-loading">
-                                                <input id="file-1" type="file" name="member_post[]" multiple
-                                                    class="file" data-overwrite-initial="false" data-min-file-count="0">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <script type="text/javascript">
-                                    $("#file-1").fileinput({
-                                        rtl: true,
-                                        showUpload: false,
-                                        theme: 'fa',
-                                        uploadUrl: "/image-view",
-                                        uploadExtraData: function() {
-                                            return {
-                                                _token: $("input[name='_token']").val(),
-                                            };
-                                        },
-                                        allowedFileExtensions: ['jpg', 'png', 'jpeg'],
-                                        overwriteInitial: false,
-                                        maxFilesNum: 20,
-                                        slugCallback: function(filename) {
-                                            return filename.replace('(', '_').replace(']', '_');
-                                        }
-                                    });
-                                    </script>
-
-
-
-                                </div>
-
-
+                                <script type="text/javascript">
+                                $("#file-1").fileinput({
+                                    rtl: true,
+                                    showUpload: false,
+                                    theme: 'fa',
+                                    uploadUrl: "/image-view",
+                                    uploadExtraData: function() {
+                                        return {
+                                            _token: $("input[name='_token']").val(),
+                                        };
+                                    },
+                                    allowedFileExtensions: ['jpg', 'png', 'jpeg'],
+                                    overwriteInitial: false,
+                                    maxFilesNum: 20,
+                                    slugCallback: function(filename) {
+                                        return filename.replace('(', '_').replace(']', '_');
+                                    }
+                                });
+                                </script>
                             </div>
 
-
-
-
-
-
-
-                        </form>
-
-
+                        </div>
+   </div>
                
 
 
@@ -141,7 +93,16 @@
 
         <input type="text" class="form-control" name="location_tr" value="{{ $member_postings->location_tr }}"
             aria-required="true">
-
+            <h4 class="card-title">Kategori</h4>
+        </div>
+        <div class="body">
+            <div class="multiselect_div">
+                <select id="single-selection" name="category"
+                    class="form-control">
+                    <option value="Konut">Konut</option>
+                    <option value="Araç">Araç</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
 
         <h4 class="card-title">
             İlan Detayları</h4>

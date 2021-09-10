@@ -89,7 +89,7 @@ Route::get('activities/single/{activity}', 'FrontPagesController@activity')->nam
 // events
 Route::get('/events', 'FrontPagesController@events')->name('events');
 
-Route::get('/member_postings', 'FrontPagesController@member_postings')->name('member_postings');
+Route::get('/member_postings', 'FrontPagesController@member_posting')->name('member_postings');
 
 
 // event single

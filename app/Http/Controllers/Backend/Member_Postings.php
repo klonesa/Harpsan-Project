@@ -53,6 +53,8 @@ class Member_Postings extends Controller
 
         $member_postings->name_tr = $request->name_tr;
         $member_postings->text_tr = $request->text_tr;
+        $member_postings->category = $request->category;
+
         $member_postings->location_tr = $request->location_tr;
 
         $member_postings->slug =  Str::slug($request->name_tr);
@@ -136,6 +138,8 @@ class Member_Postings extends Controller
         $member_postings->name_tr = $request->name_tr;
         $member_postings->text_tr = $request->text_tr;
         $member_postings->location_tr = $request->location_tr;
+        $member_postings->category = $request->category;
+        
 
         $member_postings->slug =  Str::slug($request->name_en);
 
@@ -158,6 +162,9 @@ class Member_Postings extends Controller
                 $gallery_images->save();
         }
     }
+ }
+
+ 
 
  
             return redirect('admin/member_postings')->with('success', trans('Information has been updated sucessfully'));
