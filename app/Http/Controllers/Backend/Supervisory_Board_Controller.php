@@ -163,7 +163,6 @@ class Supervisory_Board_Controller extends Controller
     public function destroy($id)
     {
         $supervisoryboard = SupervisoryBoard::where('id', $id)->first();
-        unlink('uploads/teams/' . $supervisoryboard->image);
         $supervisoryboard->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 
