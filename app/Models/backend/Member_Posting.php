@@ -24,13 +24,9 @@ class Member_Posting extends Model
 
     ];
 
-    public function getRouteKeyName()
+    
+    public function member_post()
     {
-        return  'slug';
+        return $this->hasMany('App\Models\frontend\member_post');
     }
-
-    // public function member_post()
-    // {
-    //     return $this->hasMany('App\Models\frontend\member_post');
-    // }
 }

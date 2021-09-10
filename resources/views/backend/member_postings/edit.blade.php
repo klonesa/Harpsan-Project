@@ -21,11 +21,30 @@
 
                         <div class="row">
 
-                            <div class="col-12">
+                             <div class="col-12">
 
                                 <div class="card">
                                     <div class="header">
                                         <h2>{{ trans('backend.images') }}</h2>
+ 
+                        <section id="statistics-card">
+                            <div class="row">
+                                @foreach ($member_postings->gallery_images as $gallery_images)
+                                <div id="{{ $gallery_images->id }}" class="col-xl-2 col-md-4 col-sm-6">
+                                    <div class="card text-center">
+                                        <div class="card-content">
+                                            <div class="card-body">
+
+                                                <img width="200" height="100" class="user-photo"
+                                                    src="{{ URL::to('uploads/member_postings/',$gallery_images->gallery_image_path) }}"
+                                                    alt="sdfsf">
+
+
+                                                <br>
+                                                <button class="deleteimage" data-id="{{ $gallery_images->id }}"
+                                                    data-token="{{ csrf_token() }}">{{ trans('backend.delete') }}</button>
+                                            </div>
+ 
                                     </div>
                                     <div class="body">
                                         <div class="file-loading">
