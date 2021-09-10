@@ -162,7 +162,7 @@ class Member_Postings extends Controller
                 $gallery_images->save();
         }
     }
- }
+ 
 
  
 
