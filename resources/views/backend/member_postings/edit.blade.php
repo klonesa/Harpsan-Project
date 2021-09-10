@@ -22,19 +22,19 @@
 
                         <section id="statistics-card">
                             <div class="row">
-                                @foreach ($member_postings->gallery_images as $member_post)
-                                <div id="{{ $member_post->id }}" class="col-xl-2 col-md-4 col-sm-6">
+                                @foreach ($member_postings->gallery_images as $gallery_images)
+                                <div id="{{ $gallery_images->id }}" class="col-xl-2 col-md-4 col-sm-6">
                                     <div class="card text-center">
                                         <div class="card-content">
                                             <div class="card-body">
 
                                                 <img width="200" height="100" class="user-photo"
-                                                    src="{{ URL::to('uploads/member_postings/',$member_post->gallery_image_path) }}"
+                                                    src="{{ URL::to('uploads/member_postings/',$gallery_images->gallery_image_path) }}"
                                                     alt="sdfsf">
 
 
                                                 <br>
-                                                <button class="deleteimage" data-id="{{ $member_post->id }}"
+                                                <button class="deleteimage" data-id="{{ $gallery_images->id }}"
                                                     data-token="{{ csrf_token() }}">{{ trans('backend.delete') }}</button>
                                             </div>
                                         </div>
