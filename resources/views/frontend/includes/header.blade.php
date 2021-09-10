@@ -211,7 +211,7 @@
                                     href="{{URL('/about/board-of-directors')}}">{{ trans('frontend.board_of_directors') }}</a>
                             </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/about/executive-management')}}">Başkanlar</a>
+                                <a href="{{URL('/about/executive-management')}}">Başkanlarımız</a>
                             </li>
                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/founding_members')}}">Kurucu Üyeler</a>
@@ -220,10 +220,7 @@
                                 <a href="{{URL('/about/supervisoryboard')}}">Denetleme Kurulu</a>
                             </li>
                             <li><a href="{{URL('/about/advisory')}}">Danışma ve İstişare Kurulu</a></li>
-                            <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a
-                                    href="{{URL('/about/organizational-structure')}}">{{ trans('frontend.organizational_structure') }}</a>
-                            </li>
+                           
                             <li><a href="{{URL('/about')}}">Hakkımızda</a></li>
                             <li><a href="{{URL('/about')}}">Vizyonumuz</a></li>
                             <li><a href="{{URL('/about')}}">Misyonumuz</a></li>
