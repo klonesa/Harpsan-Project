@@ -34,9 +34,7 @@
                                                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/supervisoryboard')}}">Denetleme Kurulu</a>
                             </li>
-                                                            <li class="@if(Request::segment(1) =='about') active @endif">
-                                <a href="{{URL('/about/organizational-structure')}}">{{ trans('frontend.organizational_structure') }}</a>
-                            </li>
+                                                      
                                                             <li class="@if(Request::segment(1) =='about') active @endif">
                                 <a href="{{URL('/about/bylaws')}}">{{ trans('frontend.bylaws') }}</a>
                             </li>
