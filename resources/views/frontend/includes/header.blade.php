@@ -316,10 +316,10 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button  type="button" class="close" data-dismiss="modal">&times;</button>
+              <button id="closemodal" type="button" class="close" data-dismiss="modal">&times;</button>
              </div>
             <div class="modal-body">
-              <p>Değerli üyelerimiz sizlerin talep ve destekleri ile çıktığımız bu yolda, daha iyi hizmet verebilmek için hazırladığımız internet sitemizi kullanımınıza sunuyoruz. Harbsan ailesi olarak bundan sonra yapacagimiz çalışmaları buradan takip edebilirsiniz. Sizin için çalışmaya devam ediyoruz. Bizi takip etmeye devam edin.</p>
+              <p>Değerli üyelerimiz sizlerin talep ve destekleri ile çıktığımız bu yolda, daha iyi hizmet verebilmek için hazırladığımız internet sitemizi kullanımınıza sunuyoruz. Harp-San ailesi olarak bundan sonra yapacagimiz çalışmaları buradan takip edebilirsiniz. Sizin için çalışmaya devam ediyoruz. Bizi takip etmeye devam edin.</p>
             </div>
             <div class="modal-footer">
                 <a id="closemodal" href="{{route('frontend.index')}}" class="btn btn-primary" >Hoşgeldiniz</a>
