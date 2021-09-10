@@ -65,7 +65,7 @@ class Board_of_Directors extends Controller
           $boardofdirectory->position_tr = $request->position_tr;  
           $boardofdirectory->text_tr = $request->text_tr;
           $boardofdirectory->e_mail = $request->e_mail;
-          $supervisoryboard->phone = $request->phone;
+          $boardofdirectory->phone = $request->phone;
           $boardofdirectory->instagram = $request->instagram;
           $boardofdirectory->facebook = $request->facebook;
           $boardofdirectory->twitter = $request->twitter;
