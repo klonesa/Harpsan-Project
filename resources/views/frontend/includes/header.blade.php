@@ -315,25 +315,22 @@
       
           <!-- Modal content-->
           <div class="modal-content">
-            <div class="modal-header">
-              <button id="closemodal" type="button" class="close" data-dismiss="modal">&times;</button>
-             </div>
+          
             <div class="modal-body">
               <p>Değerli üyelerimiz sizlerin talep ve destekleri ile çıktığımız bu yolda, daha iyi hizmet verebilmek için hazırladığımız internet sitemizi kullanımınıza sunuyoruz. Harp-San ailesi olarak bundan sonra yapacagimiz çalışmaları buradan takip edebilirsiniz. Sizin için çalışmaya devam ediyoruz. Bizi takip etmeye devam edin.</p>
             </div>
-            <div class="modal-footer">
-                <a id="closemodal" href="{{route('frontend.index')}}" class="btn btn-primary" >Hoşgeldiniz</a>
-              </div>
+             
           </div>
       
         </div>
       </div>
+ 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <script type="text/javascript">
+          <!-- JavaScript Bundle with Popper -->
+          <script type="text/javascript">
         $(window).on('load', function() {
             $('#myModal').modal('show');
         });
-        $('#closemodal').click(function() {
-    $('#modalwindow').modal('hide');
-});
+         
     </script>
+ 
