@@ -143,27 +143,30 @@ class Member_Postings extends Controller
 
         $member_postings->slug =  Str::slug($request->name_en);
 
+        $gallery = gallery::find($id);
+        $gallery->title_tr = $request->title_tr;
+        $gallery->type = $request->type;
+        $gallery->video_url = $request->video_url;
 
-
+        $gallery->save();
         // Start of Upload Files
-    
-        $member_postings->save();
-   // Start of Upload Files
-   if ($request->hasFile('gallery_images')) {
-    $all_images = $request->file('gallery_images');
-    $path = $this->getUploadPath();
-    foreach ($all_images as $file) {
-        $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
-        $file->move($path, $image_name);
-        $gallery_images = new member_post;
-        $gallery_images->gallery_id = $id;
-        $gallery_images->gallery_image_path = $image_name;
-        $gallery_images->save();
-        
+        if ($request->hasFile('gallery_images')) {
+            $all_images = $request->file('gallery_images');
+            $path = $this->getUploadPath();
+            foreach ($all_images as $file) {
+                $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $image_name);
+                $gallery_images = new gallery_images;
+                $gallery_images->gallery_id = $id;
+                $gallery_images->gallery_image_path = $image_name;
+                $gallery_images->save();
+        }
     }
-}
+ }
 
+ 
 
+ 
             return redirect('admin/member_postings')->with('success', trans('Information has been updated sucessfully'));
 
     }
