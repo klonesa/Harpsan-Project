@@ -173,7 +173,7 @@
                 </li>
 
                 <li class=" nav-item ">
-                    <a href="{{ route('admin.member_postings.index') }}"><i class="feather icon-image"></i><span
+                    <a href="{{ route('admin.advert.index') }}"><i class="feather icon-image"></i><span
                             class="menu-title"
                             data-i18n="User">Üye İlanları</span>
                     </a>

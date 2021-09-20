@@ -13,6 +13,7 @@ use App\Models\backend\activity;
 use App\Models\backend\unit_type;
 use App\Models\backend\StaticPages;
 use App\Models\backend\activity_type;
+use App\Models\backend\Advert;
 use App\Models\backend\advertisement;
 use App\Models\backend\FoundingMembers;
 use App\Models\backend\AdvisoryBoard;
@@ -21,18 +22,10 @@ use App\Models\backend\BoardofDirectors;
 use App\Models\backend\Member_Posting;
 use App\Models\frontend\member_post;
 use App\Models\backend\ShoppingController;
-
-
-
-
-
-
-
-
 use App\Models\backend\ShoppingModel;
 
-
 use App\Http\Controllers\Frontend\BaseFrontendController;
+use App\Models\frontend\advert_images;
 
 /**
  * Class HomeController.
@@ -147,6 +140,7 @@ class FrontPagesController extends BaseFrontendController
         $founding_members = FoundingMembers::all();
         return view('frontend.founding_members.founding_member', compact('founding_members'));
     }
+ 
 
     public function supervisoryboard()
     {
@@ -181,19 +175,7 @@ class FrontPagesController extends BaseFrontendController
     {
         return view('frontend.events.event-single', compact('event'));
     }
-
-    
-    public function member_postings()
-    {
-
-        $member_postings = member_posting::orderBy("id", "desc")->paginate(6);
-        return view('frontend.member_postings.member_postings', compact('member_postings'));
-    }
-
-    public function member_posting_single(Member_Posting $member_posting)
-    {
-        return view('frontend.member_postings.member_posting-single', compact('member_posting'));
-    }
+   
 
   
 
@@ -213,11 +195,12 @@ class FrontPagesController extends BaseFrontendController
         
         return view('frontend.companies.companies', compact('companiesa','companiesb','companiesc','companiesd','companiese','companiesf'));
     }
-    public function member_posting(Member_Posting $member_postings)
+    public function member_posting(Advert $advert)
     {
-        $member_postingsa = Member_Posting::Where('category','Konut')->paginate(20);
-        $member_postingsb = Member_Posting::Where('category','Araç')->paginate(20);
-        $member_postingsc = Member_Posting::Where('category','Diğer')->paginate(20);
+        
+        $member_postingsa = Advert::Where('category','Konut')->with('gallery_images')->paginate(20);
+         $member_postingsb = Advert::Where('category','Araç')->with('gallery_images')->paginate(20);
+        $member_postingsc = Advert::Where('category','Diğer')->with('gallery_images')->paginate(20);
       
 
         
@@ -302,8 +285,19 @@ class FrontPagesController extends BaseFrontendController
         $galleries = Gallery::orderBy("id", "desc")->paginate(9);
         return view('frontend.gallery', compact('galleries'));
     }
+    
+    
+ 
+  
+    public function member_posting_single(Advert $advert)
+    {
+         
+        $advert = Advert::orderBy("id", "desc")->paginate(9);
 
+         return view('frontend.member_postings.member_posting-single', compact('advert'));
+    }
 
+    
     public function shopping()
     {
 

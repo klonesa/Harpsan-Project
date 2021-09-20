@@ -1,81 +1,65 @@
 @extends('frontend.layouts.app')
-
-@section('title', GeneralSiteSettings('site_title') )
-
+@section('title', GeneralSiteSettings('site_title') . ' | ' . trans('backend.gallery'))
 @section('content')
 
-<!-- Start main-content -->
-<div class="main-content">
 
+<section id="tm-home-news" class="uk-section tm-filter-after">
+    <div class="uk-container">
 
-    <div class="uk-section">
-        <div class="uk-container">
+        <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
+             <div class="uk-width-1-1@m">
+            @foreach ($advert as $gallery)
+            <h2><b>{{ $gallery->title_tr}}</b></h2> <br>
+      
+                 <div id="grid" class="gallery-isotope grid-3 gutter clearfix">
+                    <!-- Portfolio Item Start -->
+                    
 
-            <div uk-grid>
-                <div class="uk-width-expand">
-                    <article class="uk-article uk-card uk-card-default uk-border-rounded">
-
-                        <div class="tm-event-media uk-card-media-top uk-grid-collapse" uk-grid>
-                            <div class="uk-width-3-5@m">
-                                <img src="{{  asset('uploads/member_posting/')}}/{{ $member_posting->image }}" alt="{{$member_posting->name}}"
-                                    uk-img>
-                            </div>
-                            <div class="uk-width-expand">
-                                <div class="uk-card uk-card-body">
-                                    <div class="tm-event date">
-                                        
-                                    </div>
-                                    <div class="tm-event-name">
-                                        <h1 class="uk-h4 uk-text-bold uk-margin-small-bottom">{{$member_posting->name_tr}}</h1>
-                                    </div>
- 
-                                    <div class="tm-event-register uk-margin-medium-top">
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Portfolio Item Start -->
+               
+                    <div class="uk-child-width-1-4@m" uk-grid uk-lightbox="animation: scale">
+                        @foreach ($gallery->gallery_images->take(4) as $image)
+                        <div>
+                            <a class="uk-inline" href="{{asset('uploads/galleries/')}}/{{ $image->gallery_image_path}}"
+                                data-caption="Caption 3">
+                                <img src="{{asset('uploads/galleries/')}}/{{ $image->gallery_image_path}}"
+                                    alt="{{ $gallery->title}}">
+                            </a>
                         </div>
-
-                        <div class="tm-event-body uk-card-body">
-                            <div uk-grid>
-
-                                <div class="uk-width-3-5@m">
-                                    <div class="tm-event-details uk-panel">
-                                        <h4 class="uk-text-bold">Etkinlik Detayı</h4>
-
-                                        <div>
-                                            <p class="MsoNormal">{!! $member_posting->text_tr !!}
-                                            <p class="MsoNormal"></p>
-                                            <p></p>
-
-                                            <p class="MsoNormal"></p>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="uk-width-expand">
-                                    <div class="tm-event-meta uk-panel">
-                                       <b>Lokasyon: </b> 
-                                        <p class="uk-margin-remove-top">{{$member_posting->location_tr}}</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </article>
+                        @endforeach
+                        </ul>
+                    </div>
+                    <div> <p><h2>Konum:</h2> {{$gallery->location_tr}}</p> </div>   
+                    <div> <p><h2>İlan Detayları:</h2> {!!$gallery->text_tr!!}</p> </div>   
+            
                 </div>
+
+               
             </div>
+            <!-- Portfolio Item End -->
+
+
+
+
+
+            <nav>
+                <ul class="pagination theme-colored">
+                    {{ $advert->links() }}
+                </ul>
+            </nav>
+
+
+          
 
         </div>
+        <!-- End Portfolio Gallery Grid -->
+
     </div>
-
-
-
-</div>
+    @endforeach
+    </div>
+    </div>
+    </div>
 </section>
-</div>
-<!-- end main-content -->
+
 
 @endsection

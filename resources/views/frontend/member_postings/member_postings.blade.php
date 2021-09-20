@@ -37,21 +37,30 @@
         <div uk-slider>
 
             <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-
+               
+             
                 <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
                     @foreach ($member_postingsa as $posta )
                     <li>
                         <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top" style="text-align:center;">
-                                    <a href="{{ route('frontend.member_posting',$posta->slug) }}"></a> <img
-                                        src="{{  asset('uploads/member_postings/')}}/{{ $posta->image }}" style="max-height:200px;"
-                                        alt=""></a>
-                                </div>
+                                    @foreach ($posta->gallery_images->take(1) as $image)
+                                    <div>
+                                        
+                                        <a href="{{ route('frontend.member_posting',$posta->slug) }}"></a> <img
+                                        src="{{asset('uploads/galleries/')}}/{{ $image->gallery_image_path}}" style="max-height:200px;"
+                                        alt="{{ $posta->title_tr}}"></a>
+                                    </div>
+                                    @endforeach
+                                  
+                                    </div>
+
                                 <div class="uk-card-body">
                                     <a href="{{route('frontend.member_posting',$posta->slug)}}">
-                                        <h3 class="uk-card-title">{{$posta->name_tr}}</h3>
+                                        <h3 class="uk-card-title">{{$posta->title_tr}}</h3>
                                     </a>
+                                    
                                     <p>{!!\Illuminate\Support\str::limit($posta->text_tr,200)!!}</p>
                                     <a href="{{route('frontend.member_posting',$posta->slug)}}"><button class="uk-button uk-button-danger">Detaylar</button></a>
                                 </div>

@@ -8,6 +8,7 @@ use App\Models\backend\activity;
 use App\Models\backend\activity_type;
 use App\Models\backend\contact_form;
 use App\Models\backend\Gallery;
+use App\Models\backend\Advert;
 use App\Models\backend\slider;
 use App\Models\backend\team;
 use App\Models\backend\testimonial;
@@ -48,7 +49,7 @@ class DashboardController extends BaseBackendController
         $sliders = slider::count();
         $contact_forms = contact_form::count();
         $activities = activity::count();
-        $galleries = Gallery::count();
+        $advert = Advert::count();
         $boards = User::where('is_board',1)->count();
         $activitytypes = activity_type::count();
         $unittypes = unit_type::count();
@@ -57,6 +58,6 @@ class DashboardController extends BaseBackendController
         $fields = field::count();
         $forum_categories = Category::count();
 
-        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams', 'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','galleries','boards'));
+        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams','advert', 'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','galleries','boards'));
     }
 }

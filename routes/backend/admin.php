@@ -56,6 +56,10 @@ Route::resource('field', 'FieldController');
 Route::resource('gallery', 'GalleryController');
 Route::delete('gallery/image/{id}', 'GalleryController@deleteImage');
 
+//advert
+Route::resource('advert', 'AdvertController');
+Route::delete('advert/image/{id}', 'AdvertController@deleteImage');
+
 
 // contacts form
 Route::get('contact_forms', 'Contact_FormsController@index')->name('contact_forms.index');
@@ -83,10 +87,7 @@ Route::post('about', 'AboutController@update')->name('about.update');
 //Event Controller
 Route::get('events/{id}', 'EventController@show')->where('id', '[0-9]+');
 Route::resource('events', 'EventController');
-
-Route::get('member_postings/{id}', 'Member_Postings@show')->where('id', '[0-9]+');
-Route::resource('member_postings', 'Member_Postings');
-
+ 
 //anlaşmalı firmalar
 Route::resource('company', 'CompanyController');
 Route::get('/company_delete/{id}', [CompanyController::class, 'delete'])->name('delete.company');
