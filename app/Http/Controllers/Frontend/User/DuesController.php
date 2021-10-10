@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Frontend\BaseFrontendController;
 use App\Models\Auth\User;
+use App\Models\backend\contact_form;
 use App\Models\Frontend\Dues;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class DuesController extends BaseFrontendController
      */
     public function index()
     {
- 
+
         $userId = Auth::id();
          
         $dues =Dues::orderBy('id','ASC')->where('user_id', '=', $userId )->limit(1)->get();
@@ -53,9 +54,13 @@ class DuesController extends BaseFrontendController
      * @param \App\Admin\Model\slider $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(BackendDues $dues)
+    public function show($id)
     {
-        //
+
+        $userId = Auth::id();
+
+        $dues =Dues::find($id);
+        return view('frontend.user.showdues', compact('dues'));
     }
 
     /**

@@ -163,6 +163,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
         Route::get('dues', [DuesController::class, 'index'])->name('dues');
+        Route::get('showdues/{id}', [DuesController::class, 'show'])->name('showdues');
         Route::get('shopping', [ShoppingController::class, 'index'])->name('shopping');
 
         // User Profile Specific
