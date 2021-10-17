@@ -13,37 +13,22 @@
                 <div class="card-content">
                     <div class="card-body">
 
-                        
-                        <div class="table-responsive">
-                            <table class="table add-rows">
-                                <thead>
-                                    <tr>
-                                        <th>Tarih</th>
-                                          <th>Açıklama</th>
-                                        <th>Detay Gör</th>
+                        <div class="row">
+                            <div class="col-4">
 
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                <div class="card main-sectionx">
+                                    <div class="header">
+                                        <h2>{{ trans('backend.image') }}</h2>
+                                    </div>
+                                    <div class="body">
+                                        <img src="{{ URL::to('uploads/dues',$dues->f_image) }}" width="100%" height="100%" alt="">
 
-                                    @foreach ($dues as $ad)
-                                    <tr>
-                                        <td>{{ $ad->date }}</td>
+                                    </div>
+                                </div>
 
-                                         <td>{!!$ad->description!!}</td>
-                                        <td>
-                                            <a href="{{   route('admin.frontend.showdues',$ad->id) }}"> <i
-                                                        class="feather icon-eye font-medium-5"></i> </a>
-                                        </td>
- 
-                                    </tr>
-                                    @endforeach
-
-
-                                </tbody>
-
-                            </table>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

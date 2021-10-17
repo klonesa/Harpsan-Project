@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PostImages extends Migration
+class DuesImages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class PostImages extends Migration
      */
     public function up()
     {
-        Schema::create('post_images', function (Blueprint $table) {
+        Schema::create('dues_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('post_id')->unsigned();
-            $table->string('post_image_path');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->integer('dues_id')->unsigned();
+            $table->string('dues_image_path');
+            $table->foreign('dues_id')->references('id')->on('dues')->onDelete('cascade');
             $table->timestamps();
         });
     }

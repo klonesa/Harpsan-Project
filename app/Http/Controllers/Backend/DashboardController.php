@@ -58,6 +58,6 @@ class DashboardController extends BaseBackendController
         $fields = field::count();
         $forum_categories = Category::count();
 
-        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams','advert', 'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','galleries','boards'));
+        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams','advert', 'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','boards'));
     }
 }
