@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\DuesController;
+use App\Http\Controllers\Frontend\User\DepositesController;
 use App\Http\Controllers\Frontend\User\ShoppingController;
 
 
@@ -163,6 +164,9 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
         Route::get('dues', [DuesController::class, 'index'])->name('dues');
+        Route::get('showdues/{id}', [DuesController::class, 'show'])->name('showdues');
+        Route::get('deposites', [DepositesController::class, 'index'])->name('deposites');
+        Route::get('showdeposites/{id}', [DepositesController::class, 'show'])->name('showdeposites');
         Route::get('shopping', [ShoppingController::class, 'index'])->name('shopping');
 
         // User Profile Specific

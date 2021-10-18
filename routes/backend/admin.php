@@ -101,6 +101,9 @@ Route::resource('testimonial', 'TestimonialController');
 
 //Dues
 Route::resource('dues', 'DuesController');
+//Deposites
+Route::resource('deposites', 'DepositesController');
+
 //Finance
 Route::resource('finance', 'FinanceController');
 Route::resource('financePayment', 'FinancePaymentController');
