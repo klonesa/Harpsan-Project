@@ -144,21 +144,21 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-2 col-md-4 col-sm-6">
-        <div class="card text-center">
-            <div class="card-content">
-                <div class="card-body">
-                    <div class="avatar bg-rgba-danger p-50 m-0 mb-1">
-                        <div class="avatar-content">
-                            <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image text-danger font-medium-5"></i></a>
-                        </div>
-                    </div>
-                <a href="{{ route('admin.gallery.index') }}"><h2 class="text-bold-700">{{ $galleries }}</h2>
-                    <p class="mb-0 line-ellipsis">{{ trans('backend.gallery') }}</p></a>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="col-xl-2 col-md-4 col-sm-6">--}}
+{{--        <div class="card text-center">--}}
+{{--            <div class="card-content">--}}
+{{--                <div class="card-body">--}}
+{{--                    <div class="avatar bg-rgba-danger p-50 m-0 mb-1">--}}
+{{--                        <div class="avatar-content">--}}
+{{--                            <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image text-danger font-medium-5"></i></a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                <a href="{{ route('admin.gallery.index') }}"><h2 class="text-bold-700">{{ $galleries }}</h2>--}}
+{{--                    <p class="mb-0 line-ellipsis">{{ trans('backend.gallery') }}</p></a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="card text-center">
             <div class="card-content">
@@ -288,4 +288,3 @@
 
 </section>
 @endsection
-

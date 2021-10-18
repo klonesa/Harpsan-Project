@@ -19,9 +19,9 @@
                                 <thead>
                                     <tr>
                                         <th>Tarih</th>
-                                        <th>Aidat Tutarı</th>
-                                        <th>Toplam Tutar</th>
-                                        <th>Açıklama</th>
+                                          <th>Açıklama</th>
+                                        <th>Detay Gör</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -29,9 +29,12 @@
                                     @foreach ($dues as $ad)
                                     <tr>
                                         <td>{{ $ad->date }}</td>
-                                        <td>{{ $ad->dues }}</td>
-                                        <td>{{ $ad->total}}</td>
+
                                          <td>{!!$ad->description!!}</td>
+                                        <td>
+                                            <a href="{{   route('frontend.user.showdues',$ad->id) }}"> <i
+                                                        class="feather icon-eye font-medium-5"></i> </a>
+                                        </td>
  
                                     </tr>
                                     @endforeach

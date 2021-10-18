@@ -17,9 +17,8 @@ class DuesTable extends Migration
             $table->increments('id');
             $table->bigInteger('user_id')->unsigned();
             $table->date('date')->nullable();
-            $table->decimal('dues', 12, 2)->nullable();
-            $table->decimal('total', 12, 2)->nullable();
-            $table->string('description')->nullable();
+              $table->string('description')->nullable();
+            $table->string('f_image');
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')

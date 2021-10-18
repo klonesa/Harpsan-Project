@@ -23,8 +23,6 @@
                                 <thead>
                                     <tr>
                                         <th>Tarih</th>
-                                        <th>Aidat</th>
-                                        <th>Toplam</th>
                                         <th>Üye Adı</th>
                                         <th>Açıklama</th>
                                     </tr>
@@ -34,8 +32,6 @@
                                     @foreach ($dues as $ad)
                                     <tr>
                                         <td>{{ $ad->date }}</td>
-                                        <td>{{ $ad->dues }}</td>
-                                        <td>{{ $ad->total}}</td>
                                         <td>{{ $ad->full_name_tr}}</td>
                                         <td>{!!$ad->description!!}</td>
 
