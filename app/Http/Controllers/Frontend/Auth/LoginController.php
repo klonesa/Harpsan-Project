@@ -89,11 +89,11 @@ class LoginController extends BaseFrontendController
             throw new GeneralException(__('exceptions.frontend.auth.confirmation.resend', ['url' => route('frontend.auth.account.confirm.resend', e($user->{$user->getUuidName()}))]));
         }
 
-        if (! $user->isActive()) {
-            auth()->logout();
+        // if (! $user->isActive()) {
+        //     auth()->logout();
 
-            throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
-        }
+        //     throw new GeneralException(__('exceptions.frontend.auth.deactivated'));
+        // }
 
         event(new UserLoggedIn($user));
 
