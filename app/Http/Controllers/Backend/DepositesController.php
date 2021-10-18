@@ -20,8 +20,8 @@ class DepositesController extends Controller
      */
     public function index()
     {
-        $deposites = BackendDeposites::query()->join('users', 'users.id', '=', 'dues.user_id')->select(
-            'dues.*',
+        $deposites = BackendDeposites::query()->join('users', 'users.id', '=', 'deposites.user_id')->select(
+            'deposites.*',
             'users.full_name_tr'
         )->get();
         return view('backend.deposites.index', compact('deposites'));

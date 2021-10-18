@@ -6,25 +6,25 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Aidat Düzenle</h4>
+                        <h4 class="card-title">Depozito Düzenle</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
 
                             <section id="statistics-card">
                                 <div class="row">
-                                    @foreach ($dues->dues_images as $dues_images)
-                                        <div  id="{{ $dues_images->id }}"  class="col-xl-2 col-md-4 col-sm-6">
+                                    @foreach ($deposites->deposites_images as $deposites_images)
+                                        <div  id="{{ $deposites_images->id }}"  class="col-xl-2 col-md-4 col-sm-6">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body">
 
-                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/dues',$dues_images->dues_image_path) }}"
+                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/deposites',$deposites_images->deposites_image_path) }}"
                                                              alt="">
 
 
                                                         <br>
-                                                        <button class="deleteimage" data-id="{{ $dues_images->id }}"
+                                                        <button class="deleteimage" data-id="{{ $deposites_images->id }}"
                                                                 data-token="{{ csrf_token() }}">{{ trans('backend.delete') }}</button>
                                                     </div>
                                                 </div>
@@ -37,7 +37,7 @@
 
 
 
-                            <form role="form" action="{{ route('admin.dues.update',$dues->id) }}" method="post"
+                            <form role="form" action="{{ route('admin.deposites.update',$deposites->id) }}" method="post"
                                   enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
@@ -50,7 +50,7 @@
                                                 <h2>{{ trans('backend.image') }}</h2>
                                             </div>
                                             <div class="body">
-                                                <input type="file" class="dropify" data-default-file="{{ URL::to('uploads/dues',$dues->f_image) }}" data-allowed-file-extensions="png jpg jpeg"
+                                                <input type="file" class="dropify" data-default-file="{{ URL::to('uploads/deposites',$deposites->f_image) }}" data-allowed-file-extensions="png jpg jpeg"
                                                        name="f_image" >
                                             </div>
                                         </div>
@@ -111,7 +111,7 @@
                                                             @foreach ($users as $user)
                                                                 <option
                                                                     value="{{ $user->id }}"
-                                                                    @if ($dues->user_id == $user->id)
+                                                                    @if ($deposites->user_id == $user->id)
                                                                     selected
                                                                     @endif
                                                                 >{{ $user->full_name_tr }}</option>
@@ -122,7 +122,7 @@
                                                     <div class="form-group">
                                                         <label class="card-title control-label" for="date">Tarih</label>
                                                         <input id="date" type="date" class="form-control" name="date"
-                                                               value="{{ $dues->date }}" min="2020-01-01"
+                                                               value="{{ $deposites->date }}" min="2020-01-01"
                                                                aria-required="true" required>
                                                     </div>
 
@@ -131,7 +131,7 @@
                                                         <label class="card-title control-label" for="description">Açıklama</label>
                                                         <textarea class="form-control" id="description"
                                                                   name="description"
-                                                                  rows="3">{{ $dues->description }}</textarea>
+                                                                  rows="3">{{ $deposites->description }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -141,7 +141,7 @@
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                     <a type="button" class="btn btn-warning"
-                                       href="{{   route('admin.dues.index')   }}">{{ trans('backend.back') }}</a>
+                                       href="{{   route('admin.deposites.index')   }}">{{ trans('backend.back') }}</a>
                                 </div>
                             </form>
                         </div>

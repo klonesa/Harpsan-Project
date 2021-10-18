@@ -7,13 +7,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Aidat Oluştur</h4>
+                        <h4 class="card-title">Depozito Oluştur</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
 
 
-                            <form role="form" action="{{ route('admin.dues.store') }}" method="post"
+                            <form role="form" action="{{ route('admin.deposites.store') }}" method="post"
                                   enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
@@ -88,7 +88,7 @@
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                     <a type="button" class="btn btn-warning"
-                                       href="{{   route('admin.dues.index')   }}">{{ trans('backend.back') }}</a>
+                                       href="{{   route('admin.deposites.index')   }}">{{ trans('backend.back') }}</a>
                                 </div>
                             </form>
 
