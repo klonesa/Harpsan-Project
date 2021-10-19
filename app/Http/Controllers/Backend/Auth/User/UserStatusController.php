@@ -60,13 +60,13 @@ class UserStatusController extends BaseBackendController
     {
         $this->userRepository->mark($user, (int) $status);
 
-        if((int) $status === 1){
-            $user->notify(new UserNeedsConfirmation($status));
-            return redirect()->route('admin.auth.user.index')->withFlashSuccess(__('alerts.backend.users.updated'));
-        }else {
-            $user->notify(new UserNeedsConfirmation($status));
-            return redirect()->route('admin.auth.user.deactivated')->withFlashSuccess(__('alerts.backend.users.updated'));
-        }
+        // if((int) $status === 1){
+        //     $user->notify(new UserNeedsConfirmation($status));
+        //     return redirect()->route('admin.auth.user.index')->withFlashSuccess(__('alerts.backend.users.updated'));
+        // }else {
+        //     $user->notify(new UserNeedsConfirmation($status));
+        //     return redirect()->route('admin.auth.user.deactivated')->withFlashSuccess(__('alerts.backend.users.updated'));
+        // }
 
 
 
