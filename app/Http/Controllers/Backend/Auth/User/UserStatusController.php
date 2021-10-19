@@ -69,6 +69,7 @@ class UserStatusController extends BaseBackendController
         // }
 
 
+        return redirect()->route('admin.auth.user.deactivated')->withFlashSuccess(__('alerts.backend.users.updated'));
 
     }
 
