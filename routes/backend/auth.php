@@ -41,7 +41,7 @@ Route::group([
             Route::get('/', [UserController::class, 'destroy'])->name('user.destroy');
 
             // Account
-            Route::get('account/confirm/resend', [UserConfirmationController::class, 'sendConfirmationEmail'])->name('user.account.confirm.resend');
+           // Route::get('account/confirm/resend', [UserConfirmationController::class, 'sendConfirmationEmail'])->name('user.account.confirm.resend');
 
             // Status
             Route::get('mark/{status}', [UserStatusController::class, 'mark'])->name('user.mark')->where(['status' => '[0,1]']);
