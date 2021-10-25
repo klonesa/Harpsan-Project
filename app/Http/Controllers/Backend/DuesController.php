@@ -82,6 +82,7 @@ class DuesController extends Controller
                 $dues_images->dues_id = $dues->id;
                 $dues_images->dues_image_path = $image_name;
                 $dues_images->save();
+                dd($dues_images);
             }
         }
 
