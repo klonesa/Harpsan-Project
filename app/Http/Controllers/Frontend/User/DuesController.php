@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Frontend\User;
 use App\Http\Controllers\Frontend\BaseFrontendController;
 use App\Models\Auth\User;
 use App\Models\backend\contact_form;
-use App\Models\Frontend\Dues;
+use App\Models\frontend\Dues;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
