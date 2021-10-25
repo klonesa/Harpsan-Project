@@ -23,7 +23,7 @@ class DuesController extends BaseFrontendController
 
         $userId = Auth::id();
          
-        $dues =Dues::orderBy('id','ASC')->where('user_id', '=', $userId )->limit(1)->get();
+        $dues =Dues::orderBy('id','ASC')->where('user_id', '=', $userId )->limit(10)->get();
         return view('frontend.user.dues', compact('dues'));
     }
 
