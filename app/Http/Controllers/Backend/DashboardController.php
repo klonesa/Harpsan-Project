@@ -49,7 +49,7 @@ class DashboardController extends BaseBackendController
         $sliders = slider::count();
         $contact_forms = contact_form::count();
         $activities = activity::count();
-        $advert = Advert::count();
+        //$advert = Advert::count();
         $boards = User::where('is_board',1)->count();
         $activitytypes = activity_type::count();
         $unittypes = unit_type::count();
@@ -58,6 +58,6 @@ class DashboardController extends BaseBackendController
         $fields = field::count();
         $forum_categories = Category::count();
 
-        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams','advert', 'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','boards'));
+        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams',  'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','boards'));
     }
 }
