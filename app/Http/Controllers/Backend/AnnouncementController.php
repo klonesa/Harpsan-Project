@@ -63,7 +63,7 @@ class AnnouncementController extends BaseBackendController
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('uploads/announcements', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/announcements', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
@@ -170,7 +170,7 @@ class AnnouncementController extends BaseBackendController
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('uploads/announcement', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/announcement', $fileNameToStore);
 
             $announcementx->f_image = $fileNameToStore;
             $announcementx->save();

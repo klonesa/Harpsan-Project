@@ -45,7 +45,7 @@ class ShoppingController extends Controller
     
                 $fileNameToStore =  time() . '.' . $extension;
                 // upload
-                $path = $request->file('image')->move('uploads/shopping', $fileNameToStore);
+                $path = $request->file('image')->move('public/uploads/shopping', $fileNameToStore);
             } else {
                 $fileNameToStore = 'f_image.jpg';
             }
@@ -110,7 +110,7 @@ class ShoppingController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('image')->move('uploads/shopping', $fileNameToStore);
+            $path = $request->file('image')->move('public/uploads/shopping', $fileNameToStore);
 
             $postx->image = $fileNameToStore;
             $postx->save();

@@ -55,7 +55,7 @@ class AdvertisementController extends Controller
 
     $fileNameToStore =  time() . '.' . $extension;
     // upload
-    $path = $request->file('f_image')->move('uploads/advertisement', $fileNameToStore);
+    $path = $request->file('f_image')->move('public/uploads/advertisement', $fileNameToStore);
 } else {
     $fileNameToStore = 'f_image.jpg';
 }
@@ -125,7 +125,7 @@ $advertisement = new advertisement;
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('uploads/advertisement', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/advertisement', $fileNameToStore);
 
             $advertisement->f_image = $fileNameToStore;
             $advertisement->save();

@@ -47,7 +47,7 @@ class CompanyController extends Controller
     
                 $fileNameToStore =  time() . '.' . $extension;
                 // upload
-                $path = $request->file('src')->move('uploads/company', $fileNameToStore);
+                $path = $request->file('src')->move('public/uploads/company', $fileNameToStore);
             } else {
                 $fileNameToStore = 'f_image.jpg';
             }
@@ -123,7 +123,7 @@ class CompanyController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('src')->move('uploads/company', $fileNameToStore);
+            $path = $request->file('src')->move('public/uploads/company', $fileNameToStore);
 
             $postx->src = $fileNameToStore;
             $postx->save();

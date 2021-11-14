@@ -65,7 +65,7 @@ class ActivityController extends BaseBackendController
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('uploads/activities', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/activities', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
@@ -189,7 +189,7 @@ class ActivityController extends BaseBackendController
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('uploads/activities', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/activities', $fileNameToStore);
 
             $activityx->f_image = $fileNameToStore;
             $activityx->save();

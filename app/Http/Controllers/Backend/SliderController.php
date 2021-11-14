@@ -65,7 +65,7 @@ class SliderController extends BaseBackendController
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('image')->move('uploads/sliders', $fileNameToStore);
+            $path = $request->file('image')->move('public/uploads/sliders', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
@@ -165,7 +165,7 @@ class SliderController extends BaseBackendController
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-              $path = $request->file('image')->move('uploads/sliders', $fileNameToStore);
+              $path = $request->file('image')->move('public/uploads/sliders', $fileNameToStore);
 
             $sliderar->image = $fileNameToStore;
             $sliderar->save();

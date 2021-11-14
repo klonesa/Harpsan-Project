@@ -58,7 +58,7 @@ class DepositesController extends Controller
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('uploads/deposites', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/deposites', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
@@ -147,7 +147,7 @@ class DepositesController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('uploads/dues', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/dues', $fileNameToStore);
 
             $postx->f_image = $fileNameToStore;
             $postx->save();

@@ -64,7 +64,7 @@ class PostController extends BaseBackendController
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('uploads/posts', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/posts', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
@@ -173,7 +173,7 @@ class PostController extends BaseBackendController
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('uploads/posts', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/posts', $fileNameToStore);
 
             $postx->f_image = $fileNameToStore;
             $postx->save();
