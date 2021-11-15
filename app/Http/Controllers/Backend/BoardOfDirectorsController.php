@@ -90,11 +90,7 @@ if ($request->hasFile('image')) {
     }
 }
 
-
-
- 
-
-
+ dd($request);
           return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.created_successfully'));
       }
   
