@@ -11,7 +11,7 @@ class  TeamController extends BaseBackendController
 {
 
 
-    private $uploadPath = "uploads/teams/";
+    private $uploadPath = "public/uploads/teams/";
 
 
 
