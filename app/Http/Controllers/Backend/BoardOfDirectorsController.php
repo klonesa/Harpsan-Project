@@ -92,8 +92,7 @@ if ($request->hasFile('image')) {
 
 
 
- $boardofdirectory->unit_types()->sync($request->unit_type);
-
+ 
 
 
           return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.created_successfully'));
