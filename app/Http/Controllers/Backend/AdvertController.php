@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\File;
 class AdvertController extends BaseBackendController
 {
 
-    private $uploadPath = "public/uploads/adverts/";
+    private $uploadPath = "public/uploads/galleries/";
     /**
      * Display a listing of the resource.
      *
@@ -160,7 +160,7 @@ class AdvertController extends BaseBackendController
 
         $gallery_images = advert_images::where('gallery_id', $id)->get();
         foreach ($gallery_images as $image) {
-            unlink('public/uploads/adverts/' . $image->gallery_image_path);
+            unlink('public/uploads/galleries/' . $image->gallery_image_path);
         }
         Advert::where('id', $id)->delete();
         return redirect()->back();
