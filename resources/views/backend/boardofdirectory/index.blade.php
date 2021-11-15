@@ -46,7 +46,7 @@
 
 
                                         <td align="left"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{  URL::to('uploads/boardofdirectors/')}}/{{ $sboard->image }}"></td>
+                                                src="{{  URL::to('uploads/BoardofDirectors/')}}/{{ $sboard->image }}"></td>
 
 
                                         <td>{{ $sboard->name_tr }}</td>
