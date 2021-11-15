@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+ use Illuminate\Http\Request;
 use App\Models\backend\BoardofDirectors;
+use Illuminate\Support\Str;
 
 class BoardOfDirectorsController extends Controller
 {
@@ -42,24 +43,55 @@ class BoardOfDirectorsController extends Controller
   
             // 'image'=> ['required'],
         ]);
-  
-  
-  
-           // Start of Upload Files
-        $formFileName = "image";
-        $fileFinalName = "";
-        if ($request->$formFileName != "") {
-            $fileFinalName = time() . rand(1111,
-                    9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
-            $path = $this->getUploadPath();
-            $request->file($formFileName)->move($path, $fileFinalName);
+
+
+
+        // Start of Upload Files
+        if ($request->hasFile('image')) {
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            // get file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // get extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+
+            $fileNameToStore =  time() . '.' . $extension;
+            // upload
+            $path = $request->file('image')->move('public/uploads/BoardofDirectors', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'image.jpg';
         }
-  
-  
-  
-        // End of Upload Files
-  
-          $boardofdirectory = new BoardofDirectors;
+
+
+        $activity = new BoardofDirectors;
+
+
+        $activity->image = $fileNameToStore;
+
+
+
+
+        $activity->save();
+
+
+        // Start of Upload Files
+        if ($request->hasFile('BoardofDirectors')) {
+            $all_images = $request->file('BoardofDirectors');
+            $path = $this->getUploadPath();
+            foreach ($all_images as $file) {
+                $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $image_name);
+                $activity_images = new BoardofDirectors;
+                $activity_images->activity_id = $activity->id;
+                $activity_images->activity_image_path = $image_name;
+                $activity_images->save();
+            }
+        }
+        $activity->activity_types()->sync($request->activity_type);
+        $activity->unit_types()->sync($request->unit_type);
+
+
+
+        $boardofdirectory = new BoardofDirectors;
           $boardofdirectory->image = $fileFinalName; 
           $boardofdirectory->name_tr = $request->name_tr;
           $boardofdirectory->position_tr = $request->position_tr;  
