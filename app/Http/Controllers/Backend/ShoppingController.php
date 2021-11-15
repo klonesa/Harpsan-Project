@@ -98,7 +98,7 @@ class ShoppingController extends Controller
             $postx = ShoppingModel::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($postx->image != "") {
-                unlink('uploads/shopping/' . $postx->image);
+                unlink('public/uploads/shopping/' . $postx->image);
             }
 
             $fileNameWithExt = $request->file('image')->getClientOriginalName();

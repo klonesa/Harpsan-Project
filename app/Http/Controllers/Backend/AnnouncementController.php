@@ -158,7 +158,7 @@ class AnnouncementController extends BaseBackendController
             $announcementx = announcement::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($announcementx->f_image != "") {
-                unlink('uploads/announcement/' . $announcementx->f_image);
+                unlink('public/uploads/announcement/' . $announcementx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -222,10 +222,10 @@ class AnnouncementController extends BaseBackendController
      $announcement = announcement::find($id);
       $announcement_images = announcement_images::where('announcement_id', $id)->get();
       foreach ($announcement_images as $image) {
-          unlink('uploads/announcements/' . $image->announcement_image_path);
+          unlink('public/uploads/announcements/' . $image->announcement_image_path);
 
       }
-      unlink('uploads/announcements/' . $announcement->f_image);
+      unlink('public/uploads/announcements/' . $announcement->f_image);
       $announcement->delete();
       return redirect()->back();
 

@@ -153,7 +153,7 @@ class founding_members_Controller extends Controller
            if ($request->$formFileName != "") {
                $teamx = FoundingMembers::find($id);  // here to store image alone
             /*  if ($teamx->image != "") {
-                  unlink('uploads/teams/' . $teamx->image);
+                  unlink('public/uploads/teams/' . $teamx->image);
               }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
@@ -185,7 +185,7 @@ class founding_members_Controller extends Controller
     public function destroy($id)
     {
         $founding_member = FoundingMembers::where('id', $id)->first();
-        unlink('uploads/teams/' . $founding_member->image);
+        unlink('public/uploads/teams/' . $founding_member->image);
         $founding_member->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 

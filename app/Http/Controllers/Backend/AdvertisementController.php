@@ -112,7 +112,7 @@ $advertisement = new advertisement;
             $advertisement = advertisement::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($advertisement->f_image != "noimage.jpeg") {
-                unlink('uploads/advertisement/'.$advertisement->f_image);
+                unlink('public/uploads/advertisement/'.$advertisement->f_image);
                
             }
 
@@ -153,7 +153,7 @@ $advertisement = new advertisement;
     public function destroy($id)
     {
       $advertisement = advertisement::find($id);
-      unlink('uploads/advertisement/' . $advertisement->image);
+      unlink('public/uploads/advertisement/' . $advertisement->image);
       $sliadvertisementder->delete();
       return redirect()->back()->with('message','advertisement Deleted Sucsessfully');
     }

@@ -135,7 +135,7 @@ class DepositesController extends Controller
             $postx = Dues::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($postx->f_image != "") {
-                unlink('uploads/dues/' . $postx->f_image);
+                unlink('public/uploads/dues/' . $postx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();

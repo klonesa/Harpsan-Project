@@ -157,7 +157,7 @@ class TestimonialController extends BaseBackendController
             $testimonialx = testimonial::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($testimonialx->image != "") {
-                unlink('uploads/testimonials/' . $testimonialx->image);
+                unlink('public/uploads/testimonials/' . $testimonialx->image);
             }
 
              $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
@@ -192,7 +192,7 @@ class TestimonialController extends BaseBackendController
     {
 
         $testimonial = testimonial::find($id);
-        unlink('uploads/testimonials/' . $testimonial->image);
+        unlink('public/uploads/testimonials/' . $testimonial->image);
         $testimonial->delete();
         return redirect()->back()->with('message', 'slider Deleted Sucsessfully');
     }

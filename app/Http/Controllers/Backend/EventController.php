@@ -160,7 +160,7 @@ class EventController extends BaseBackendController
         if ($request->$formFileName != "") {
             // Delete a style_logo_en photo
             if ($event->image != "") {
-                unlink('uploads/events/' . $event->image);
+                unlink('public/uploads/events/' . $event->image);
             }
 
             $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
@@ -194,7 +194,7 @@ class EventController extends BaseBackendController
         $event = Event::find($id);
         // Delete a style_logo_en photo
         if ($event->image != "") {
-            unlink('uploads/events/' . $event->image);
+            unlink('public/uploads/events/' . $event->image);
         }
         $event->delete();
         return redirect('admin/events')->with('success', trans('Information has been deleted sucessfully'));

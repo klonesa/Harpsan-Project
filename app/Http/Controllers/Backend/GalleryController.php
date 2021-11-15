@@ -159,7 +159,7 @@ class GalleryController extends BaseBackendController
 
         $gallery_images = gallery_images::where('gallery_id', $id)->get();
         foreach ($gallery_images as $image) {
-            unlink('uploads/galleries/' . $image->gallery_image_path);
+            unlink('public/uploads/galleries/' . $image->gallery_image_path);
         }
         gallery::where('id', $id)->delete();
         return redirect()->back();

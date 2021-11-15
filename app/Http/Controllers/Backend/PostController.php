@@ -161,7 +161,7 @@ class PostController extends BaseBackendController
             $postx = post::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($postx->f_image != "") {
-                unlink('uploads/posts/' . $postx->f_image);
+                unlink('public/uploads/posts/' . $postx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -226,10 +226,10 @@ class PostController extends BaseBackendController
      $post = post::find($id);
       $post_images = post_images::where('post_id', $id)->get();
       foreach ($post_images as $image) {
-          unlink('uploads/posts/' . $image->post_image_path);
+          unlink('public/uploads/posts/' . $image->post_image_path);
 
       }
-      unlink('uploads/posts/' . $post->f_image);
+      unlink('public/uploads/posts/' . $post->f_image);
       $post->delete();
       return redirect()->back();
 

@@ -162,7 +162,7 @@ class  TeamController extends BaseBackendController
          if ($request->$formFileName != "") {
              $teamx = team::find($id);  // here to store image alone
           /*  if ($teamx->image != "") {
-                unlink('uploads/teams/' . $teamx->image);
+                unlink('public/uploads/teams/' . $teamx->image);
             }*/
              $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
              $path = $this->getUploadPath();
@@ -196,7 +196,7 @@ class  TeamController extends BaseBackendController
 
 
         $team = team::where('id', $id)->first();
-        unlink('uploads/teams/' . $team->image);
+        unlink('public/uploads/teams/' . $team->image);
         $team->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 

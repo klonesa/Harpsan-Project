@@ -111,7 +111,7 @@ class CompanyController extends Controller
             $postx = Company::find($id);  // here to store image alone
             // Delete a style_logo_en photo
           /*  if ($postx->src != "f_image") {
-                unlink('uploads/company/' . $postx->src);
+                unlink('public/uploads/company/' . $postx->src);
             }*/
 
             $fileNameWithExt = $request->file('src')->getClientOriginalName();

@@ -130,7 +130,7 @@ class Advisory_Board extends Controller
            if ($request->$formFileName != "") {
                $teamx = AdvisoryBoard::find($id);  // here to store image alone
              /* if ($teamx->image != "") {
-                  unlink('uploads/advisory/' . $teamx->image);
+                  unlink('public/uploads/advisory/' . $teamx->image);
               }*/
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
@@ -162,7 +162,7 @@ class Advisory_Board extends Controller
     public function destroy($id)
     {
         $advisory = AdvisoryBoard::where('id', $id)->first();
-        unlink('uploads/advisory/' . $advisory->image);
+        unlink('public/uploads/advisory/' . $advisory->image);
         $advisory->delete();
         return redirect()->back()->with('message', trans('backend.deleted_successfully'));
 

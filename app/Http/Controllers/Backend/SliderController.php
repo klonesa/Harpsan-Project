@@ -153,7 +153,7 @@ class SliderController extends BaseBackendController
             $sliderar = slider::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($sliderar->image != "") {
-                unlink('uploads/sliders/' . $sliderar->image);
+                unlink('public/uploads/sliders/' . $sliderar->image);
             }
 
             $fileNameWithExt = $request->file('image')->getClientOriginalName();
@@ -193,7 +193,7 @@ class SliderController extends BaseBackendController
     public function destroy($id)
     {
       $slider = slider::find($id);
-      unlink('uploads/sliders/' . $slider->image);
+      unlink('public/uploads/sliders/' . $slider->image);
       $slider->delete();
       return redirect()->back()->with('message','slider Deleted Sucsessfully');
     }

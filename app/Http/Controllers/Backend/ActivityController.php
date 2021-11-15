@@ -177,7 +177,7 @@ class ActivityController extends BaseBackendController
             $activityx = activity::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($activityx->f_image != "") {
-                unlink('uploads/activities/' . $activityx->f_image);
+                unlink('public/uploads/activities/' . $activityx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -243,9 +243,9 @@ class ActivityController extends BaseBackendController
         $activity = activity::find($id);
         $activity_images = activity_images::where('activity_id', $id)->get();
         foreach ($activity_images as $image) {
-            unlink('uploads/activities/' . $image->activity_image_path);
+            unlink('public/uploads/activities/' . $image->activity_image_path);
         }
-        unlink('uploads/activities/' . $activity->f_image);
+        unlink('public/uploads/activities/' . $activity->f_image);
         $activity->delete();
         return redirect()->back();
     }
