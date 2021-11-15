@@ -124,30 +124,26 @@ class Board_of_Directors extends Controller
             'name_tr' => ['required', 'string', 'max:255'],
             // 'image'=>'required',
         ]);
+
+         // Start of Upload Files
+           $formFileName = "image";
+           $fileFinalName = "";
+
+
         // Start of Upload Files
-        if ($request->hasFile('f_image')) {
-            $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
+        if ($request->hasFile('src')) {
+            $fileNameWithExt = $request->file('src')->getClientOriginalName();
             // get file name
             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             // get extension
-            $extension = $request->file('f_image')->getClientOriginalExtension();
+            $extension = $request->file('src')->getClientOriginalExtension();
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('public/uploads/boardogdirectors', $fileNameToStore);
+            $path = $request->file('src')->move('public/uploads/boardofdirectory', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
-
-           if ($request->$formFileName != "") {
-               $teamx = BoardofDirectors::find($id);  // here to store image alone
-               $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
-               $path = $this->getUploadPath();
-               $request->file($formFileName)->move($path, $fileFinalName);
-               $teamx->image = $fileFinalName; // here there is  a bug when update profile image
-               $teamx->save();
-           }
-  
   
   
            // End of Upload Files
