@@ -13,7 +13,7 @@ class EventController extends BaseBackendController
 {
 
 
-    private $uploadPath = "uploads/events/";
+    private $uploadPath = "public/uploads/events/";
 
     /**
      * Display a listing of the resource.
