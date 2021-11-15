@@ -86,10 +86,7 @@ class BoardOfDirectorsController extends Controller
                 $activity_images->save();
             }
         }
-        $activity->activity_types()->sync($request->activity_type);
-        $activity->unit_types()->sync($request->unit_type);
-
-
+     
 
         $boardofdirectory = new BoardofDirectors;
           $boardofdirectory->image = $fileFinalName; 
@@ -198,7 +195,7 @@ class BoardOfDirectorsController extends Controller
                 $activity_images->save();
             }
         }
- 
+
           return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.updated_successfully'));
   
   
