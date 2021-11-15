@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\backend\BoardofDirectors;
 
-class Board_of_Directors extends Controller
+class BoardOfDirectorsController extends Controller
 {
     private $uploadPath = "uploads/boardofdirectors/";
     /**
@@ -125,21 +125,19 @@ class Board_of_Directors extends Controller
             // 'image'=>'required',
         ]);
 
+         // Start of Upload Files
+           $formFileName = "image";
+           $fileFinalName = "";
 
-        // Start of Upload Files
-        if ($request->hasFile('src')) {
-            $fileNameWithExt = $request->file('src')->getClientOriginalName();
-            // get file name
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            // get extension
-            $extension = $request->file('src')->getClientOriginalExtension();
+           if ($request->$formFileName != "") {
+               $teamx = BoardofDirectors::find($id);  // here to store image alone
+               $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+               $path = $this->getUploadPath();
+               $request->file($formFileName)->move($path, $fileFinalName);
+               $teamx->image = $fileFinalName; // here there is  a bug when update profile image
+               $teamx->save();
+           }
 
-            $fileNameToStore =  time() . '.' . $extension;
-            // upload
-            $path = $request->file('src')->move('public/uploads/boardofdirectory', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'image.jpg';
-        }
   
   
            // End of Upload Files
