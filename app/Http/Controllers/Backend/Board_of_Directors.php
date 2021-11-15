@@ -124,11 +124,21 @@ class Board_of_Directors extends Controller
             'name_tr' => ['required', 'string', 'max:255'],
             // 'image'=>'required',
         ]);
-  
-         // Start of Upload Files
-           $formFileName = "image";
-           $fileFinalName = "";
-  
+        // Start of Upload Files
+        if ($request->hasFile('f_image')) {
+            $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
+            // get file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // get extension
+            $extension = $request->file('f_image')->getClientOriginalExtension();
+
+            $fileNameToStore =  time() . '.' . $extension;
+            // upload
+            $path = $request->file('f_image')->move('public/uploads/boardogdirectors', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'f_image.jpg';
+        }
+
            if ($request->$formFileName != "") {
                $teamx = BoardofDirectors::find($id);  // here to store image alone
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
