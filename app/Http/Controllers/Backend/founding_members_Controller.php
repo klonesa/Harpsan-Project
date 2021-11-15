@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\backend\FoundingMembers;
 class founding_members_Controller extends Controller
 {
-    private $uploadPath = "uploads/teams/";
+    private $uploadPath = "public/uploads/teams/";
     /**
      * Display a listing of the resource.
      *
@@ -152,9 +152,9 @@ class founding_members_Controller extends Controller
   
            if ($request->$formFileName != "") {
                $teamx = FoundingMembers::find($id);  // here to store image alone
-            /*  if ($teamx->image != "") {
+              if ($teamx->image != "") {
                   unlink('public/uploads/teams/' . $teamx->image);
-              }*/
+              }
                $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
                $path = $this->getUploadPath();
                $request->file($formFileName)->move($path, $fileFinalName);
