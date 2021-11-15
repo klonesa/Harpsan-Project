@@ -125,10 +125,6 @@ class Board_of_Directors extends Controller
             // 'image'=>'required',
         ]);
 
-         // Start of Upload Files
-           $formFileName = "image";
-           $fileFinalName = "";
-
 
         // Start of Upload Files
         if ($request->hasFile('src')) {
@@ -142,7 +138,7 @@ class Board_of_Directors extends Controller
             // upload
             $path = $request->file('src')->move('public/uploads/boardofdirectory', $fileNameToStore);
         } else {
-            $fileNameToStore = 'f_image.jpg';
+            $fileNameToStore = 'image.jpg';
         }
   
   
