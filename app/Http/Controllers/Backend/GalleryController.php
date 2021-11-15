@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\File;
 class GalleryController extends BaseBackendController
 {
 
-    private $uploadPath = "uploads/galleries/";
+    private $uploadPath = "public/uploads/galleries/";
     /**
      * Display a listing of the resource.
      *
