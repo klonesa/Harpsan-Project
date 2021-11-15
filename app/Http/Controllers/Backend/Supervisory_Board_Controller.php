@@ -8,7 +8,7 @@ use App\Models\backend\SupervisoryBoard;
 
 class Supervisory_Board_Controller extends Controller
 {
-    private $uploadPath = "uploads/teams/";
+    private $uploadPath = "public/uploads/teams/";
     /**
      * Display a listing of the resource.
      *
