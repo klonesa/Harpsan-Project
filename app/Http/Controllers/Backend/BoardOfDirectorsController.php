@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
  use Illuminate\Http\Request;
 use App\Models\backend\BoardofDirectors;
+use App\Models\frontend\directors_images;
+
 use Illuminate\Support\Str;
 
 class BoardOfDirectorsController extends Controller
@@ -45,61 +47,55 @@ class BoardOfDirectorsController extends Controller
         ]);
 
 
+   // Start of Upload Files
+   if ($request->hasFile('image')) {
+    $fileNameWithExt = $request->file('image')->getClientOriginalName();
+    // get file name
+    $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+    // get extension
+    $extension = $request->file('image')->getClientOriginalExtension();
 
-        // Start of Upload Files
-        if ($request->hasFile('image')) {
-            $fileNameWithExt = $request->file('image')->getClientOriginalName();
-            // get file name
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            // get extension
-            $extension = $request->file('image')->getClientOriginalExtension();
-
-            $fileNameToStore =  time() . '.' . $extension;
-            // upload
-            $path = $request->file('image')->move('public/uploads/BoardofDirectors', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'image.jpg';
-        }
-
-
-        $activity = new BoardofDirectors;
-
-
-        $activity->image = $fileNameToStore;
-
+    $fileNameToStore =  time() . '.' . $extension;
+    // upload
+    $path = $request->file('image')->move('public/uploads/BoardofDirectors', $fileNameToStore);
+} else {
+    $fileNameToStore = 'image.jpg';
+}
+ 
+$boardofdirectory = new BoardofDirectors;
+$boardofdirectory->image = $fileNameToStore; 
+$boardofdirectory->name_tr = $request->name_tr;
+$boardofdirectory->position_tr = $request->position_tr;  
+$boardofdirectory->text_tr = $request->text_tr;
+$boardofdirectory->e_mail = $request->e_mail;
+$boardofdirectory->phone = $request->phone;
+$boardofdirectory->instagram = $request->instagram;
+$boardofdirectory->facebook = $request->facebook;
+$boardofdirectory->twitter = $request->twitter;
+$boardofdirectory->linkedin = $request->linkedin;
+$boardofdirectory->save();
 
 
+// Start of Upload Files
+if ($request->hasFile('image')) {
+    $all_images = $request->file('image');
+    $path = $this->getUploadPath();
+    foreach ($all_images as $file) {
+        $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
+        $file->move($path, $image_name);
+        $directors_images = new directors_images;
+        $directors_images->directors_id = $boardofdirectory->id;
+        $directors_images->directors_image_path = $image_name;
+        $directors_images->save();
+    }
+}
 
-        $activity->save();
 
 
-        // Start of Upload Files
-        if ($request->hasFile('BoardofDirectors')) {
-            $all_images = $request->file('BoardofDirectors');
-            $path = $this->getUploadPath();
-            foreach ($all_images as $file) {
-                $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
-                $file->move($path, $image_name);
-                $activity_images = new BoardofDirectors;
-                $activity_images->activity_id = $activity->id;
-                $activity_images->activity_image_path = $image_name;
-                $activity_images->save();
-            }
-        }
-     
+ $boardofdirectory->unit_types()->sync($request->unit_type);
 
-        $boardofdirectory = new BoardofDirectors;
-          $boardofdirectory->image = $fileFinalName; 
-          $boardofdirectory->name_tr = $request->name_tr;
-          $boardofdirectory->position_tr = $request->position_tr;  
-          $boardofdirectory->text_tr = $request->text_tr;
-          $boardofdirectory->e_mail = $request->e_mail;
-          $boardofdirectory->phone = $request->phone;
-          $boardofdirectory->instagram = $request->instagram;
-          $boardofdirectory->facebook = $request->facebook;
-          $boardofdirectory->twitter = $request->twitter;
-          $boardofdirectory->linkedin = $request->linkedin;
-          $boardofdirectory->save();
+
+
           return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.created_successfully'));
       }
   
