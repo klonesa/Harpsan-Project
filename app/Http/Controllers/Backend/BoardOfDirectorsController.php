@@ -165,8 +165,8 @@ class BoardOfDirectorsController extends Controller
 
             $activityx = BoardofDirectors::find($id);  // here to store image alone
             // Delete a style_logo_en photo
-            if ($activityx->f_image != "") {
-                unlink('public/uploads/BoardofDirectors/' . $activityx->f_image);
+            if ($activityx->image != "") {
+                unlink('public/uploads/BoardofDirectors/' . $activityx->image);
             }
 
             $fileNameWithExt = $request->file('image')->getClientOriginalName();
@@ -180,7 +180,7 @@ class BoardOfDirectorsController extends Controller
 
             $path = $request->file('image')->move('public/uploads/BoardofDirectors', $fileNameToStore);
 
-            $activityx->f_image = $fileNameToStore;
+            $activityx->image = $fileNameToStore;
             $activityx->save();
         }
 
