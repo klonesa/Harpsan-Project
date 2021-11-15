@@ -51,7 +51,7 @@
                             @foreach($users as $user)
                             <tr>
                                 <td align="center"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{ asset('storage')}}/{{$user->profile_image }}"></td>
+                                                src="{{ asset('storage')}}/members/profiles/ZfE7TfK3rDO01ZtaUr072skjYyH1SEjvOFXRnyOU.png"></td>
                                 <td>{{ $user->full_name }}</td>
                                 <td>{{ $user->email }}</td>
 
