@@ -198,11 +198,7 @@ class BoardOfDirectorsController extends Controller
                 $activity_images->save();
             }
         }
-        $activity->activity_types()->sync($request->activity_type);
-
-        $activity->unit_types()->sync($request->unit_type);
-
-
+ 
           return redirect(route('admin.boardofdirectory.index'))->with('message', trans('backend.updated_successfully'));
   
   
