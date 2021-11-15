@@ -18,7 +18,7 @@
 <link href="{{asset('uploads/settings')}}/{{GeneralSiteSettings('site_icon')}}" rel="apple-touch-icon" sizes="144x144">
 <link href="https://fonts.googleapis.com/css?family=Helvetica:300,400,500,600" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/vendors/css/pickers/pickadate/pickadate.css')}}">
-<script src="https://cdn.tiny.cloud/1/trrk14o6y1iqza8jpleitgq81i52dcftkecin2tnnz5ac5np/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/y75i6xrmswftuzdxwm8a1tcjvyou1myq2avv3l9z8x5vwbio/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
       selector: 'textarea',
