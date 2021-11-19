@@ -122,7 +122,7 @@
                     class="menu-item"
                     data-i18n="Select">Aidat</span></a>
         </li>  
-         <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+         <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span
             class="menu-item"
             data-i18n="Select">Depozito</span></a>
          </li>
@@ -266,10 +266,7 @@
                     class="menu-item"
                     data-i18n="Select">Aidat Modülü</span></a>
         </li> --}}
-        <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span
-            class="menu-item"
-            data-i18n="Select">Depozito Modülü</span></a>
-</li>
+       
                 <li class=" nav-item ">
                     <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span
                             class="menu-title"

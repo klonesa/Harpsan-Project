@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class deposites_images extends Model
 {
-    protected $fillable = ['dues_id', 'dues_image_path'];
-    public function dues()
+    protected $fillable = ['deposites_id', 'deposites_image_path'];
+
+    
+    public function deposites()
     {
-        return $this->belongsTo('App\Models\backend\Dues');
+        return $this->belongsTo('App\Models\backend\Deposites');
     }
 }

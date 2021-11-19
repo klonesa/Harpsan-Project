@@ -26,7 +26,7 @@ class DepositesController extends Controller
         )->get();
         return view('backend.deposites.index', compact('deposites'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -46,8 +46,7 @@ class DepositesController extends Controller
      */
     public function store(Request $request)
     {
-        // $total = BackendDeposites::query()->select(DB::raw('total + ' . $request->dues . ' AS total'))->orderByDesc('id')->first();
-
+ 
         // Start of Upload Files
         if ($request->hasFile('f_image')) {
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -65,8 +64,7 @@ class DepositesController extends Controller
 
         $deposites = new BackendDeposites();
         $deposites->date = $request->date;
-         //$dues->total = $total->total ?? $request->dues;
-        $deposites->user_id = $request->user;
+         $deposites->user_id = $request->user;
         $deposites->description = $request->description;
          $deposites->f_image =  $fileNameToStore;
 
@@ -108,23 +106,22 @@ class DepositesController extends Controller
     public function edit($id)
     {
         $users = User::all();
-        $dues = BackendDeposites::find($id);
-//dd(compact('dues', 'users'));
-        return view('backend.deposites.edit', compact('dues', 'users'));
+        $deposites = BackendDeposites::find($id);
+         return view('backend.deposites.edit', compact('deposites', 'users'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Admin\Model\dues $dues
+     * @param \App\Admin\Model\deposites $deposites
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
 
         // End of Upload Files
-        $dues = Dues::find($id);
+        $deposites = BackendDeposites::find($id);
         //   $post->image = $imageUrl;
 
 
@@ -132,10 +129,10 @@ class DepositesController extends Controller
         // Start of Upload Files
         // file upload
         if ($request->hasFile('f_image')) {
-            $postx = Dues::find($id);  // here to store image alone
+            $postx = BackendDeposites::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($postx->f_image != "") {
-                unlink('public/uploads/dues/' . $postx->f_image);
+                unlink('public/uploads/deposites/' . $postx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -147,18 +144,17 @@ class DepositesController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('public/uploads/dues', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/deposites', $fileNameToStore);
 
             $postx->f_image = $fileNameToStore;
             $postx->save();
         }
-        $dues = BackendDeposites::find($id);
-        $dues->date = $request->date;
-         //$total = BackendDeposites::query()->select(DB::raw('SUM(dues) + ' . $request->dues . ' AS total'))->groupBy('id')->orderByDesc('id')->whereNotIn('id', [$id])->first();
-        //$dues->total = $total->total ?? $request->dues;
-         $dues->user_id = $request->user;
-        $dues->description = $request->description;
-        $dues->save();
+        $deposites = BackendDeposites::find($id);
+        $deposites->date = $request->date;
+         
+         $deposites->user_id = $request->user;
+        $deposites->description = $request->description;
+        $deposites->save();
         // Start of Upload Files
         if ($request->hasFile('post_images')) {
             $all_images = $request->file('post_images');
@@ -166,10 +162,10 @@ class DepositesController extends Controller
             foreach ($all_images as $file) {
                 $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $image_name);
-                $dues_images = new dues_images;
-                $dues_images->dues_id = $id;
-                $dues_images->dues_image_path = $image_name;
-                $dues_images->save();
+                $deposites_images = new deposites_images;
+                $deposites_images->deposites_id = $id;
+                $deposites_images->deposites_image_path = $image_name;
+                $deposites_images->save();
             }
         }
         return redirect(route('admin.deposites.index'));
@@ -178,7 +174,7 @@ class DepositesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Admin\Model\dues $dues
+     * @param \App\Admin\Model\deposites $deposites
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
