@@ -26,7 +26,7 @@ class DepositesTable extends Migration
                 ->onUpdate('cascade');
              
         });
-
+       
     }
 
     /**

@@ -18,10 +18,9 @@ class DepositesImages extends Migration
             $table->integer('deposites_id')->unsigned();
             $table->string('deposites_image_path');
             $table->foreign('deposites_id')->references('id')->on('deposites')->onDelete('cascade');
-
              $table->timestamps();
         });
-
+      
     
     }
 
