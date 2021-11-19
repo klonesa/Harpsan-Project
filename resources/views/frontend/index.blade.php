@@ -21,10 +21,10 @@
                     <!-- SLIDE 1 -->
                     <li data-index="rs-{{ $loop->index + 1 }}" data-transition="slidingoverlayhorizontal"
                         data-slotamount="default" data-easein="default" data-easeout="default"
-                        data-masterspeed="default" data-thumb="{{asset('uploads/sliders/')}}/{{$slider->image}}"
+                        data-masterspeed="default" data-thumb="{{asset('public/uploads/sliders/')}}/{{$slider->image}}"
                         data-rotate="0" data-saveperformance="off" data-title="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('uploads/sliders/')}}/{{$slider->image}}" alt="{{$slider->title}}"
+                        <img src="{{asset('public/uploads/sliders/')}}/{{$slider->image}}" alt="{{$slider->title}}"
                             data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                             class="rev-slidebg" data-bgparallax="10" data-no-retina>
 
@@ -210,7 +210,7 @@
                         <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
                             <div class="uk-card-media-top">
                                 <a href="{{route('frontend.new',$post->slug)}}" title="{{$post->title}}">
-                                    <img src="{{asset('uploads/posts/')}}/{{ $post->f_image}}"
+                                    <img src="{{asset('public/uploads/posts/')}}/{{ $post->f_image}}"
                                         style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
                                 </a>
                             </div>
@@ -277,7 +277,7 @@
             <div class="uk-width-2-5@m uk-flex uk-flex-middle">
                 <div class="">
                     <img class="uk-position-relative"
-                        src="{{asset('uploads/settings')}}/{{GeneralSiteSettings("site_logo")}}" style="width: 250px"
+                        src="{{asset('public/uploads/settings')}}/{{GeneralSiteSettings("site_logo")}}" style="width: 250px"
                         alt="{{GeneralSiteSettings("site_title")}}">
                 </div>
             </div>
@@ -324,7 +324,7 @@
                         <article class="uk-card uk-card-default uk-card-small uk-border-rounded">
                             <div class="uk-card-media-top">
                                 <a href="{{route('frontend.announcements',$aaa->slug)}}" title="{{$aaa->title}}">
-                                    <img src="{{asset('uploads/announcements/')}}/{{ $aaa->f_image}}"
+                                    <img src="{{asset('public/uploads/announcements/')}}/{{ $aaa->f_image}}"
                                         style="width: 100px; height:80px" alt="{{$post->title}}" uk-img>
                                 </a>
                             </div>
