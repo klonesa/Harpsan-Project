@@ -24,7 +24,7 @@
                                             <div class="card-body">
 
                                                 <img width="200" height="100" class="user-photo"
-                                                    src="{{ URL::to('uploads/galleries',$gallery_images->gallery_image_path) }}"
+                                                    src="{{ URL::to('public/uploads/galleries',$gallery_images->gallery_image_path) }}"
                                                     alt="">
 
 
