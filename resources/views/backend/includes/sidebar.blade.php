@@ -115,18 +115,29 @@
 
                 <li class="nav-item has-sub @if(Request::segment(2) == "finance" ) open @endif">
                     <a href="#"><i class="feather icon-feather"></i>
-                        <span class="menu-title" data-i18n="finance">Finans</span>
+                        <span class="menu-title" data-i18n="finance">Finans Detayları </span>
                     </a>
-                    <ul class="menu-content" style="">
-                        <li class="@if(Request::segment(2) == "finance" ) active @endif">
-                            <a href="{{ route('admin.finance.index') }}"><i class="feather icon-feather"></i>
-                                <span class="menu-item" data-i18n="Select">Kayıt</span></a>
-                        </li>
-                        <li class="@if(Request::segment(2) == "financePayment" ) active @endif">
-                            <a href="{{ route('admin.financePayment.index') }}"><i class="feather icon-archive"></i>
-                                <span class="menu-item" data-i18n="Select">Ödeme</span></a>
-                        </li>
-
+                
+        <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+                    class="menu-item"
+                    data-i18n="Select">Aidat</span></a>
+        </li>  
+         <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+            class="menu-item"
+            data-i18n="Select">Depozito</span></a>
+         </li>
+         <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+            class="menu-item"
+            data-i18n="Select">Alışveriş</span></a>
+         </li>
+         <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+            class="menu-item"
+            data-i18n="Select">Finans 1</span></a>
+         </li>
+         <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+            class="menu-item"
+            data-i18n="Select">Finans 2</span></a>
+         </li>
                     </ul>
                 </li>
 
@@ -251,10 +262,10 @@
                             data-i18n="User">@lang('backend.forum_category')</span>
                     </a>
                 </li> --}}
-                <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+                {{-- <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
                     class="menu-item"
                     data-i18n="Select">Aidat Modülü</span></a>
-        </li>
+        </li> --}}
         <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span
             class="menu-item"
             data-i18n="Select">Depozito Modülü</span></a>
