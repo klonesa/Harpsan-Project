@@ -173,95 +173,9 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-            <div class="card-header">
-                <h4 class="card-title">{{ trans('backend.counter_title') }}</h4>
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-                    <!-- Tab panes -->
-                    <div class="tab-content pt-1">
-                        <div class="tab-pane active" id="home-counter" role="tabpanel"
-                            aria-labelledby="home-tab-counter">
-                            <input type="text"
-                                class="form-control" name="counter_title_tr" value="{{   $about->counter_title_tr }}"
-                                aria-required="true">
-                            <h4 class="card-title"><br>
-                                {{ trans('backend.counter_text') }}</h4>
-                            <textarea type="text" class="form-control"
-                                name="counter_text_tr">{!! $about->counter_text_tr !!}</textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+ 
 
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-
-            <div class="card-content">
-                <div class="card-body">
-<div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="header">
-                <h2>{{ trans('backend.counter') }} 1</h2>
-            </div>
-            <div class="body">
-                <input type="text" class="form-control" name="counter1" value="{{   $about->counter1 }}"
-                    aria-required="true">
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <div class="header">
-                <h2>{{ trans('backend.counter') }} 2</h2>
-            </div>
-            <div class="body">
-
-                <input type="text" class="form-control" name="counter2" value="{{   $about->counter2 }}"
-                    aria-required="true">
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card">
-            <div class="header">
-                <h2>{{ trans('backend.counter') }} 3 </h2>
-            </div>
-            <div class="body">
-                <input type="text" class="form-control" name="counter3" value="{{   $about->counter3 }}"
-                    aria-required="true">
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card">
-            <div class="header">
-                <h2>{{ trans('backend.counter') }} 4</h2>
-            </div>
-            <div class="body">
-                <input type="text" class="form-control" name="counter4" value="{{   $about->counter4 }}"
-                    aria-required="true">
-            </div>
-        </div>
-    </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+ 
 
 
 
