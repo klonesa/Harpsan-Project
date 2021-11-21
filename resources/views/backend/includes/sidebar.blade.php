@@ -100,16 +100,18 @@
                             </a>
                         </li>
 
+                        <li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
+                            <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span
+                                    class="menu-title"
+                                    data-i18n="User">@lang('labels.backend.access.roles.management')</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 
 
-                <li class=" nav-item @if(Request::segment(3) == "role" ) active @endif ">
-                    <a href="{{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span
-                            class="menu-title"
-                            data-i18n="User">@lang('labels.backend.access.roles.management')</span>
-                    </a>
-                </li>
+             
 
             
 
@@ -126,7 +128,7 @@
                     class="menu-item"
                     data-i18n="Select">Depozito</span></a>
                  </li>
-                 <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span
+                 <li><a href="{{ route('admin.shoppings.index') }}"><i class="feather icon-check-square"></i><span
                     class="menu-item"
                     data-i18n="Select">Alışveriş</span></a>
                  </li>
