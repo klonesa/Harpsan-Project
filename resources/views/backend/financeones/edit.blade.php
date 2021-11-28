@@ -13,18 +13,18 @@
 
                             <section id="statistics-card">
                                 <div class="row">
-                                    @foreach ($financeones->financeone_images as $financeone_images)
-                                        <div  id="{{ $financeone_images->id }}"  class="col-xl-2 col-md-4 col-sm-6">
+                                    @foreach ($financeones->financeones_images as $financeones_images)
+                                        <div  id="{{ $financeones_images->id }}"  class="col-xl-2 col-md-4 col-sm-6">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body">
 
-                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/financeones',$financeone_images->financeone_image_path) }}"
+                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/financeones',$financeones_images->financeone_image_path) }}"
                                                              alt="">
 
 
                                                         <br>
-                                                        <button class="deleteimage" data-id="{{ $financeone_images->id }}"
+                                                        <button class="deleteimage" data-id="{{ $financeones_images->id }}"
                                                                 data-token="{{ csrf_token() }}">{{ trans('backend.delete') }}</button>
                                                     </div>
                                                 </div>

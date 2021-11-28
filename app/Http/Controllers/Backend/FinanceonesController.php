@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
 use App\Models\backend\Financeones;
 use App\Models\backend\Financeones as BackendFinanceones;
-use App\Models\frontend\financeone_images;
+use App\Models\frontend\financeones_images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -72,17 +72,17 @@ class FinanceonesController extends Controller
 
          $financeones->save();
         // Start of Upload Files
-        if ($request->hasFile('financeone_images')) {
-            $all_images = $request->file('financeone_images');
+        if ($request->hasFile('financeones_images')) {
+            $all_images = $request->file('financeones_images');
             $path = $this->getUploadPath();
             foreach ($all_images as $file) {
                 $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $image_name);
-                $financeone_images = new financeone_images;
-                $financeone_images->financeone_id = $financeones->id;
-                $financeone_images->financeone_image_path = $image_name;
-                $financeone_images->save();
-                dd($financeone_images);
+                $financeones_images = new financeones_images;
+                $financeones_images->financeone_id = $financeones->id;
+                $financeones_images->financeone_image_path = $image_name;
+                $financeones_images->save();
+                dd($financeones_images);
             }
         }
 
@@ -167,10 +167,10 @@ class FinanceonesController extends Controller
             foreach ($all_images as $file) {
                 $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $image_name);
-                $financeone_images = new financeone_images;
-                $financeone_images->financeone_id = $id;
-                $financeone_images->financeone_image_path = $image_name;
-                $financeone_images->save();
+                $financeones_images = new financeones_images;
+                $financeones_images->financeone_id = $id;
+                $financeones_images->financeone_image_path = $image_name;
+                $financeones_images->save();
             }
         }
         return redirect(route('admin.financeones.index'));
