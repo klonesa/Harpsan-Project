@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
-use App\Models\backend\financeones;
- use App\Models\backend\financeones as BackendFinanceones;
- use App\Models\frontend\financeone_images;
- use Illuminate\Http\Request;
+use App\Models\backend\Financeones;
+use App\Models\backend\Financeones as BackendFinanceones;
+use App\Models\frontend\financeone_images;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class FinanceonesController extends Controller
