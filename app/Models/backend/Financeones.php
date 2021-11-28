@@ -4,7 +4,7 @@ namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 
-class financeones extends Model
+class Financeones extends Model
 {
     protected $fillable = ['date', 'financeones', 'total', 'description', 'user_id'];
 
