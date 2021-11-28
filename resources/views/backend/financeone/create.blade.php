@@ -13,7 +13,7 @@
                         <div class="card-body">
 
 
-                            <form role="form" action="{{ route('admin.financeone.store') }}" method="post"
+                            <form role="form" action="{{ route('admin.financeones.store') }}" method="post"
                                   enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
@@ -88,7 +88,7 @@
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                     <a type="button" class="btn btn-warning"
-                                       href="{{   route('admin.financeone.index')   }}">{{ trans('backend.back') }}</a>
+                                       href="{{   route('admin.financeones.index')   }}">{{ trans('backend.back') }}</a>
                                 </div>
                             </form>
 

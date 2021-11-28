@@ -132,7 +132,7 @@
                     class="menu-item"
                     data-i18n="Select">Alışveriş</span></a>
                  </li>
-                 <li><a href="{{ route('admin.financeone.index') }}"><i class="feather icon-check-square"></i><span
+                 <li><a href="{{ route('admin.financeones.index') }}"><i class="feather icon-check-square"></i><span
                     class="menu-item"
                     data-i18n="Select">Finans 1</span></a>
                  </li>

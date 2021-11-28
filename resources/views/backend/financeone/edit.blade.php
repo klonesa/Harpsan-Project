@@ -13,13 +13,13 @@
 
                             <section id="statistics-card">
                                 <div class="row">
-                                    @foreach ($financeone->financeone_images as $financeone_images)
+                                    @foreach ($financeones->financeone_images as $financeone_images)
                                         <div  id="{{ $financeone_images->id }}"  class="col-xl-2 col-md-4 col-sm-6">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body">
 
-                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/financeone',$financeone_images->financeone_image_path) }}"
+                                                        <img width="200" height="100" class="user-photo" src="{{ URL::to('uploads/financeones',$financeone_images->financeone_image_path) }}"
                                                              alt="">
 
 
@@ -37,7 +37,7 @@
 
 
 
-                            <form role="form" action="{{ route('admin.financeone.update',$financeone->id) }}" method="post"
+                            <form role="form" action="{{ route('admin.financeones.update',$financeones->id) }}" method="post"
                                   enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
@@ -50,7 +50,7 @@
                                                 <h2>{{ trans('backend.image') }}</h2>
                                             </div>
                                             <div class="body">
-                                                <input type="file" class="dropify" data-default-file="{{ URL::to('uploads/financeone',$financeone->f_image) }}" data-allowed-file-extensions="png jpg jpeg"
+                                                <input type="file" class="dropify" data-default-file="{{ URL::to('uploads/financeones',$financeones->f_image) }}" data-allowed-file-extensions="png jpg jpeg"
                                                        name="f_image" >
                                             </div>
                                         </div>
@@ -111,7 +111,7 @@
                                                             @foreach ($users as $user)
                                                                 <option
                                                                     value="{{ $user->id }}"
-                                                                    @if ($financeone->user_id == $user->id)
+                                                                    @if ($financeones->user_id == $user->id)
                                                                     selected
                                                                     @endif
                                                                 >{{ $user->full_name_tr }}</option>
@@ -122,7 +122,7 @@
                                                     <div class="form-group">
                                                         <label class="card-title control-label" for="date">Tarih</label>
                                                         <input id="date" type="date" class="form-control" name="date"
-                                                               value="{{ $financeone->date }}" min="2020-01-01"
+                                                               value="{{ $financeones->date }}" min="2020-01-01"
                                                                aria-required="true" required>
                                                     </div>
 
@@ -131,7 +131,7 @@
                                                         <label class="card-title control-label" for="description">Açıklama</label>
                                                         <textarea class="form-control" id="description"
                                                                   name="description"
-                                                                  rows="3">{{ $financeone->description }}</textarea>
+                                                                  rows="3">{{ $financeones->description }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -141,7 +141,7 @@
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                     <a type="button" class="btn btn-warning"
-                                       href="{{   route('admin.financeone.index')   }}">{{ trans('backend.back') }}</a>
+                                       href="{{   route('admin.financeones.index')   }}">{{ trans('backend.back') }}</a>
                                 </div>
                             </form>
                         </div>

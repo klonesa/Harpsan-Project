@@ -9,8 +9,8 @@ class financeone_images extends Model
     protected $fillable = ['financeone_id', 'financeone_image_path'];
 
     
-    public function financeone()
+    public function financeones()
     {
-        return $this->belongsTo('App\Models\backend\Financeone');
+        return $this->belongsTo('App\Models\backend\financeones');
     }
 }

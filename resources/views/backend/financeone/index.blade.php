@@ -14,7 +14,7 @@
                 <div class="card-content">
                     <div class="card-body">
 
-                        <a href="{{   route('admin.financeone.create')   }}" class="btn btn-primary mb-2"><i
+                        <a href="{{   route('admin.financeones.create')   }}" class="btn btn-primary mb-2"><i
                                 class="feather icon-plus"></i>&nbsp;
                             {{ trans('backend.new') }}
                         </a>
@@ -29,20 +29,20 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach ($financeone as $ad)
+                                    @foreach ($financeones as $ad)
                                     <tr>
                                         <td>{{ $ad->date }}</td>
                                         <td>{{ $ad->full_name_tr}}</td>
                                         <td>{!!$ad->description!!}</td>
 
                                         <td>
-                                           <a href="{{   route('admin.financeone.edit',$ad->id) }}"> <i
+                                           <a href="{{   route('admin.financeones.edit',$ad->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
                                                 onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $ad->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $ad->id }}" method="post"
-                                                action="{{ route('admin.financeone.destroy',$ad->id) }}">
+                                                action="{{ route('admin.financeones.destroy',$ad->id) }}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                             </form>

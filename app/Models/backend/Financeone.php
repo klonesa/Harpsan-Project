@@ -4,9 +4,9 @@ namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Financeone extends Model
+class financeones extends Model
 {
-    protected $fillable = ['date', 'financeone', 'total', 'description', 'user_id'];
+    protected $fillable = ['date', 'financeones', 'total', 'description', 'user_id'];
 
 
     public function financeone_images()

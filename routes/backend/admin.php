@@ -106,7 +106,7 @@ Route::resource('deposites', 'DepositesController');
 //Shoppings
 Route::resource('shoppings', 'ShoppingsController');
 //Fiannceone
-Route::resource('financeone', 'FinanceoneController');
+Route::resource('financeones', 'FinanceonesController');
 
 //Shopping
 Route::resource('shopping', 'ShoppingController');

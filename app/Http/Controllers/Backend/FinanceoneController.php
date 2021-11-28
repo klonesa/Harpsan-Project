@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
-use App\Models\backend\Financeone;
- use App\Models\backend\Financeone as BackendFinanceone;
+use App\Models\backend\financeones;
+ use App\Models\backend\financeones as BackendFinanceones;
  use App\Models\frontend\financeone_images;
  use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class FinanceoneController extends Controller
+class FinanceonesController extends Controller
 {
 
     /**
@@ -20,11 +20,11 @@ class FinanceoneController extends Controller
      */
     public function index()
     {
-        $financeone = BackendFinanceone::query()->join('users', 'users.id', '=', 'financeone.user_id')->select(
-            'financeone.*',
+        $financeones = BackendFinanceones::query()->join('users', 'users.id', '=', 'financeones.user_id')->select(
+            'financeones.*',
             'users.full_name_tr'
         )->get();
-        return view('backend.financeone.index', compact('financeone'));
+        return view('backend.financeones.index', compact('financeones'));
     }
 
     /**
@@ -35,7 +35,7 @@ class FinanceoneController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('backend.financeone.create', compact('users'));
+        return view('backend.financeones.create', compact('users'));
     }
 
     /**
@@ -46,7 +46,7 @@ class FinanceoneController extends Controller
      */
     public function store(Request $request)
     {
-        // $total = BackendFinanceone::query()->select(DB::raw('total + ' . $request->financeone . ' AS total'))->orderByDesc('id')->first();
+        // $total = BackendFinanceones::query()->select(DB::raw('total + ' . $request->financeones . ' AS total'))->orderByDesc('id')->first();
 
         // Start of Upload Files
         if ($request->hasFile('f_image')) {
@@ -58,19 +58,19 @@ class FinanceoneController extends Controller
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('public/uploads/financeone', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/financeones', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
 
-        $financeone = new BackendFinanceone();
-        $financeone->date = $request->date;
-         //$financeone->total = $total->total ?? $request->financeone;
-        $financeone->user_id = $request->user;
-        $financeone->description = $request->description;
-         $financeone->f_image =  $fileNameToStore;
+        $financeones = new BackendFinanceones();
+        $financeones->date = $request->date;
+         //$financeones->total = $total->total ?? $request->financeones;
+        $financeones->user_id = $request->user;
+        $financeones->description = $request->description;
+         $financeones->f_image =  $fileNameToStore;
 
-         $financeone->save();
+         $financeones->save();
         // Start of Upload Files
         if ($request->hasFile('financeone_images')) {
             $all_images = $request->file('financeone_images');
@@ -79,14 +79,14 @@ class FinanceoneController extends Controller
                 $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $image_name);
                 $financeone_images = new financeone_images;
-                $financeone_images->financeone_id = $financeone->id;
+                $financeone_images->financeone_id = $financeones->id;
                 $financeone_images->financeone_image_path = $image_name;
                 $financeone_images->save();
                 dd($financeone_images);
             }
         }
 
-        return redirect(route('admin.financeone.index'));
+        return redirect(route('admin.financeones.index'));
     }
 
     /**
@@ -95,7 +95,7 @@ class FinanceoneController extends Controller
      * @param \App\Admin\Model\slider $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(BackendFinanceone $financeone)
+    public function show(BackendFinanceones $financeones)
     {
         //
     }
@@ -109,23 +109,23 @@ class FinanceoneController extends Controller
     public function edit($id)
     {
         $users = User::all();
-        $financeone = BackendFinanceone::find($id);
-//dd(compact('financeone', 'users'));
-        return view('backend.financeone.edit', compact('financeone', 'users'));
+        $financeones = BackendFinanceones::find($id);
+//dd(compact('financeones', 'users'));
+        return view('backend.financeones.edit', compact('financeones', 'users'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Admin\Model\financeone $financeone
+     * @param \App\Admin\Model\financeones $financeones
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
 
         // End of Upload Files
-        $financeone = Financeone::find($id);
+        $financeones = financeones::find($id);
         //   $post->image = $imageUrl;
 
 
@@ -133,10 +133,10 @@ class FinanceoneController extends Controller
         // Start of Upload Files
         // file upload
         if ($request->hasFile('f_image')) {
-            $postx = Financeone::find($id);  // here to store image alone
+            $postx = financeones::find($id);  // here to store image alone
             // Delete a style_logo_en photo
             if ($postx->f_image != "") {
-                unlink('public/uploads/financeone/' . $postx->f_image);
+                unlink('public/uploads/financeones/' . $postx->f_image);
             }
 
             $fileNameWithExt = $request->file('f_image')->getClientOriginalName();
@@ -148,18 +148,18 @@ class FinanceoneController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('f_image')->move('public/uploads/financeone', $fileNameToStore);
+            $path = $request->file('f_image')->move('public/uploads/financeones', $fileNameToStore);
 
             $postx->f_image = $fileNameToStore;
             $postx->save();
         }
-        $financeone = BackendFinanceone::find($id);
-        $financeone->date = $request->date;
-         //$total = BackendFinanceone::query()->select(DB::raw('SUM(financeone) + ' . $request->financeone . ' AS total'))->groupBy('id')->orderByDesc('id')->whereNotIn('id', [$id])->first();
-        //$financeone->total = $total->total ?? $request->financeone;
-         $financeone->user_id = $request->user;
-        $financeone->description = $request->description;
-        $financeone->save();
+        $financeones = BackendFinanceones::find($id);
+        $financeones->date = $request->date;
+         //$total = BackendFinanceones::query()->select(DB::raw('SUM(financeones) + ' . $request->financeones . ' AS total'))->groupBy('id')->orderByDesc('id')->whereNotIn('id', [$id])->first();
+        //$financeones->total = $total->total ?? $request->financeones;
+         $financeones->user_id = $request->user;
+        $financeones->description = $request->description;
+        $financeones->save();
         // Start of Upload Files
         if ($request->hasFile('post_images')) {
             $all_images = $request->file('post_images');
@@ -173,19 +173,19 @@ class FinanceoneController extends Controller
                 $financeone_images->save();
             }
         }
-        return redirect(route('admin.financeone.index'));
+        return redirect(route('admin.financeones.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Admin\Model\financeone $financeone
+     * @param \App\Admin\Model\financeones $financeones
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $financeone = BackendFinanceone::find($id);
-        $financeone->delete();
-        return redirect()->back()->with('message', 'Financeone Deleted Successfully');
+        $financeones = BackendFinanceones::find($id);
+        $financeones->delete();
+        return redirect()->back()->with('message', 'financeones Deleted Successfully');
     }
 }
