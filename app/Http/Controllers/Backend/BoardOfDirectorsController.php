@@ -61,7 +61,6 @@ class BoardOfDirectorsController extends Controller
 } else {
     $fileNameToStore = 'image.jpg';
 }
- 
 $boardofdirectory = new BoardofDirectors;
 $boardofdirectory->image = $fileNameToStore; 
 $boardofdirectory->name_tr = $request->name_tr;
