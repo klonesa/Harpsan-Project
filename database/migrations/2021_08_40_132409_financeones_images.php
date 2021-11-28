@@ -13,11 +13,11 @@ class FinanceonesImages extends Migration
      */
     public function up()
     {
-        Schema::create('financeone_images', function (Blueprint $table) {
+        Schema::create('financeones_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('financeone_id')->unsigned();
-            $table->string('financeone_image_path');
-            $table->foreign('financeone_id')->references('id')->on('financeones')->onDelete('cascade');
+            $table->integer('financeones_id')->unsigned();
+            $table->string('financeones_image_path');
+            $table->foreign('financeones_id')->references('id')->on('financeones')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class FinanceonesImages extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('financeone_images');
+        Schema::dropIfExists('financeones_images');
     }
 }

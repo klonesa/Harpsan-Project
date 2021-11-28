@@ -11,7 +11,7 @@ class Financeones extends Model
 
     public function financeone_images()
     {
-        return $this->hasMany('App\Models\frontend\financeone_images');
+        return $this->hasMany('App\Models\frontend\financeones_images');
     }
 }
 
