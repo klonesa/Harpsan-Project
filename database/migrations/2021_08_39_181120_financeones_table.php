@@ -19,7 +19,6 @@ class FinanceonesTable extends Migration
             $table->date('date')->nullable();
               $table->string('description')->nullable();
             $table->string('f_image');
-
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
